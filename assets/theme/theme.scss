@@ -1,0 +1,53 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+    background-color: #F4F7F8;
+    .header {
+        .header-top {
+            background-color: #F4F7F8;
+            color: #393a3a;
+            text-align: right;
+            height: 75px;
+            .dropdown {
+                .dropdown-toggle {
+                    display: inline-flex;
+                }
+            }
+        }
+        .header-nav {
+            background-color: #485272;
+            color: #D7D9E0;
+            height: 80px;
+            .header-logo {
+                position: relative;
+                width: 324px;
+                background-color: #78849E;
+                color: #FFFFFF;
+                display: grid;
+                height: 100%;
+                .logo-text {
+                    font-size: 36px;
+                    color: #FFFFFF;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    .main {
+        direction: rtl;
+        text-align: right;
+        .sidebar {
+            position: fixed;
+            width: 324px;
+            height: 100vw;
+            background-color: #FFFFFF;
+            border: solid 1px #707070;
+        }
+        .app {
+            position: relative;
+            width: 100%;
+            padding-right: 324px;
+        }
+    }
+}
