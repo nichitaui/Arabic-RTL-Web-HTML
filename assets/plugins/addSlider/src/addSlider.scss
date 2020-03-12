@@ -1,0 +1,18 @@
+/* Variables */
+$theme: "light";
+
+/* Colors */
+$primary: #1E87F0;
+$subprimary: #C8DCF0;
+$secondary: #BFC5D2;
+$accent: #ff4081;
+$error: #f44336;
+$warning: #ff9800;
+$success: #4caf50;
+
+/* Sizes */
+$mobileSize: 600px;
+$tabletSize: 960px;
+
+@import "partials/functions";
+@import "partials/addSlider";

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <title>Admin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="assets/bootstrap-4.3.1-dist/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/theme/theme.css">
+  <!-- plugin css -->
+  <link rel='stylesheet' href='assets/plugins/addSlider/src/addSlider.css' />
+  <link rel="stylesheet" href="assets/plugins/sliding-toggle-switch/lc_switch.css">
+  <!-- js -->
+  <script src="assets/jquery/jquery.min.js"></script>
+  <script src="assets/plugins/popper/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    function usd(x){
+      if(isNaN(parseInt(x)))
+        return "0$";
+      var dollars = Math.floor(x);
+      return dollars+"$";
+    }
+    function percent(x){
+      if(isNaN(parseInt(x)))
+        return "0%";
+      var percents = Math.floor(x);
+      return percents+"%";
+    }
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-top">
+    <div class="dropdown">
+      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="avatar-container">
+          <img src="assets/img/icons/ic_account_circle.png" alt="avatar" class="header-avatar" />
+        </div>
+        שם משתמש
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+  </div>
+  <div class="header-nav">
+    <nav class="nav">
+      <div class="header-logo">
+        <a href="#" class="logo-text">LOGO</a>
+      </div>
+      <ul>
+        <li class="active">
+          <a href="#">לקוחות</a>
+        </li>
+        <li class="">
+          <a href="#">סימולטור</a>
+        </li>
+        <li class="">
+          <a href="#">CRM</a>
+        </li>
+        <li class="">
+          <a href="#">מעקב ביצוע</a>
+        </li>
+        <li class="">
+          <a href="#">ניהול וקליטת נתונים</a>
+        </li>
+        <li class="">
+          <a href="#">דוחות</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+  
+<div class="main">
+  <div class="filter-bar">
+    <div class="filter-header">
+        <button class="filter-button filter-toggle">
+            <div class="cs-icon ic-filter-result"></div>
+        </button>
+        <button class="filter-button open-show filter-settings">
+            <div class="cs-icon ic-settings"></div>
+        </button>
+        <button class="filter-button open-show cs-btn-icon btn-close filter-close"></button>
+    </div>
+    <div class="filter-body open-show">
+      <form class="filter-form">
+        <div class="form-group name-wrapper">
+          <div class="row mx-0">
+            שם פרטי
+          </div>
+          <div class="row mx-0">
+            שם משפחה
+          </div>
+        </div>
+        <div class="form-group">
+          <label>ת.ז \ ח.פ \ ח.צ</label>
+          <input type="text" class="form-control" placeholder="NUM" />
+        </div>
+        <div class="form-group gender-group">
+          <label>מגדר</label>
+          <div class="row mx-0">
+            <div class="custom-control custom-checkbox male-checkbox">
+              <input type="checkbox" class="custom-control-input" id="male">
+              <label class="custom-control-label" for="male">
+                <div class="cs-icon ic-male"></div>
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox female-checkbox">
+              <input type="checkbox" class="custom-control-input" id="female">
+              <label class="custom-control-label" for="female">
+                <div class="cs-icon ic-female"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>שם מעסיק</label>
+          <input type="text" class="form-control" placeholder="TEXT" />
+        </div>
+        <div class="form-group">
+          <label>גיל</label>
+          <input
+            data-name='age'
+            data-addui='slider'
+            data-fontsize='12'
+            data-step='1'
+            data-min='0'
+            data-max='100'
+            data-range='true'
+            value='18,67'
+          />
+        </div>
+        <div class="form-group">
+          <label>אחזקות</label>
+          <input
+            data-name='holdings'
+            data-addui='slider'
+            data-fontsize='12'
+            data-step='1'
+            data-formatter='usd'
+            data-min='0'
+            data-max='15000'
+            data-range='true'
+            value='0,10000'
+          />
+        </div>
+        <div class="form-group">
+          <label>דמי ניהול מצבירה</label>
+          <input
+            data-name='management-fee'
+            data-addui='slider'
+            data-fontsize='12'
+            data-step='1'
+            data-formatter='percent'
+            data-min='0'
+            data-max='100'
+            data-range='true'
+            value='0,10'
+          />
+        </div>
+        <div class="form-group">
+          <label>דמי ניהול מפרמיה - טווח ערכים</label>
+          <input
+            data-name='premium-mamagement-fee'
+            data-addui='slider'
+            data-fontsize='12'
+            data-step='1'
+            data-formatter='percent'
+            data-min='0'
+            data-max='100'
+            data-range='true'
+            value='0,10'
+          />
+        </div>
+        <div class="form-group">
+          <label>חברה מנהלת</label>
+          <div class="custom-control custom-checkbox company-checkbox">
+            <input type="checkbox" class="custom-control-input" id="company1">
+            <label class="custom-control-label checkbox-right" for="company1">
+              חברה מנהלת
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox company-checkbox">
+            <input type="checkbox" class="custom-control-input" id="company2">
+            <label class="custom-control-label checkbox-right" for="company2">
+              חברה מנהלת
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox company-checkbox">
+            <input type="checkbox" class="custom-control-input" id="company3">
+            <label class="custom-control-label checkbox-right" for="company3">
+              חברה מנהלת
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="w-100">סטטוס</label>
+          <input type="checkbox" name="status" value="1" class="lcs_check" autocomplete="off" checked />
+        </div>
+        <div class="form-group">
+          <label>סטטוס</label>
+          <div class="custom-control custom-checkbox customer-type-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customer-type1">
+            <label class="custom-control-label checkbox-right" for="customer-type1">
+              סוג לקוח
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox customer-type-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customer-type2">
+            <label class="custom-control-label checkbox-right" for="customer-type2">
+              סוג לקוח
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox customer-type-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customer-type3">
+            <label class="custom-control-label checkbox-right" for="customer-type3">
+              סוג לקוח
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>סוג מוצר</label>
+          <div class="custom-control custom-checkbox product-type-checkbox">
+            <input type="checkbox" class="custom-control-input" id="product-type1">
+            <label class="custom-control-label checkbox-right" for="product-type1">
+              סוג מוצר
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox product-type-checkbox">
+            <input type="checkbox" class="custom-control-input" id="product-type2">
+            <label class="custom-control-label checkbox-right" for="product-type2">
+              סוג מוצר
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox product-type-checkbox">
+            <input type="checkbox" class="custom-control-input" id="product-type3">
+            <label class="custom-control-label checkbox-right" for="product-type3">
+              סוג מוצר
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>שם מוצר</label>
+          <select class="form-control">
+            <option>מוצר</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>מספר אוצר /מ"ה</label>
+          <input type="text" class="form-control" placeholder="NUM" />
+        </div>
+        <div class="form-group">
+          <label>עיר מגורים</label>
+          <select class="form-control">
+            <option>עיר</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>צוות מטפל</label>
+          <div class="custom-control custom-checkbox caring-staff-checkbox">
+            <input type="checkbox" class="custom-control-input" id="caring-staff1">
+            <label class="custom-control-label checkbox-right" for="caring-staff1">
+              צוות מטפל
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox caring-staff-checkbox">
+            <input type="checkbox" class="custom-control-input" id="caring-staff2">
+            <label class="custom-control-label checkbox-right" for="caring-staff2">
+              צוות מטפל
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox caring-staff-checkbox">
+            <input type="checkbox" class="custom-control-input" id="caring-staff3">
+            <label class="custom-control-label checkbox-right" for="caring-staff3">
+              צוות מטפל
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>מתכנן (סוכן) מטפל</label>
+          <div class="custom-control custom-checkbox agent-therapist-checkbox">
+            <input type="checkbox" class="custom-control-input" id="agent-therapist1">
+            <label class="custom-control-label checkbox-right" for="agent-therapist1">
+              מתכנן (סוכן) מטפל
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox agent-therapist-checkbox">
+            <input type="checkbox" class="custom-control-input" id="agent-therapist2">
+            <label class="custom-control-label checkbox-right" for="agent-therapist2">
+              מתכנן (סוכן) מטפל
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox agent-therapist-checkbox">
+            <input type="checkbox" class="custom-control-input" id="agent-therapist3">
+            <label class="custom-control-label checkbox-right" for="agent-therapist3">
+              מתכנן (סוכן) מטפל
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>סטוס משפחתי</label>
+          <div class="custom-control custom-checkbox family-status-checkbox">
+            <input type="checkbox" class="custom-control-input" id="family-status1">
+            <label class="custom-control-label checkbox-right" for="family-status1">
+              סטוס משפחתי
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox family-status-checkbox">
+            <input type="checkbox" class="custom-control-input" id="family-status2">
+            <label class="custom-control-label checkbox-right" for="family-status2">
+              סטוס משפחתי
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox family-status-checkbox">
+            <input type="checkbox" class="custom-control-input" id="family-status3">
+            <label class="custom-control-label checkbox-right" for="family-status3">
+              סטוס משפחתי
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>סוג עוסק</label>
+          <div class="custom-control custom-checkbox type-deals-checkbox">
+            <input type="checkbox" class="custom-control-input" id="type-deals1">
+            <label class="custom-control-label checkbox-right" for="type-deals1">
+              סוג עוסק
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox type-deals-checkbox">
+            <input type="checkbox" class="custom-control-input" id="type-deals2">
+            <label class="custom-control-label checkbox-right" for="type-deals2">
+              סוג עוסק
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox type-deals-checkbox">
+            <input type="checkbox" class="custom-control-input" id="type-deals3">
+            <label class="custom-control-label checkbox-right" for="type-deals3">
+              סוג עוסק
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>מעמד</label>
+          <div class="custom-control custom-checkbox status-checkbox">
+            <input type="checkbox" class="custom-control-input" id="status1">
+            <label class="custom-control-label checkbox-right" for="status1">
+              מעמד
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox status-checkbox">
+            <input type="checkbox" class="custom-control-input" id="status2">
+            <label class="custom-control-label checkbox-right" for="status2">
+              מעמד
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox status-checkbox">
+            <input type="checkbox" class="custom-control-input" id="status3">
+            <label class="custom-control-label checkbox-right" for="status3">
+              מעמד
+            </label>
+          </div>
+        </div>
+      </form>
+      <!-- settings form -->
+      <form class="settings-form">
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="name">
+          <label class="custom-control-label checkbox-left" for="name">
+            שם פרטי
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="last_name">
+          <label class="custom-control-label checkbox-left" for="last_name">
+            שם משפחה
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="dob">
+          <label class="custom-control-label checkbox-left" for="dob">
+            ת.ז \ ח.פ \ ח.צ
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="name_of_employer">
+          <label class="custom-control-label checkbox-left" for="name_of_employer">
+            שם מעסיק
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="age">
+          <label class="custom-control-label checkbox-left" for="age">
+            גיל
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="holdings">
+          <label class="custom-control-label checkbox-left" for="holdings">
+            אחזקות
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="management_fee">
+          <label class="custom-control-label checkbox-left" for="management_fee">
+            דמי ניהול מצבירה
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="premium_management_fee">
+          <label class="custom-control-label checkbox-left" for="premium_management_fee">
+            דמי ניהול מפרמיה - טווח ערכים
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="managing_company">
+          <label class="custom-control-label checkbox-left" for="managing_company">
+            חברה מנהלת
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="status">
+          <label class="custom-control-label checkbox-left" for="status">
+            סטטוס 
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="product_type">
+          <label class="custom-control-label checkbox-left" for="product_type">
+            סוג מוצר
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="product_name">
+          <label class="custom-control-label checkbox-left" for="product_name">
+            שם מוצר
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="treasury_number">
+          <label class="custom-control-label checkbox-left" for="treasury_number">
+            מספר אוצר /מ"ה
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="hometown">
+          <label class="custom-control-label checkbox-left" for="hometown">
+            עיר מגורים
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="balances">
+          <label class="custom-control-label checkbox-left" for="balances">
+            יתרות
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="caring_staff">
+          <label class="custom-control-label checkbox-left" for="caring_staff">
+            צוות מטפל
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="agent_therapist">
+          <label class="custom-control-label checkbox-left" for="agent_therapist">
+            מתכנן (סוכן) מטפל
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="family_status">
+          <label class="custom-control-label checkbox-left" for="family_status">
+            סטטוס משפחתי
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="type_deals">
+          <label class="custom-control-label checkbox-left" for="type_deals">
+            סוג עוסק
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox settings-checkbox">
+          <input type="checkbox" class="custom-control-input" id="status">
+          <label class="custom-control-label checkbox-left" for="status">
+            מעמד
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="filter-app">
+    <div class="app-header">
+      <div class="row app-header-top">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+          <span class="title">רשימת לקוחות</span>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-left">
+          <a class="cs-btn-icon btn-exit" href="javascript:avoid(0)"></a>
+          <a class="cs-btn-icon btn-xls" href="javascript:avoid(0)"></a>
+          <a class="cs-btn-icon btn-print" href="javascript:avoid(0)"></a>
+        </div>
+      </div>
+      <div class="row app-header-bottom">
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 d-inline-flex">
+          <select class="form-control select-sort-by">
+            <option>מיון לפי</option>
+          </select>
+          <div class="input-search-wrapper">
+            <input type="text" class="form-control input-search" placeholder="חיפש" />
+            <img src="assets/img/icons/ic_search.png" alt="icon search" class="input-icon" />
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 text-left">
+          <button class="cs-btn-img btn-new-customer" data-toggle="modal" data-target="#newCustomerModal"></button>
+        </div>
+      </div>
+    </div>
+    <div class="app-body">
+      <div class="app-filter-tags">
+        <div class="filter-tag">
+          סינון
+          <div class="cs-icon ic-times"></div>
+        </div>
+        <div class="filter-tag">
+          סינון
+          <div class="cs-icon ic-times"></div>
+        </div>
+        <div class="filter-tag">
+          סינון
+          <div class="cs-icon ic-times"></div>
+        </div>
+      </div>
+      <div class="app-card-list">
+        <div class="card customer-card">
+          <div class="card-header">
+            <a href="#" class="float-right"><div class="cs-icon ic-square"></div></a>
+            <a href="customer-info.html" class="float-left"><div class="cs-icon ic-pencil"></div></a>
+          </div>
+          <div class="card-body">
+            <div class="row py-2">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-female"></div>שם לקוח
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-call"></div>000000000
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-folder-shared-gray"></div>TEXT
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-sms"></div></a>
+              </div>
+            </div>
+            <div class="row py-2">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-chrome-reader"></div>031327387
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-room"></div>TEXT
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-people"></div>TEXT
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-class"></div></a>
+              </div>
+            </div>
+            <div class="row py-2">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-account-balance-wallet"></div>2,476,231$
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-email"></div>email@email.com
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-record-voice"></div>TEXT
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-group"></div></a>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="row">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                (3) חשיפה
+                <img class="mr-4" src="assets/img/level3.png" alt="level" />
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                (4) רמת מינוף 
+                <img class="mr-4" src="assets/img/level4.png" alt="level" />
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                (3) רמת סיכון 
+                <img class="mr-4" src="assets/img/level3.png" alt="level" />
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-trash"></div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card customer-card">
+          <div class="card-header">
+            <a href="#" class="float-right"><div class="cs-icon ic-square"></div></a>
+            <a href="customer-info.html" class="float-left"><div class="cs-icon ic-pencil"></div></a>
+          </div>
+          <div class="card-body">
+            <div class="row py-2">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-female"></div>שם לקוח
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-call"></div>000000000
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-folder-shared-gray"></div>TEXT
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-sms"></div></a>
+              </div>
+            </div>
+            <div class="row py-2">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-chrome-reader"></div>031327387
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-room"></div>TEXT
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-people"></div>TEXT
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-class"></div></a>
+              </div>
+            </div>
+            <div class="row py-2">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-account-balance-wallet"></div>2,476,231$
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-email"></div>email@email.com
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-record-voice"></div>TEXT
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-group"></div></a>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="row">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                (3) חשיפה
+                <img class="mr-4" src="assets/img/level3.png" alt="level" />
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                (4) רמת מינוף 
+                <img class="mr-4" src="assets/img/level4.png" alt="level" />
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                (3) רמת סיכון 
+                <img class="mr-4" src="assets/img/level3.png" alt="level" />
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-trash"></div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card customer-card">
+          <div class="card-header">
+            <a href="#" class="float-right"><div class="cs-icon ic-square"></div></a>
+            <a href="customer-info.html" class="float-left"><div class="cs-icon ic-pencil"></div></a>
+          </div>
+          <div class="card-body">
+            <div class="row py-2">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-female"></div>שם לקוח
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-call"></div>000000000
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-folder-shared-gray"></div>TEXT
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-sms"></div></a>
+              </div>
+            </div>
+            <div class="row py-2">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-chrome-reader"></div>031327387
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-room"></div>TEXT
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-people"></div>TEXT
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-class"></div></a>
+              </div>
+            </div>
+            <div class="row py-2">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-account-balance-wallet"></div>2,476,231$
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-email"></div>email@email.com
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <div class="cs-icon ic-record-voice"></div>TEXT
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-group"></div></a>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="row">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                (3) חשיפה
+                <img class="mr-4" src="assets/img/level3.png" alt="level" />
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                (4) רמת מינוף 
+                <img class="mr-4" src="assets/img/level4.png" alt="level" />
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                (3) רמת סיכון 
+                <img class="mr-4" src="assets/img/level3.png" alt="level" />
+                <a href="#" class="float-left btn-action"><div class="cs-icon ic-trash"></div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- New Customer Modal -->
+<div class="modal fade" id="newCustomerModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        <button type="button" class="cs-btn-icon btn-close close" data-dismiss="modal"></button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>שם פרטי</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>שם משפחה</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>מגדר</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>ת.ז</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>סוג עוסק</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>מעמד</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>כתובת</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>ישוב</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>טלפון</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>טלפון</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>אימייל</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>צוות מטפל</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>מתכנן (סוכן) מטפל</label>
+                <input type="text" class="form-control" placeholder="TEXT" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="cs-btn-img btn-save" data-dismiss="modal"></button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- plugin js -->
+<script src="assets/plugins/bar-rating/jquery.barrating.js"></script>
+<script src='assets/plugins/addSlider/res/Obj.min.js'></script>
+<script src='assets/plugins/addSlider/src/addSlider.js'></script>
+<script src="assets/plugins/sliding-toggle-switch/lc_switch.js" type="text/javascript"></script>
+<!-- ./plugin js -->
+<script type="text/javascript">
+  $(document).ready(function(e) {
+      $('input.lcs_check').lc_switch('פעיל', 'deactive');
+  
+      // triggered each time a field changes status
+      $(document).on('lcs-statuschange', '.lcs_check', function() {
+          var status 	= ($(this).is(':checked')) ? 'checked' : 'unchecked',
+      subj 	= ($(this).attr('type') == 'radio') ? 'radio #' : 'checkbox #',
+      num		= $(this).val(); 
+          
+    $('#third_div ul').prepend('<li><em>[lcs-statuschange]</em>'+ subj + num +' changed status: '+ status +'</li>');
+      });
+      
+      
+      // triggered each time a field is checked
+      $(document).on('lcs-on', '.lcs_check', function() {
+    var subj 	= ($(this).attr('type') == 'radio') ? 'radio #' : 'checkbox #',
+      num		= $(this).val(); 
+    
+    $('#third_div ul').prepend('<li><em>[lcs-on]</em>'+ subj + num +' is checked</li>');
+      });
+      
+      
+      // triggered each time a is unchecked
+      $(document).on('lcs-off', '.lcs_check', function() {
+          var subj 	= ($(this).attr('type') == 'radio') ? 'radio #' : 'checkbox #',
+      num		= $(this).val(); 
+    
+    $('#third_div ul').prepend('<li><em>[lcs-off]</em>'+ subj + num +' is unchecked</li>');
+      });
+  });
+
+
+  // clean events log
+  $('#third_div small').click(function() {
+    $('#third_div ul').empty();
+  });
+</script>
+<!-- script -->
+<script>
+  $(document).on('click', '.filter-toggle', function() {
+    $('.main').addClass('open-filter');
+    $('.settings-form').removeClass('open');
+    $('.filter-form').addClass('open');
+  });
+  $(document).on('click', '.filter-settings', function() {
+    $('.main').addClass('open-filter');
+    $('.filter-form').removeClass('open');
+    $('.settings-form').addClass('open');
+  });
+  $(document).on('click', '.filter-close', function() {
+    $('.main').removeClass('open-filter');
+  });
+</script>
+<!-- ./script -->
+</body>
+</html>

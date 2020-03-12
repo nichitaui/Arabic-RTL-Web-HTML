@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='../src/addSlider.css' />
+  <script src='../res/jquery.js'></script>
+  <script src='../res/Obj.min.js'></script>
+  <script src='../src/addSlider.js'></script>
+  <script>
+    function betterParseFloat(x){
+      if(isNaN(parseFloat(x)) && x.length > 0)
+        return betterParseFloat(x.substr(1));
+      return parseFloat(x);
+    }
+    function usd(x){
+      x = betterParseFloat(x);
+      if(isNaN(x))
+        return "$0.00";
+      var dollars = Math.floor(x);
+      var cents = Math.round((x - dollars) * 100) + "";
+      if(cents.length==1)cents = "0"+cents;
+      return "$"+dollars+"."+cents;
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      width: 100vw;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <br><br><br>
+  <br><br><br>
+  <input
+    data-addui='slider'
+    data-formatter='usd'
+    data-fontsize='14'
+    data-step='0.01'
+    data-min='5'
+    data-max='20'
+    value='10'
+  />
+</body>
+</html>

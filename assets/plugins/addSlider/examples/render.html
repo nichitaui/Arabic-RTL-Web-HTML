@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='../src/addSlider.css' />
+  <script src='../res/jquery.js'></script>
+  <script src='../res/Obj.min.js'></script>
+  <script src='../src/addSlider.js'></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      width: 100vw;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <br><br><br>
+  <br><br><br>
+  <script>
+    var slider = new $add.SliderObj({
+      min: 0,
+      max: 10,
+      value: 2
+    });
+    slider.render("body", "append");
+  </script>
+</body>
+</html>
