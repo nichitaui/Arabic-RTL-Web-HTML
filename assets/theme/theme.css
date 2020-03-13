@@ -9951,6 +9951,7 @@ body .main .sidebar {
   overflow: auto;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  z-index: 10;
 }
 body .main .sidebar ul {
   list-style: none;
@@ -9980,17 +9981,265 @@ body .main .sidebar ul li.active a {
   color: #FFFFFF;
 }
 body .main .app {
-  position: relative;
+  position: fixed;
   width: 100%;
   padding-right: 324px;
+  height: calc(100% - 150px);
+  overflow: auto;
 }
 body .main .app .app-header {
-  width: calc(100%);
-  height: 189px;
+  padding: 30px;
+}
+body .main .app .app-header .app-header-top {
+  padding: 10px 0;
+}
+body .main .app .app-header .app-header-top .title {
+  font-size: 35px;
+  font-weight: 500;
+}
+body .main .app .app-header .app-header-top .cs-btn-img {
+  float: left;
+}
+body .main .app .app-header .app-header-top .cs-btn-img:first-child {
+  margin-left: 0px;
+}
+body .main .app .app-header .app-header-bottom {
+  padding: 20px 0 0 0;
+}
+body .main .app .app-header .app-header-bottom .card {
+  height: 100%;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+body .main .app .app-header .app-header-bottom .card .card-header {
+  height: 28px;
+  background-color: #0288D1;
+  padding: 5px 20px 5px 10px;
+}
+body .main .app .app-header .app-header-bottom .card .card-header.header-green {
+  background-color: #21D102;
+}
+body .main .app .app-header .app-header-bottom .card .card-header .cs-icon {
+  font-size: 18px;
+  height: 18px;
+}
+body .main .app .app-header .app-header-bottom .card .card-body {
+  position: relative;
+  font-size: 20px;
+}
+body .main .app .app-header .app-header-bottom .card .card-body .action-group {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: grid;
+  width: 40px;
+  height: 100%;
+}
+body .main .app .app-header .app-header-bottom .card .card-body .action-group .btn-action {
+  padding: 13px 10px;
+}
+body .main .app .app-header .app-header-bottom .card .card-body .label {
+  font-size: 20px;
+  text-align: center;
+}
+body .main .app .app-header .app-header-bottom .card .card-body .value {
+  font-size: 27px;
+  font-weight: bold;
+  text-align: center;
+  color: #1E87F0;
+}
+body .main .app .app-header .app-header-bottom .card .card-body .chart-group {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body .main .app .app-header .app-header-bottom .card .card-body .chart-group .label {
+  font-size: 14px;
+  margin-top: 5px;
+}
+body .main .app .app-body .app-tab {
+  padding: 0 30px 30px 30px;
+}
+body .main .app .app-body .app-tab .nav-tabs {
+  border-bottom: solid 17px #7ABBFC;
+  height: 86px;
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link {
+  color: #485272;
+  font-size: 20px;
+  padding: 19px;
+  /* tab nav icons css */
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
+  margin-left: 10px;
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-user {
+  background-image: url(../img/icons/ic_user_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-call {
+  background-image: url(../img/icons/ic_call_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-assignment {
+  background-image: url(../img/icons/ic_assignment_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-group {
+  background-image: url(../img/icons/ic_group_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-person-add {
+  background-image: url(../img/icons/ic_person_add_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-account-balance-wallet {
+  background-image: url(../img/icons/ic_account_balance_wallet_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-healing {
+  background-image: url(../img/icons/ic_healing_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-store {
+  background-image: url(../img/icons/ic_store_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-group-add {
+  background-image: url(../img/icons/ic_group_add_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active {
+  background-color: #7ABBFC;
+  border: 0;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  /* tab nav icons css */
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-user {
+  background-image: url(../img/icons/ic_user_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-call {
+  background-image: url(../img/icons/ic_call_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-assignment {
+  background-image: url(../img/icons/ic_assignment_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-group {
+  background-image: url(../img/icons/ic_group_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-person-add {
+  background-image: url(../img/icons/ic_person_add_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-account-balance-wallet {
+  background-image: url(../img/icons/ic_account_balance_wallet_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-healing {
+  background-image: url(../img/icons/ic_healing_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-store {
+  background-image: url(../img/icons/ic_store_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-group-add {
+  background-image: url(../img/icons/ic_group_add_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link:hover {
+  border: 0;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane {
   background-color: #FFFFFF;
-  border-right: solid 1px #707070;
-  border-left: solid 1px #707070;
-  border-bottom: solid 2px #707070;
+  padding: 25px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form .row {
+  margin-bottom: 35px;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #7ABBFC;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .form-control {
+  height: 50px;
+  max-width: 300px;
+  border-radius: 0.25rem !important;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .gj-datepicker .input-group-append {
+  position: absolute;
+  right: 260px;
+  top: 0px;
+  height: 100%;
+  z-index: 10;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .gj-datepicker .input-group-append .btn {
+  border: 0;
+  color: #7ABBFC;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .gj-datepicker .input-group-append .btn .gj-icon {
+  top: 15px;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .button-group {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .button-group .form-control {
+  border: 0;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .button-group .form-control label {
+  position: relative;
+  top: -20px;
+  left: 20px;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .lcs_wrap, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-bank-account .lcs_wrap, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-medical-details .lcs_wrap {
+  width: 100%;
+  margin-top: 5px;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .lcs_wrap .lcs_switch.lcs_on, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-bank-account .lcs_wrap .lcs_switch.lcs_on, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-medical-details .lcs_wrap .lcs_switch.lcs_on {
+  background-color: #7ABBFC;
+  box-shadow: 0 0 2px #7ABBFC inset;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .col-xl-6 .form-control, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-bank-account .col-xl-6 .form-control, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-medical-details .col-xl-6 .form-control {
+  max-width: 678px;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .col-xl-9 .form-control, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-bank-account .col-xl-9 .form-control, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-medical-details .col-xl-9 .form-control {
+  max-width: 1054px;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table {
+  width: 100%;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #7ABBFC;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th:last-child {
+  text-align: left;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr {
+  border-top: solid 2px #BFC5D2;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td:last-child {
+  text-align: left;
+  display: inline-flex;
+  width: 100% !important;
+  justify-content: flex-end;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td .btn-icon {
+  width: 55px;
+  height: 40px;
+  display: inline-block;
+  padding: 10px 17px;
+  border-right: solid 1px #BFC5D2;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table thead tr th {
+  width: 14%;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table tbody tr {
+  border-top: solid 2px #BFC5D2;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table tbody tr td {
+  width: 14%;
 }
 body .main .filter-bar {
   position: fixed;
@@ -10245,6 +10494,9 @@ body .main.open-filter .filter-app {
 .cs-btn-icon.btn-close:hover {
   background-image: url(../img/buttons/btn-close.png);
 }
+.cs-btn-icon.btn-add {
+  background-image: url(../img/buttons/btn-add.png);
+}
 
 .cs-btn-img {
   position: relative;
@@ -10261,6 +10513,15 @@ body .main.open-filter .filter-app {
 .cs-btn-img.btn-save {
   background-image: url(../img/buttons/btn-save.png);
 }
+.cs-btn-img.btn-questionnaire {
+  background-image: url(../img/buttons/btn-questionnaire.png);
+}
+.cs-btn-img.btn-back {
+  background-image: url(../img/buttons/btn-back.png);
+}
+.cs-btn-img.btn-options {
+  background-image: url(../img/buttons/btn-options.png);
+}
 
 .cs-icon {
   display: inline-flex;
@@ -10269,6 +10530,7 @@ body .main.open-filter .filter-app {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  /* tab nav icons css */
 }
 .cs-icon.ic-folder-shared {
   background-image: url(../img/icons/ic_folder_shared.png);
@@ -10369,6 +10631,48 @@ body .main.open-filter .filter-app {
 .cs-icon.ic-settings {
   background-image: url(../img/icons/ic_settings_blue.png);
 }
+.cs-icon.ic-trash-white {
+  background-image: url(../img/icons/ic_trash_white.png);
+}
+.cs-icon.ic-person-add {
+  background-image: url(../img/icons/ic_person_add.png);
+}
+.cs-icon.ic-email-blue {
+  background-image: url(../img/icons/ic_email_blue.png);
+}
+.cs-icon.ic-user-blue {
+  background-image: url(../img/icons/ic_user_blue.png);
+}
+.cs-icon.ic-call-blue {
+  background-image: url(../img/icons/ic_call_blue.png);
+}
+.cs-icon.ic-assignment-blue {
+  background-image: url(../img/icons/ic_assignment_blue.png);
+}
+.cs-icon.ic-group-blue {
+  background-image: url(../img/icons/ic_group_blue.png);
+}
+.cs-icon.ic-person-add-blue {
+  background-image: url(../img/icons/ic_person_add_blue.png);
+}
+.cs-icon.ic-account-balance-wallet-blue {
+  background-image: url(../img/icons/ic_account_balance_wallet_blue.png);
+}
+.cs-icon.ic-healing-blue {
+  background-image: url(../img/icons/ic_healing_blue.png);
+}
+.cs-icon.ic-store-blue {
+  background-image: url(../img/icons/ic_store_blue.png);
+}
+.cs-icon.ic-group-add-blue {
+  background-image: url(../img/icons/ic_group_add_blue.png);
+}
+.cs-icon.ic-trash-blue {
+  background-image: url(../img/icons/ic_trash_blue.png);
+}
+.cs-icon.ic-pencil-blue {
+  background-image: url(../img/icons/ic_pencil_blue.png);
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -10393,6 +10697,14 @@ body .main.open-filter .filter-app {
 button:focus {
   outline: none;
   box-shadow: none;
+}
+
+.border-left-primary {
+  border-left: solid 2px #1A70C6;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
 }
 
 .custom-control-label.checkbox-right {
@@ -10448,17 +10760,96 @@ button:focus {
 }
 .modal-open .modal .modal-dialog .modal-content .modal-body .form-group {
   margin-bottom: 60px;
+  text-align: right;
+}
+.modal-open .modal .modal-dialog .modal-content .modal-body .form-group label {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Heebo";
+  color: #7ABBFC;
+  text-align: right;
 }
 .modal-open .modal .modal-dialog .modal-content .modal-body .form-group .form-control {
   height: 50px;
   width: 298px;
   max-width: 298px;
 }
+.modal-open .modal .modal-dialog .modal-content .modal-body .col-xl-9 .form-control {
+  max-width: 963px;
+  width: 100%;
+  height: 136px;
+}
 .modal-open .modal .modal-dialog .modal-content .modal-footer {
   border-top: 0;
   text-align: right;
   justify-content: flex-start;
   padding: 30px 50px 60px 30px;
+}
+
+#relativesEditModal .lcs_wrap {
+  width: 100%;
+  margin-top: 10px;
+}
+#relativesEditModal .lcs_wrap .lcs_switch.lcs_on {
+  background: #7ABBFC;
+  box-shadow: 0 0 2px #7ABBFC inset;
+}
+
+#relatedBusinessAddModal .modal-body .col-xl-12 .form-control {
+  max-width: 630px;
+  width: 100%;
+}
+
+#contactsAddModal .modal-body, #contactsAddModal .modal-footer {
+  margin-right: 170px;
+  margin-left: 75px;
+}
+
+/* datepicker css custom */
+.gj-datepicker .input-group-append {
+  position: absolute;
+  right: 260px;
+  top: 0px;
+  height: 100%;
+  z-index: 10;
+}
+.gj-datepicker .input-group-append .btn {
+  border: 0;
+  color: #7ABBFC;
+}
+.gj-datepicker .input-group-append .btn .gj-icon {
+  top: 15px;
+}
+
+.semi-donut {
+  --percentage: 0;
+  --fill: #ff0;
+  width: 120px;
+  height: 60px;
+  position: relative;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  overflow: hidden;
+  color: var(--fill);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.semi-donut:before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  border: 20px solid;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) var(--fill) var(--fill);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  transform: rotate(calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ));
+  animation: fillAnimation 1s ease-in;
 }
 
 /*# sourceMappingURL=theme.css.map */

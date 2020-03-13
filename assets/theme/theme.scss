@@ -82,6 +82,7 @@ body {
             overflow: auto;
             -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
             box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+            z-index: 10;
             ul {
                 list-style: none;
                 padding: 0px;
@@ -112,16 +113,302 @@ body {
         }
 
         .app {
-            position: relative;
+            position: fixed;
             width: 100%;
             padding-right: 324px;
+            height: calc(100% - 150px);
+            overflow: auto;
             .app-header {
-                width: calc(100%);
-                height: 189px;
-                background-color: #FFFFFF;
-                border-right: solid 1px #707070;
-                border-left: solid 1px #707070;
-                border-bottom: solid 2px #707070;
+                padding: 30px;
+                .app-header-top {
+                    padding: 10px 0;
+                    .title {
+                        font-size: 35px;
+                        font-weight: 500;
+                    }
+                    .cs-btn-img {
+                        float: left;
+                        &:first-child {
+                            margin-left: 0px;
+                        }
+                    }
+                }
+                .app-header-bottom {
+                    padding: 20px 0 0 0;
+                    .card {
+                        height: 100%;
+                        -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
+                        box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+                        .card-header {
+                            height: 28px;
+                            background-color: #0288D1;
+                            padding: 5px 20px 5px 10px;
+                            &.header-green {
+                                background-color: #21D102;
+                            }
+                            .cs-icon {
+                                font-size: 18px;
+                                height: 18px;
+                            }
+                        }
+                        .card-body {
+                            position: relative;
+                            font-size: 20px;
+                            .action-group {
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                display: grid;
+                                width: 40px;
+                                height: 100%;
+                                .btn-action {
+                                    padding: 13px 10px;
+                                }
+                            }
+                            .label {
+                                font-size: 20px;
+                                text-align: center;
+                            }
+                            .value {
+                                font-size: 27px;
+                                font-weight: bold;
+                                text-align: center;
+                                color: #1E87F0;
+                            }
+                            .chart-group {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                .label {
+                                    font-size: 14px;
+                                    margin-top: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .app-body {
+                .app-tab {
+                    padding: 0 30px 30px 30px;
+                    .nav-tabs {
+                        border-bottom: solid 17px #7ABBFC;
+                        height: 86px;
+                        .nav-link {
+                            color: #485272;
+                            font-size: 20px;
+                            padding: 19px;
+                            /* tab nav icons css */
+                            .cs-icon {
+                                margin-left: 10px;
+                                &.ic-user {
+                                    background-image: url(../img/icons/ic_user_blue.png);
+                                }
+                                &.ic-call {
+                                    background-image: url(../img/icons/ic_call_blue.png);
+                                }
+                                &.ic-assignment {
+                                    background-image: url(../img/icons/ic_assignment_blue.png);
+                                }
+                                &.ic-group {
+                                    background-image: url(../img/icons/ic_group_blue.png);
+                                }
+                                &.ic-person-add {
+                                    background-image: url(../img/icons/ic_person_add_blue.png);
+                                }
+                                &.ic-account-balance-wallet {
+                                    background-image: url(../img/icons/ic_account_balance_wallet_blue.png);
+                                }
+                                &.ic-healing {
+                                    background-image: url(../img/icons/ic_healing_blue.png);
+                                }
+                                &.ic-store {
+                                    background-image: url(../img/icons/ic_store_blue.png);
+                                }
+                                &.ic-group-add {
+                                    background-image: url(../img/icons/ic_group_add_blue.png);
+                                }
+                            }
+                            &.active {
+                                background-color: #7ABBFC;
+                                border: 0;
+                                color: #FFFFFF;
+                                font-weight: bold;
+                                border-top-left-radius: 0.5rem;
+                                border-top-right-radius: 0.5rem;
+                                /* tab nav icons css */
+                                .cs-icon {
+                                    &.ic-user {
+                                        background-image: url(../img/icons/ic_user_white.png);
+                                    }
+                                    &.ic-call {
+                                        background-image: url(../img/icons/ic_call_white.png);
+                                    }
+                                    &.ic-assignment {
+                                        background-image: url(../img/icons/ic_assignment_white.png);
+                                    }
+                                    &.ic-group {
+                                        background-image: url(../img/icons/ic_group_white.png);
+                                    }
+                                    &.ic-person-add {
+                                        background-image: url(../img/icons/ic_person_add_white.png);
+                                    }
+                                    &.ic-account-balance-wallet {
+                                        background-image: url(../img/icons/ic_account_balance_wallet_white.png);
+                                    }
+                                    &.ic-healing {
+                                        background-image: url(../img/icons/ic_healing_white.png);
+                                    }
+                                    &.ic-store {
+                                        background-image: url(../img/icons/ic_store_white.png);
+                                    }
+                                    &.ic-group-add {
+                                        background-image: url(../img/icons/ic_group_add_white.png);
+                                    }
+                                }
+                            }
+                            &:hover {
+                                border: 0;
+                            }
+                        }
+                    }
+                    .tab-content {
+                        .tab-pane {
+                            background-color: #FFFFFF;
+                            padding: 25px;
+                            -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
+                            box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+                            form {
+                                .row {
+                                    margin-bottom: 35px;
+                                    .form-group {
+                                        label {
+                                            font-size: 18px;
+                                            font-weight: bold;
+                                            color: #7ABBFC;
+                                        }
+                                        .form-control {
+                                            height: 50px;
+                                            max-width: 300px;
+                                            border-radius: 0.25rem !important;
+                                        }
+                                        .gj-datepicker {
+                                            .input-group-append {
+                                                position: absolute;
+                                                right: 260px;
+                                                top: 0px;
+                                                height: 100%;
+                                                z-index: 10;
+                                                .btn {
+                                                    border: 0;
+                                                    color: #7ABBFC;
+                                                    .gj-icon {
+                                                        top: 15px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                &.form-employer {
+                                    .button-group {
+                                        position: absolute;
+                                        width: 100%;
+                                        bottom: 0px;
+                                        .form-control {
+                                            border: 0;
+                                            label {
+                                                position: relative;
+                                                top: -20px;
+                                                left: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+                                &.form-partner, 
+                                &.form-bank-account,
+                                &.form-medical-details {
+                                    .lcs_wrap {
+                                        width: 100%;
+                                        margin-top: 5px;
+                                        .lcs_switch {
+                                            &.lcs_on {
+                                                background-color: #7ABBFC;
+                                                box-shadow: 0 0 2px #7ABBFC inset;
+                                            }
+                                        }
+                                    }
+                                    .col-xl-6 {
+                                        .form-control {
+                                            max-width: 678px;
+                                        }
+                                    }
+                                    .col-xl-9 {
+                                        .form-control {
+                                            max-width: 1054px;
+                                        }
+                                    }
+                                }
+                            }
+                            .customer-table {
+                                width: 100%;
+                                thead {
+                                    tr {
+                                        th {
+                                            text-align: center;
+                                            font-size: 18px;
+                                            font-weight: bold;
+                                            color: #7ABBFC;
+                                            &:last-child {
+                                                text-align: left;
+                                            }
+                                        }
+                                    }
+                                }
+                                tbody {
+                                    tr {
+                                        border-top: solid 2px #BFC5D2;
+                                        td {
+                                            text-align: center;
+                                            font-size: 18px;
+                                            padding: 20px 0;
+                                            &:last-child {
+                                                text-align: left;
+                                                display: inline-flex;
+                                                width: 100% !important;
+                                                justify-content: flex-end;
+                                            }
+                                            .btn-icon {
+                                                width: 55px;
+                                                height: 40px;
+                                                display: inline-block;
+                                                padding: 10px 17px;
+                                                border-right: solid 1px #BFC5D2;
+                                            }
+                                        }
+                                    }
+                                }
+                                &.relatives-table {
+                                    thead {
+                                        tr {
+                                            th {
+                                                width: 14%;
+                                            }
+                                        }
+                                    }
+                                    tbody {
+                                        tr {
+                                            border-top: solid 2px #BFC5D2;
+                                            td {
+                                                width: 14%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         // filter app css
@@ -373,6 +660,9 @@ body {
             background-image: url(../img/buttons/btn-close.png);
         }
     }
+    &.btn-add {
+        background-image: url(../img/buttons/btn-add.png);
+    }
 }
 
 .cs-btn-img {
@@ -388,6 +678,15 @@ body {
     }
     &.btn-save {
         background-image: url(../img/buttons/btn-save.png);
+    }
+    &.btn-questionnaire {
+        background-image: url(../img/buttons/btn-questionnaire.png);
+    }
+    &.btn-back {
+        background-image: url(../img/buttons/btn-back.png);
+    }
+    &.btn-options {
+        background-image: url(../img/buttons/btn-options.png);
     }
 }
 
@@ -497,6 +796,49 @@ body {
     &.ic-settings {
         background-image: url(../img/icons/ic_settings_blue.png);
     }
+    &.ic-trash-white {
+        background-image: url(../img/icons/ic_trash_white.png);
+    }
+    &.ic-person-add {
+        background-image: url(../img/icons/ic_person_add.png);
+    }
+    &.ic-email-blue {
+        background-image: url(../img/icons/ic_email_blue.png);
+    }
+    /* tab nav icons css */
+    &.ic-user-blue {
+        background-image: url(../img/icons/ic_user_blue.png);
+    }
+    &.ic-call-blue {
+        background-image: url(../img/icons/ic_call_blue.png);
+    }
+    &.ic-assignment-blue {
+        background-image: url(../img/icons/ic_assignment_blue.png);
+    }
+    &.ic-group-blue {
+        background-image: url(../img/icons/ic_group_blue.png);
+    }
+    &.ic-person-add-blue {
+        background-image: url(../img/icons/ic_person_add_blue.png);
+    }
+    &.ic-account-balance-wallet-blue {
+        background-image: url(../img/icons/ic_account_balance_wallet_blue.png);
+    }
+    &.ic-healing-blue {
+        background-image: url(../img/icons/ic_healing_blue.png);
+    }
+    &.ic-store-blue {
+        background-image: url(../img/icons/ic_store_blue.png);
+    }
+    &.ic-group-add-blue {
+        background-image: url(../img/icons/ic_group_add_blue.png);
+    }
+    &.ic-trash-blue {
+        background-image: url(../img/icons/ic_trash_blue.png);
+    }
+    &.ic-pencil-blue {
+        background-image: url(../img/icons/ic_pencil_blue.png);
+    }
 }
 
 /* width */
@@ -524,6 +866,13 @@ button:focus {
     box-shadow: none;
 }
 
+.border-left-primary {
+    border-left: solid 2px #1A70C6;
+}
+
+.justify-content-flex-end {
+    justify-content: flex-end;
+}
 .custom-control-label {
     &.checkbox-right {
         padding-right: 30px;
@@ -576,10 +925,25 @@ button:focus {
                     padding: 30px 50px 30px 30px;
                     .form-group {
                         margin-bottom: 60px;
+                        text-align: right;
+                        label {
+                            font-size: 18px;
+                            font-weight: bold;
+                            font-family: "Heebo";
+                            color: #7ABBFC;
+                            text-align: right;
+                        }
                         .form-control {
                             height: 50px;
                             width: 298px;
                             max-width: 298px;
+                        }
+                    }
+                    .col-xl-9 {
+                        .form-control {
+                            max-width: 963px;
+                            width: 100%;
+                            height: 136px;
                         }
                     }
                 }
@@ -592,4 +956,108 @@ button:focus {
             }
         }
     }
+}
+
+#relativesEditModal {
+    .lcs_wrap {
+        width: 100%;
+        margin-top: 10px;
+        .lcs_switch {
+            &.lcs_on {
+                background: #7ABBFC;
+                box-shadow: 0 0 2px #7ABBFC inset;
+            }
+        }
+    }
+}
+
+#relatedBusinessAddModal {
+    .modal-body {
+        .col-xl-12 {
+            .form-control {
+                max-width: 630px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+#contactsAddModal {
+    .modal-body, .modal-footer {
+        margin-right: 170px;
+        margin-left: 75px;
+    }
+}
+
+/* datepicker css custom */
+
+.gj-datepicker {
+    .input-group-append {
+        position: absolute;
+        right: 260px;
+        top: 0px;
+        height: 100%;
+        z-index: 10;
+        .btn {
+            border: 0;
+            color: #7ABBFC;
+            .gj-icon {
+                top: 15px;
+            }
+        }
+    }
+}
+
+// ===================Semi Donut Chart model-1========================
+
+.semi-donut{
+  --percentage: 0;
+  --fill: #ff0;
+  width: 120px;
+  height: 60px;
+  position: relative;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  overflow: hidden;
+  color: var(--fill);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing : border-box;
+  &:before{
+    content: '';
+    width: 120px;
+    height: 120px;
+    border:20px solid;
+    border-color : rgba(0,0,0,0.15) rgba(0,0,0,0.15) var(--fill) var(--fill);
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    box-sizing : border-box;
+    transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ) );
+    animation : fillAnimation 1s ease-in;
+  }
+//   &:after{
+//     // content: attr(data-name) ;
+//     content: attr(data-name);
+//     counter-reset: varible var(--percentage);
+//     background: var(--fill) ;
+//     box-sizing : border-box;
+//     border-radius : 2px;
+//     color: #fff;
+//     font-weight: 200;
+//     font-size: 12px;
+//     height: 20px;
+//     padding: 3px 5px;
+//     top: 0px;
+//     position: absolute;
+//     left: 0;
+//     transform: rotate(calc( -1deg * var(--percentage) * 0 ))  translate(calc(1px * var(--percentage) * 1.5) , calc(-1px * var(--percentage) * 0));
+//     // transform: rotate(calc( -1deg * var(--percentage) * 1.8 ))  translate(-30px , 0px);
+//     // transition:0.2s ease-in;
+//     // transform-origin: 0 50% 0;
+//     opacity: 1;
+//   }
 }
