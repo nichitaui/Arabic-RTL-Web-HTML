@@ -10,6 +10,9 @@
   <!-- plugins css -->
   <link rel="stylesheet" href="assets/plugins/sliding-toggle-switch/lc_switch.css">
   <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="assets/plugins/DataTables/datatables.css"/>
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="assets/plugins/svg-pie-donut-chart/css/jquery.listtopie.css" />
 
   <script src="assets/jquery/jquery.min.js"></script>
   <script src="assets/plugins/popper/popper.min.js"></script>
@@ -64,7 +67,7 @@
   
 <div class="main">
   <div class="sidebar">
-    <ul>
+    <ul class="side-nav">
       <li class="">
         <a href="customer-info.html">
           <div class="cs-icon ic-folder-shared"></div>כללי
@@ -274,801 +277,396 @@
       <div class="app-tab">
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-customer-detail-tab" data-toggle="tab" href="#nav-customer-detail" role="tab" aria-controls="nav-customer-detail" aria-selected="true"><div class="cs-icon ic-user"></div>פרטי לקוח</a>
-            <a class="nav-item nav-link" id="nav-contact-information-tab" data-toggle="tab" href="#nav-contact-information" role="tab" aria-controls="nav-contact-information" aria-selected="false"><div class="cs-icon ic-call"></div>פרטי התקשרות</a>
-            <a class="nav-item nav-link" id="nav-employer-tab" data-toggle="tab" href="#nav-employer" role="tab" aria-controls="nav-employer" aria-selected="false"><div class="cs-icon ic-assignment"></div>מעסיק</a>
-            <a class="nav-item nav-link" id="nav-partner-tab" data-toggle="tab" href="#nav-partner" role="tab" aria-controls="nav-partner" aria-selected="false"><div class="cs-icon ic-group"></div>בת זוג</a>
-            <a class="nav-item nav-link" id="nav-list-of-relatives-tab" data-toggle="tab" href="#nav-list-of-relatives" role="tab" aria-controls="nav-list-of-relatives" aria-selected="false"><div class="cs-icon ic-person-add"></div>רשימת קרובים</a>
-            <a class="nav-item nav-link" id="nav-bank-account-tab" data-toggle="tab" href="#nav-bank-account" role="tab" aria-controls="nav-bank-account" aria-selected="false"><div class="cs-icon ic-account-balance-wallet"></div>חשבון בנק</a>
-            <a class="nav-item nav-link" id="nav-medical-details-tab" data-toggle="tab" href="#nav-medical-details" role="tab" aria-controls="nav-medical-details" aria-selected="false"><div class="cs-icon ic-healing"></div>פרטים רפואים</a>
-            <a class="nav-item nav-link" id="nav-related-businesses-tab" data-toggle="tab" href="#nav-related-businesses" role="tab" aria-controls="nav-related-businesses" aria-selected="false"><div class="cs-icon ic-store"></div>עסקים קשורים</a>
-            <a class="nav-item nav-link" id="nav-contacts-tab" data-toggle="tab" href="#nav-contacts" role="tab" aria-controls="nav-contacts" aria-selected="false"><div class="cs-icon ic-group-add"></div>אנשי קשר</a>
+            <a class="nav-item nav-link active" id="nav-holding-portfolio-tab" data-toggle="tab" href="#nav-holding-portfolio" role="tab" aria-controls="nav-holding-portfolio" aria-selected="true"><div class="cs-icon ic-work"></div>תיק אחזקות</a>
+            <a class="nav-item nav-link" id="nav-holdings-portfolio-by-group-tab" data-toggle="tab" href="#nav-holdings-portfolio-by-group" role="tab" aria-controls="nav-holdings-portfolio-by-group" aria-selected="false"><div class="cs-icon ic-view-column"></div>תיק אחזקות לפי קבוצות</a>
+            <a class="nav-item nav-link" id="nav-distribution-graph-tab" data-toggle="tab" href="#nav-distribution-graph" role="tab" aria-controls="nav-distribution-graph" aria-selected="false"><div class="cs-icon ic-donut-small"></div>גרף התפלגות</a>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-customer-detail" role="tabpanel" aria-labelledby="nav-customer-detail-tab">
-            <form class="form-customer-detail">
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מין</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>תאריך לידה</label>
-                    <input id="datepicker1" class="form-control" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>גיל</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מצב משפחתי</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
+          <div class="tab-pane fade show active" id="nav-holding-portfolio" role="tabpanel" aria-labelledby="nav-holding-portfolio-tab">
+            <div class="table-filter-group">
+              <div class="input-group-prepend product-type-dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">סוג מוצר</button>
+                <div class="dropdown-menu">
+                  <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>סוג לקוח</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מעמד</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>עיסוק</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>איך הגיע</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">חברה מנהלת</button>
+                <div class="dropdown-menu">
+                  <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>אזרחות</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>תאריך הנפקת ת.ז.</label>
-                    <input id="datepicker2" class="form-control" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>צוות מנהל</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מתכנן</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">מטבע</button>
+                <div class="dropdown-menu">
+                  <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>סטטוס</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">נזילות</button>
+                <div class="dropdown-menu">
+                  <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
                 </div>
               </div>
-            </form>
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">סטוטס</button>
+                <div class="dropdown-menu">
+                  <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
+                </div>
+              </div>
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">מעמד</button>
+                <div class="dropdown-menu">
+                  <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
+                  <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
+                </div>
+              </div>
+            </div>
+            <div class="pane-body">
+              <table id="example" class="table datatable m-0" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>סוג המוצר</th>
+                    <th>שם מוצר</th>
+                    <th>מספר חשבון</th>
+                    <th>חברה מנהלת</th>
+                    <th>יתרה</th>
+                    <th>מטבע</th>
+                    <th>דירוג</th>
+                    <th>מהתיק % </th>
+                    <th>נזילות</th>
+                    <th>תאריך הצטרפות</th>
+                    <th>מעמד</th>
+                    <th>מעמד מס </th>
+                    <th>תאריך נכונות</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>קופת גמל </td>
+                    <td>אנליסט השתלמות כללי</td>
+                    <td>6548</td>
+                    <td>טקסט</td>
+                    <td>250,000</td>
+                    <td>ש"ח</td>
+                    <td>NUMERIC</td>
+                    <td>NUMERIC</td>
+                    <td><div class="cs-icon ic-times-outline-red"></div></td>
+                    <td>NUMERIC</td>
+                    <td><div class="cs-icon ic-times-outline-red"></div></td>
+                    <td>NUMERIC</td>
+                    <td>
+                      <span>03.11.2019</span>
+                      <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisCapitalMarketModal">
+                        <div class="cs-icon ic-info-outline-blue"></div>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>קרן השתלמות</td>
+                    <td>אנליסט השתלמות כללי</td>
+                    <td>6548</td>
+                    <td>טקסט</td>
+                    <td>287,000</td>
+                    <td>ש"ח</td>
+                    <td>NUMERIC</td>
+                    <td>NUMERIC</td>
+                    <td><div class="cs-icon ic-times-outline-red"></div></td>
+                    <td>NUMERIC</td>
+                    <td><div class="cs-icon ic-times-outline-red"></div></td>
+                    <td>NUMERIC</td>
+                    <td>
+                      <span>03.11.2019</span>
+                      <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisCapitalMarketModal">
+                        <div class="cs-icon ic-info-outline-blue"></div>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>קרן פנסיה</td>
+                    <td>אנליסט השתלמות כללי</td>
+                    <td>6548</td>
+                    <td>טקסט</td>
+                    <td>138,000</td>
+                    <td>$</td>
+                    <td>NUMERIC</td>
+                    <td>NUMERIC</td>
+                    <td><div class="cs-icon ic-checked-outline-green"></div></td>
+                    <td>NUMERIC</td>
+                    <td><div class="cs-icon ic-checked-outline-green"></div></td>
+                    <td>NUMERIC</td>
+                    <td>
+                      <span>03.11.2019</span>
+                      <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisCapitalMarketModal">
+                        <div class="cs-icon ic-info-outline-blue"></div>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pane-footer">
+              <label>סה"כ </label>ש"ח1,683,008,000 
+            </div>
           </div>
-          <div class="tab-pane fade" id="nav-contact-information" role="tabpanel" aria-labelledby="nav-contact-information-tab">
-            <form class="form-contact-information">
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מספר נייד</label>
-                    <input type="text" class="form-control" placeholder="TEXT PHONE" />
-                  </div>
+          
+          <div class="tab-pane fade" id="nav-holdings-portfolio-by-group" role="tabpanel" aria-labelledby="nav-holdings-portfolio-by-group-tab">
+            <div class="collapse-container">
+              <div class="collapse-item">
+                <div class="collapse-header">
+                  <a href="#demo1" data-toggle="collapse" class="collapsed">
+                    <div class="cs-icon ic-collapse"></div>
+                  </a>
+                  <div class="collapse-header-title">קופות גמל </div>
+                  <div class="collapse-header-subtitle">סה"כ 1,683,008,000 ש"ח </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מספר טלפון</label>
-                    <input type="text" class="form-control" placeholder="TEXT PHONE" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>דואר אלקטרוני</label>
-                    <input type="email" class="form-control" placeholder="EMAIL" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>דואר אלקטרוני נוסף</label>
-                    <input type="email" class="form-control" placeholder="EMAIL" />
-                  </div>
+                <div id="demo1" class="collapse">
+                  <table id="example" class="table datatable m-0" style="width:100%">
+                    <thead>
+                      <tr>
+                        <th>סוג המוצר</th>
+                        <th>שם מוצר</th>
+                        <th>מספר חשבון</th>
+                        <th>חברה מנהלת</th>
+                        <th>יתרה</th>
+                        <th>מטבע</th>
+                        <th>דירוג</th>
+                        <th>מהתיק % </th>
+                        <th>נזילות</th>
+                        <th>תאריך הצטרפות</th>
+                        <th>מעמד</th>
+                        <th>מעמד מס </th>
+                        <th>תאריך נכונות</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>קופת גמל </td>
+                        <td>אנליסט השתלמות כללי</td>
+                        <td>6548</td>
+                        <td>טקסט</td>
+                        <td>250,000</td>
+                        <td>ש"ח</td>
+                        <td>NUMERIC</td>
+                        <td>NUMERIC</td>
+                        <td><div class="cs-icon ic-times-outline-red"></div></td>
+                        <td>NUMERIC</td>
+                        <td><div class="cs-icon ic-times-outline-red"></div></td>
+                        <td>NUMERIC</td>
+                        <td>
+                          <span>03.11.2019</span>
+                          <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisAlternativeProductsModal">
+                            <div class="cs-icon ic-info-outline-blue"></div>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>קרן השתלמות</td>
+                        <td>אנליסט השתלמות כללי</td>
+                        <td>6548</td>
+                        <td>טקסט</td>
+                        <td>287,000</td>
+                        <td>ש"ח</td>
+                        <td>NUMERIC</td>
+                        <td>NUMERIC</td>
+                        <td><div class="cs-icon ic-times-outline-red"></div></td>
+                        <td>NUMERIC</td>
+                        <td><div class="cs-icon ic-times-outline-red"></div></td>
+                        <td>NUMERIC</td>
+                        <td>
+                          <span>03.11.2019</span>
+                          <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisAlternativeProductsModal">
+                            <div class="cs-icon ic-info-outline-blue"></div>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>קרן פנסיה</td>
+                        <td>אנליסט השתלמות כללי</td>
+                        <td>6548</td>
+                        <td>טקסט</td>
+                        <td>138,000</td>
+                        <td>$</td>
+                        <td>NUMERIC</td>
+                        <td>NUMERIC</td>
+                        <td><div class="cs-icon ic-checked-outline-green"></div></td>
+                        <td>NUMERIC</td>
+                        <td><div class="cs-icon ic-checked-outline-green"></div></td>
+                        <td>NUMERIC</td>
+                        <td>
+                          <span>03.11.2019</span>
+                          <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisAlternativeProductsModal">
+                            <div class="cs-icon ic-info-outline-blue"></div>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>ישוב</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
+              <div class="collapse-item">
+                <div class="collapse-header">
+                  <a href="#demo2" data-toggle="collapse" class="collapsed">
+                    <div class="cs-icon ic-collapse"></div>
+                  </a>
+                  <div class="collapse-header-title">קופות גמל </div>
+                  <div class="collapse-header-subtitle">סה"כ 1,683,008,000 ש"ח </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>רחוב</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מספר בית</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מיקוד</label>
-                    <input type="text" class="form-control" placeholder="TEXT NOMERY" />
-                  </div>
+                <div id="demo2" class="collapse">
+                  collapse 2
                 </div>
               </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>ת.ד.</label>
-                    <select class="form-control">
-                      <option>NOMERIC</option>
-                    </select>
-                  </div>
+              <div class="collapse-item">
+                <div class="collapse-header">
+                  <a href="#demo3" data-toggle="collapse" class="collapsed">
+                    <div class="cs-icon ic-collapse"></div>
+                  </a>
+                  <div class="collapse-header-title">קופות גמל </div>
+                  <div class="collapse-header-subtitle">סה"כ 1,683,008,000 ש"ח </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>FAX</label>
-                    <input type="text" class="form-control" placeholder="NOMERIC" />
-                  </div>
+                <div id="demo3" class="collapse">
+                  collapse 3
                 </div>
               </div>
-            </form>
+            </div>
           </div>
-          <div class="tab-pane fade" id="nav-employer" role="tabpanel" aria-labelledby="nav-employer-tab">
-            <form class="form-employer">
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>שם המעסיק</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
+
+          <div class="tab-pane fade" id="nav-distribution-graph" role="tabpanel" aria-labelledby="nav-distribution-graph-tab">
+            <div class="row">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                    <div class='donut'>
+                      <div data-lcolor="#7ABBFC">34</div>
+                      <div data-lcolor="#3ACCE1">72</div>
+                      <div data-lcolor="#32D296">34</div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>כתובת המעסיק</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>תפקיד אצל המעסיק</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>תאריך פרישה לפנסיה</label>
-                    <input id="datepicker3" class="form-control" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>תחילת עבודה</label>
-                    <input id="datepicker4" class="form-control" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>סיום עבודה</label>
-                    <input id="datepicker5" class="form-control" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>הכנסה חודשית</label>
-                    <input type="text" class="form-control" placeholder="NUM" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>איש קשר אצל המעסיק</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>תפקיד</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>טלפון</label>
-                    <input type="text" class="form-control" placeholder="NUM" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>אימייל</label>
-                    <input type="text" class="form-control" placeholder="EMAIL@EMAIL.COM" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group button-group">
-                    <div class="form-control p-0 text-left">
-                      <label>מעסיק נוסף</label>
-                      <a class="cs-btn-icon btn-add m-0" href="javascript:avoid(0)"></a>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                    <div class="donut-captions">
+                      <div class="row">
+                        <label><span class="dount-caption-icon" style="--bgColor : #7ABBFC"></span>קופת גמל </label>
+                      </div>
+                      <div class="row">
+                        <label><span class="dount-caption-icon" style="--bgColor : #3ACCE1"></span>קרן השתלמות </label>
+                      </div>
+                      <div class="row">
+                        <label><span class="dount-caption-icon" style="--bgColor : #32D296"></span>קרן פנסיה </label>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="tab-pane fade" id="nav-partner" role="tabpanel" aria-labelledby="nav-partner-tab">
-            <form class="form-partner">
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>שם פרטי</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                    <div class='donut'>
+                      <div data-lcolor="#7ABBFC">34</div>
+                      <div data-lcolor="#3ACCE1">72</div>
+                      <div data-lcolor="#32D296">34</div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>שם משפחה</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מספר זהות</label>
-                    <input type="text" class="form-control" placeholder="NOMERIC" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>לקוח קיים</label>
-                    <input type="checkbox" name="status" value="1" class="lcs_check" autocomplete="off" checked />
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                    <div class="donut-captions">
+                      <div class="row">
+                        <label><span class="dount-caption-icon" style="--bgColor : #7ABBFC"></span>קופת גמל </label>
+                      </div>
+                      <div class="row">
+                        <label><span class="dount-caption-icon" style="--bgColor : #3ACCE1"></span>קרן השתלמות </label>
+                      </div>
+                      <div class="row">
+                        <label><span class="dount-caption-icon" style="--bgColor : #32D296"></span>קרן פנסיה </label>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>קרבה</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מין</label>
-                    <select class="form-control">
-                      <option>M</option>
-                      <option>F</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מצב משפחתי</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>עיסוק</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>תאריך לידה</label>
-                    <input id="datepicker6" class="form-control" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מספר טלפון</label>
-                    <input type="text" class="form-control" placeholder="TEXT PHONE" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מספר נייד</label>
-                    <input type="text" class="form-control" placeholder="TEXT PHONE" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>דואר אלקטרוני</label>
-                    <input type="text" class="form-control" placeholder="EMAIL" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>ישוב</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>רחוב</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מספר בית</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מיקוד</label>
-                    <input type="text" class="form-control" placeholder="TEXT NOMERY" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>סטטוס משפחתי</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>אזרחות</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                  <div class="form-group">
-                    <label>הערות</label>
-                    <input type="text" class="form-control w-100" placeholder="TEXT" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>חשבון שונה</label>
-                    <input type="checkbox" name="status" value="1" class="lcs_check" autocomplete="off" checked />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>בנק</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>סניף</label>
-                    <input type="text" class="form-control" placeholder="NOMERIC" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>חשבון</label>
-                    <input type="text" class="form-control" placeholder="NOMERIC" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>IBAN</label>
-                    <input type="text" class="form-control" placeholder="NOMERIC" />
-                  </div>
-                </div>
-                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                  <div class="form-group">
-                    <label>כתובת סניף</label>
-                    <input type="text" class="form-control w-100" placeholder="TEXT" />
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="tab-pane fade" id="nav-list-of-relatives" role="tabpanel" aria-labelledby="nav-list-of-relatives-tab">
-            <table class="customer-table relatives-table">
-              <thead>
-                <tr>
-                  <th>שם פרטי</th>
-                  <th>שם משפחה</th>
-                  <th>מספר זהות / ח.פ</th>
-                  <th>קרבה</th>
-                  <th> תיק  מקושר</th>
-                  <th>שווי תיק</th>
-                  <th>
-                    <a class="cs-btn-icon btn-add m-0" href="javascript:avoid(0)"></a>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>000000000</td>
-                  <td>טקסט</td>
-                  <td>000000000</td>
-                  <td>000000000</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)" data-toggle="modal" data-target="#relativesEditModal">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>000000000</td>
-                  <td>טקסט</td>
-                  <td>000000000</td>
-                  <td>000000000</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)" data-toggle="modal" data-target="#relativesEditModal">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>000000000</td>
-                  <td>טקסט</td>
-                  <td>000000000</td>
-                  <td>000000000</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)" data-toggle="modal" data-target="#relativesEditModal">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>000000000</td>
-                  <td>טקסט</td>
-                  <td>000000000</td>
-                  <td>000000000</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)" data-toggle="modal" data-target="#relativesEditModal">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="tab-pane fade" id="nav-bank-account" role="tabpanel" aria-labelledby="nav-bank-account-tab">
-            <div class="row justify-content-flex-end m-0">
-              <a class="cs-btn-icon btn-add m-0" href="javascript:avoid(0)"></a>
             </div>
-            <form class="form-bank-account">
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>בנק</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>סניף</label>
-                    <input type="text" class="form-control" placeholder="NUMERIC" />
-                  </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                  <div class="form-group">
-                    <label>כתובת סניף</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>חשבון</label>
-                    <select class="form-control">
-                      <option>NUMERIC</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>IBAN</label>
-                    <input type="text" class="form-control" placeholder="NUMERIC" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>שותפים</label>
-                    <input type="checkbox" name="status" value="1" class="lcs_check" autocomplete="off" checked />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>שמות שותפים</label>
-                    <input type="text" class="form-control" placeholder="NUMERIC" />
-                  </div>
-                </div>
-              </div>
-            </form>
           </div>
-          <div class="tab-pane fade" id="nav-medical-details" role="tabpanel" aria-labelledby="nav-medical-details-tab">
-            <div class="row justify-content-flex-end m-0">
-              <a class="cs-btn-icon btn-add m-0" href="javascript:avoid(0)"></a>
-            </div>
-            <form class="form-medical-details">
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>מצב בריאותי</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>משקל</label>
-                    <input type="text" class="form-control" placeholder="NUMERIC" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>גובה</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>עישון</label>
-                    <input type="checkbox" name="status" value="1" class="lcs_check" autocomplete="off" checked />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>קופה</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                  <div class="form-group">
-                    <label>רופא מטפל</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="tab-pane fade" id="nav-related-businesses" role="tabpanel" aria-labelledby="nav-related-businesses-tab">
-            <table class="customer-table related-businesses-table">
-              <thead>
-                <tr>
-                  <th>שם העסק</th>
-                  <th>ח.פ</th>
-                  <th>איש הקשר</th>
-                  <th>טלפון</th>
-                  <th>כתובת</th>
-                  <th>ישוב</th>
-                  <th>אימייל</th>
-                  <th>תחום עיסוק </th>
-                  <th>בעלים</th>
-                  <th>תפקיד</th>
-                  <th>
-                    <a class="cs-btn-icon btn-add m-0" href="javascript:avoid(0)" data-toggle="modal" data-target="#relatedBusinessAddModal"></a>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="font-weight-bold">טקסט</td>
-                  <td>NOMERIC</td>
-                  <td>טקסט</td>
-                  <td>NOMERIC</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">טקסט</td>
-                  <td>NOMERIC</td>
-                  <td>טקסט</td>
-                  <td>NOMERIC</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="font-weight-bold">טקסט</td>
-                  <td>NOMERIC</td>
-                  <td>טקסט</td>
-                  <td>NOMERIC</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="tab-pane fade" id="nav-contacts" role="tabpanel" aria-labelledby="nav-contacts-tab">
-            <table class="customer-table contacts-table">
-              <thead>
-                <tr>
-                  <th>שם איש קשר</th>
-                  <th>סוג הקשר</th>
-                  <th>ישוב</th>
-                  <th>טלפון</th>
-                  <th>אימייל</th>
-                  <th>
-                    <a class="cs-btn-icon btn-add m-0" href="javascript:avoid(0)" data-toggle="modal" data-target="#contactsAddModal"></a>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>NUMERIC</td>
-                  <td>טקסט</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>NUMERIC</td>
-                  <td>טקסט</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>טקסט</td>
-                  <td>NUMERIC</td>
-                  <td>טקסט</td>
-                  <td>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-pencil-blue"></div>
-                    </a>
-                    <a class="btn-icon" href="javascript:avoid(0)">
-                      <div class="cs-icon ic-trash-blue"></div>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          
         </div>
       </div>
+
+      <div class="app-tab">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-holding-portfolio-tab" data-toggle="tab" href="#nav-holding-portfolio" role="tab" aria-controls="nav-holding-portfolio" aria-selected="true"><div class="cs-icon ic-autorenew"></div>מוצרים בתהליך</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-holding-portfolio" role="tabpanel" aria-labelledby="nav-holding-portfolio-tab">
+            <div class="pane-body">
+              <table class="table datatable m-0" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>סוג מוצר</th>
+                    <th>שם המוצר נוכחי</th>
+                    <th>שם המוצר חדש</th>
+                    <th>יתרה</th>
+                    <th>מטבע</th>
+                    <th>סטטוס ביצוע</th>
+                    <th>מעמד </th>
+                    <th>מעמד מס  </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>קופת גמל  </td>
+                    <td>ילין גמל לבני 50-60</td>
+                    <td>ילין גמל לבני 50-60</td>
+                    <td>250,000</td>
+                    <td>ש"ח</td>
+                    <td>טקסט</td>
+                    <td>NUMERIC</td>
+                    <td>
+                      <span>NUMERIC</span>
+                      <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisProductsInProcessModal">
+                        <div class="cs-icon ic-info-outline-blue"></div>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>קרן השתלמות  </td>
+                    <td>אלטשולר גמל לבני 50 ומטה</td>
+                    <td>אלטשולר גמל לבני 50 ומטה</td>
+                    <td>250,000</td>
+                    <td>$</td>
+                    <td>טקסט</td>
+                    <td>NUMERIC</td>
+                    <td>
+                      <span>NUMERIC</span>
+                      <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisProductsInProcessModal">
+                        <div class="cs-icon ic-info-outline-blue"></div>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 
 
-<!-- Relatives Edit Modal -->
-<div class="modal fade" id="relativesEditModal">
+<!-- NIS-Capital Market Modal -->
+<div class="modal fade" id="nisCapitalMarketModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <!-- Modal Header -->
@@ -1078,156 +676,382 @@
       </div>
       <!-- Modal body -->
       <div class="modal-body">
-        <form>
+        <div class="row">
+          <div class="tags-group">
+            <span class="badge badge-primary">מוצרי שוק ההון</span>
+            <span class="badge badge-gray">מוצרים אלטרנטיביים</span>  
+          </div>
+        </div>
+        <div class="py-5">
           <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>שם פרטי</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>חברה מנהלת </label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>שם משפחה</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>שם מוצר</label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>מספר זהות</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>סוג מוצר</label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>לקוח קיים</label>
-                <input type="checkbox" name="status" value="1" class="lcs_check" autocomplete="off" checked />
+                <label>מספר חשבון </label>
+                <div class="w-100">NUM</div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>קרבה</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>יתרה במוצר</label>
+                <div class="w-100">NUM</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>מין</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>מספר אוצר</label>
+                <div class="w-100">NUM</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>מצב משפחתי</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>ת. הצטרפות</label>
+                <div class="w-100">DATE</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>עיסוק</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-              <div class="form-group">
-                <label>תאריך לידב</label>
-                <input id="datepicker7" class="form-control" />
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-              <div class="form-group">
-                <label>מספר טלפון</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-              <div class="form-group">
-                <label>מספר נייד</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-              <div class="form-group">
-                <label>דואר אלקטרוני</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>ת. וותק</label>
+                <div class="w-100">DATE</div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>ישוב</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>פעיל / לא פעיל</label>
+                <div class="cs-icon ic-times-outline-red"></div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>רחוב</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>מעמד </label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>מספר בית</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>שם מעסיק</label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>מיקוד</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>דמי ניהול מצבירה</label>
+                <div class="w-100">NUM</div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>סטטוס</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>מקור הכספים</label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label> תיק  מקושר</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>מעמד מס</label>
+                <div class="w-100">NUM</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
-                <label>שווי תיק</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>נזילות</label>
+                <div class="cs-icon ic-times-outline-red"></div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>% מהתיק</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>דירוג המוצר</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>הפקדה חודשית </label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>משיכה חודשית / אנונה</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>מוצר ממונף </label>
+                <div class="cs-icon ic-checked-outline-green"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>מטרת השקעה</label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>אופק השקעה</label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>לשנות דמי ניהול צבירה</label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>דמי ניהול פרמיה</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- NIS-Alternative Products Modal -->
+<div class="modal fade" id="nisAlternativeProductsModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        <button type="button" class="cs-btn-icon btn-close close" data-dismiss="modal"></button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="tags-group">
+            <span class="badge badge-gray">מוצרי שוק ההון</span>
+            <span class="badge badge-primary">מוצרים אלטרנטיביים</span>  
+          </div>
+        </div>
+        <div class="py-5">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>חברה מנהלת </label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>שם מוצר</label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>סוג מוצר</label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>מספר חשבון </label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>יתרה במוצר</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>ISIN</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>מעמד </label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>מעמד מס</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>תקופת נעילה </label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>עמלת יציאה  </label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>גובה עמלה יציאה</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>חלוקת רווחים</label>
+                <div class="cs-icon ic-times-outline-red"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>תקופת חלוקה</label>
+                <div class="w-100">DATE</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>מועד צפוי למימוש ההשקעה </label>
+                <div class="w-100">DATE</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>מקור הכספים </label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>% מהתיק</label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>מוצר ממונף </label>
+                <div class="cs-icon ic-times-outline-red"></div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>משיכה חודשית </label>
+                <div class="cs-icon ic-times-outline-red"></div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>משיכה רבעונית</label>
+                <div class="cs-icon ic-checked-outline-green"></div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>סכום משיכה חודשית </label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>סכום משיכה רבעונית</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>תשואת יעד</label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>צפוי IRR </label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>PREFERRED</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>דמי הצלחה </label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>HWM</label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+              <div class="form-group">
+                <label>HURDLE</label>
+                <div class="w-100">NUM</div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               
             </div>
           </div>
-          <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 mt-auto">
-              <div class="form-group">
-                <button class="cs-btn-img btn-save" data-dismiss="modal"></button>
-              </div>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-              <div class="form-group">
-                <label>הערות</label>
-                <textarea type="text" class="form-control" placeholder="TEXT" textarea rows="7"></textarea>
-              </div>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
       
     </div>
   </div>
 </div>
 
-<!-- Related Business Add Modal -->
-<div class="modal fade" id="relatedBusinessAddModal">
+<!-- NIS-products in the process Modal -->
+<div class="modal fade" id="nisProductsInProcessModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <!-- Modal Header -->
@@ -1237,147 +1061,114 @@
       </div>
       <!-- Modal body -->
       <div class="modal-body">
-        <form>
+        <div class="py-5">
           <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>שם העסק</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>סוג פעולה </label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>ח.פ.</label>
-                <input type="text" class="form-control" placeholder="NUM" />
+                <label>שם מוצר נוכחי</label>
+                <div class="w-100">TEXT</div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>שם מוצר חדש</label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>איש קשר</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>סוג מוצר חדש</label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>טלפון</label>
-                <input type="text" class="form-control" placeholder="PHONE" />
+                <label>סכום בתהליך</label>
+                <div class="w-100">NUM</div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>כתובת</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>ישוב</label>
-                <select class="form-control">
-                  <option>LIST</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>אימייל</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>סטטוס תהליך </label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>תחום עיסוק</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>ת. הצטרפות </label>
+                <div class="w-100">DATE</div>
               </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>בעלים</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>סיום תהליך צפוי</label>
+                <div class="w-100">DATE</div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>תפקיד</label>
-                <input type="text" class="form-control" placeholder="TEXT PHONE" />
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button class="cs-btn-img btn-save" data-dismiss="modal"></button>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-<!-- Related Business Add Modal -->
-<div class="modal fade" id="contactsAddModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-        <button type="button" class="cs-btn-icon btn-close close" data-dismiss="modal"></button>
-      </div>
-      <!-- Modal body -->
-      <div class="modal-body">
-        <form>
-          <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-              <div class="form-group">
-                <label>שם איש קשר</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>מעמד</label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>סוג הקשר</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <label>מעמד מס </label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>נזילות </label>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>% מהתיק</label>
+                <div class="w-100">NUM</div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>ישוב</label>
-                <select class="form-control">
-                  <option>LIST</option>
-                </select>
+                <label>פעיל </label>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>הפקדה חודשית </label>
+                <div class="w-100">NUM</div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="form-group">
+                <label>שם מעסיק </label>
+                <div class="w-100">TEXT</div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
-                <label>טלפון</label>
-                <input type="text" class="form-control" placeholder="PHONE" />
+                <label>דמי ניהול </label>
+                <div class="w-100">NUM</div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>אימייל</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
-              </div>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
       <!-- Modal footer -->
       <div class="modal-footer">
@@ -1391,8 +1182,13 @@
 <!-- plugins js -->
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 <script src="assets/plugins/sliding-toggle-switch/lc_switch.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/plugins/DataTables/datatables.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+<script src="./assets/plugins/svg-pie-donut-chart/js/jquery.listtopie.js"></script>
 
 <script>
+  // datepicker init
   $('#datepicker1').datepicker({ uiLibrary: 'bootstrap4' });
   $('#datepicker2').datepicker({ uiLibrary: 'bootstrap4' });
   $('#datepicker3').datepicker({ uiLibrary: 'bootstrap4' });
@@ -1400,6 +1196,15 @@
   $('#datepicker5').datepicker({ uiLibrary: 'bootstrap4' });
   $('#datepicker6').datepicker({ uiLibrary: 'bootstrap4' });
   $('#datepicker7').datepicker({ uiLibrary: 'bootstrap4' });
+  // datatable init
+  $(document).ready(function() {
+    $('.datatable').DataTable({
+      paging: false,
+      // scrollY: 400,
+      searching: false
+      // ordering:  false
+    });
+} );
 </script>
 <script type="text/javascript">
   $(document).ready(function(e) {
@@ -1437,6 +1242,35 @@
   // clean events log
   $('#third_div small').click(function() {
     $('#third_div ul').empty();
+  });
+</script>
+
+<script>
+  var renderDistributionGraphChart = function() {
+    $('.donut').listtopie({
+      startAngle:180,
+      strokeWidth:1,
+      hoverEvent:true,
+      hoverBorderColor:'#2a363b',
+      hoverAnimate:false,
+      drawType:'round',
+      speedDraw:150,
+      hoverColor:'#ffffff',
+      textColor:'#ffffff',
+      strokeColor:'#ffffff',
+      textSize:"17",
+      fontWeight: "300",
+      hoverAnimate:true,
+      marginCenter:70,
+      useMenu: true,
+      usePercent: true,
+      // valList:
+    });
+  }
+
+  $('#nav-distribution-graph-tab').on('shown.bs.tab', function(){
+    renderDistributionGraphChart();
+    $('#nav-distribution-graph-tab').off(); // to remove the binded event after the initial rendering
   });
 </script>
 </body>

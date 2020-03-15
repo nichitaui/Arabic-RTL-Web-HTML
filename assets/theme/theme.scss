@@ -110,6 +110,97 @@ body {
                     }
                 }
             }
+            .side-nav {
+                li {
+                    /* sidebar icon */
+                    .cs-icon {
+                        &.ic-folder-shared {
+                            background-image: url(../img/icons/ic_folder_shared.png);
+                        }
+                        &.ic-build {
+                            background-image: url(../img/icons/ic_build.png);
+                        }
+                        &.ic-equalizer {
+                            background-image: url(../img/icons/ic_equalizer.png);
+                        }
+                        &.ic-donut-small {
+                            background-image: url(../img/icons/ic_donut_small.png);
+                        }
+                        &.ic-lightbulb-outline {
+                            background-image: url(../img/icons/ic_lightbulb_outline.png);
+                        }
+                        &.ic-insert-drive-file {
+                            background-image: url(../img/icons/ic_insert_drive_file.png);
+                        }
+                        &.ic-description {
+                            background-image: url(../img/icons/ic_description.png);
+                        }
+                        &.ic-settings-input-component {
+                            background-image: url(../img/icons/ic_settings_input_component.png);
+                        }
+                        &.ic-customer-preferences {
+                            background-image: url(../img/icons/ic_customer_preferences.png);
+                        }
+                        &.ic-trending-up {
+                            background-image: url(../img/icons/ic_trending_up.png);
+                        }
+                        &.ic-work-cost {
+                            background-image: url(../img/icons/ic_work_cost.png);
+                        }
+                        &.ic-supervisor-account {
+                            background-image: url(../img/icons/ic_supervisor_account.png);
+                        }
+                        &.ic-insurance {
+                            background-image: url(../img/icons/ic_insurance.png);
+                        }
+                    }
+                    
+                    /* actived sidebar icon */
+                    &.active {
+                        .cs-icon {
+                            &.ic-folder-shared {
+                                background-image: url(../img/icons/ic_folder_shared_white.png);
+                            }
+                            &.ic-build {
+                                background-image: url(../img/icons/ic_build_white.png);
+                            }
+                            &.ic-equalizer {
+                                background-image: url(../img/icons/ic_equalizer_white.png);
+                            }
+                            &.ic-donut-small {
+                                background-image: url(../img/icons/ic_donut_small_white.png);
+                            }
+                            &.ic-lightbulb-outline {
+                                background-image: url(../img/icons/ic_lightbulb_outline_white.png);
+                            }
+                            &.ic-insert-drive-file {
+                                background-image: url(../img/icons/ic_insert_drive_file_white.png);
+                            }
+                            &.ic-description {
+                                background-image: url(../img/icons/ic_description_white.png);
+                            }
+                            &.ic-settings-input-component {
+                                background-image: url(../img/icons/ic_settings_input_component_white.png);
+                            }
+                            &.ic-customer-preferences {
+                                background-image: url(../img/icons/ic_customer_preferences_white.png);
+                            }
+                            &.ic-trending-up {
+                                background-image: url(../img/icons/ic_trending_up_white.png);
+                            }
+                            &.ic-work-cost {
+                                background-image: url(../img/icons/ic_work_cost_white.png);
+                            }
+                            &.ic-supervisor-account {
+                                background-image: url(../img/icons/ic_supervisor_account_white.png);
+                            }
+                            &.ic-insurance {
+                                background-image: url(../img/icons/ic_insurance_white.png);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .app {
@@ -228,6 +319,19 @@ body {
                                 &.ic-group-add {
                                     background-image: url(../img/icons/ic_group_add_blue.png);
                                 }
+                                
+                                &.ic-work {
+                                    background-image: url(../img/icons/ic_work_blue.png);
+                                }
+                                &.ic-view-column {
+                                    background-image: url(../img/icons/ic_view_column_blue.png);
+                                }
+                                &.ic-donut-small {
+                                    background-image: url(../img/icons/ic_donut_small_blue.png);
+                                }
+                                &.ic-autorenew {
+                                    background-image: url(../img/icons/ic_autorenew_white.png);
+                                }
                             }
                             &.active {
                                 background-color: #7ABBFC;
@@ -264,6 +368,19 @@ body {
                                     }
                                     &.ic-group-add {
                                         background-image: url(../img/icons/ic_group_add_white.png);
+                                    }
+
+                                    &.ic-work {
+                                        background-image: url(../img/icons/ic_work_white.png);
+                                    }
+                                    &.ic-view-column {
+                                        background-image: url(../img/icons/ic_view_column_white.png);
+                                    }
+                                    &.ic-donut-small {
+                                        background-image: url(../img/icons/ic_donut_small_white.png);
+                                    }
+                                    &.ic-autorenew {
+                                        background-image: url(../img/icons/ic_autorenew_white.png);
                                     }
                                 }
                             }
@@ -697,6 +814,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+    /* sidebar icon */
     &.ic-folder-shared {
         background-image: url(../img/icons/ic_folder_shared.png);
     }
@@ -838,6 +956,15 @@ body {
     }
     &.ic-pencil-blue {
         background-image: url(../img/icons/ic_pencil_blue.png);
+    }
+    &.ic-times-outline-red {
+        background-image: url(../img/icons/ic_times_outline_red.png);
+    }
+    &.ic-checked-outline-green {
+        background-image: url(../img/icons/ic_checked_outline_green.png);
+    }
+    &.ic-info-outline-blue {
+        background-image: url(../img/icons/ic_info_outline_blue.png);
     }
 }
 
@@ -1060,4 +1187,251 @@ button:focus {
 //     // transform-origin: 0 50% 0;
 //     opacity: 1;
 //   }
+}
+
+
+// ======== special components css ======== //
+#nav-holding-portfolio {
+    padding: 0;
+    .table-filter-group {
+        position: relative;
+        height: 44px;
+        width: 100%;
+        display: inline-flex;
+        background-color: #D7DDE9;
+        -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+        padding: 10px 20px;
+        .input-group-prepend {
+            position: relative;
+            width: 145px;
+            margin-left: 20px;
+            .dropdown-toggle {
+                width: 145px;
+                height: 23px;
+                border-radius: 4px;
+                padding: 0 10px;
+                font-size: 10px;
+                line-height: 20px;
+                color: #4D4F5C;
+                font-family: "Heebo";
+                text-align: right;
+                background-color: #FFFFFF;
+                border: solid 1px #D7DAE2;
+                -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.05);
+                box-shadow: 0px 2px 3px rgba(0,0,0,0.05);
+                &::after {
+                    position: absolute;
+                    left: 5px;
+                    top: 10px;
+                }
+            }
+            .dropdown-menu {
+                position: absolute;
+                width: 145px !important;
+                min-width: 145px !important;
+                padding: 0;
+                right: 0px !important;
+                overflow: hidden;
+                .dropdown-item {
+                    width: 145px;
+                    margin: 0;
+                    padding: 5px 10px;
+                    text-align: right;
+                    font-size: 10px;
+                    color: #4D4F5C;
+                    font-family: "Heebo";
+                    input[type=checkbox] {
+                        float: left;
+                    }
+                }
+            }
+        }
+    }
+    .pane-body {
+        
+    }
+    .pane-footer {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #485272;
+        -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+        font-size: 16px;
+        font-weight: bold;
+        color: #FFFFFF;
+        padding: 15px;
+        label {
+            width: 200px;
+        }
+    }
+}
+
+.dataTables_wrapper {
+    .row:last-child {
+        display: none;
+    }
+    tr {
+        th {
+            padding-top: 19px;
+            padding-bottom: 19px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #7ABBFC;
+        }
+        td {
+            padding-top: 19px;
+            padding-bottom: 19px;
+            font-size: 16px;
+            color: #485272;
+            &:last-child {
+                display: flex;
+                span {
+                    margin-left: 10px;
+                }
+                .btn-view-detail {
+                    position: relative;
+                    display: inline-block;
+                    width: 50px;
+                    height: 27px;
+                    border-right: solid 1px #BFC5D2;
+                    text-align: center;
+                    margin-right: auto;
+                    .cs-icon {
+                        width: 27px;
+                        height: 27px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#nav-holdings-portfolio-by-group {
+    padding: 0;
+    .collapse-container {
+        width: 100%;
+        .collapse-item {
+            .collapse-header {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 50px;
+                background-color: #485272;
+                -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
+                box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+                padding: 12px 15px;
+                margin-bottom: 2px;
+                a {
+                    .cs-icon {
+                        width: 25px;
+                        height: 25px;
+                        &.ic-collapse {
+                            background-image: url(../img/buttons/btn-minus.png);
+                        }
+                    }
+                    &.collapsed {
+                        .cs-icon {
+                            width: 25px;
+                            height: 25px;
+                            &.ic-collapse {
+                                background-image: url(../img/buttons/btn-plus.png);
+                            }
+                        }
+                    }
+                }
+                .collapse-header-title {
+                    width: 250px;
+                    text-align: right;
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    font-weight: bold;
+                    padding-right: 20px;
+                }
+                .collapse-header-subtitle {
+                    text-align: right;
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    font-weight: bold;
+                    padding-right: 20px;
+                }
+            }
+            .collapse {
+
+            }
+        }
+    }
+}
+
+#nav-distribution-graph {
+    .donut {
+        width: 100%;
+        max-width: 255px;
+    }
+    .donut-captions {
+        position: absolute;
+        bottom: 10px;
+        .dount-caption-icon {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 10px;
+            margin-left: 20px;
+            top: 3px;
+            background: var(--bgColor);
+            &::after {
+                content: "";
+                background: #FFFFFF;
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                top: 3px;
+                right: 3px;
+                border-radius: 50%;
+                display: block;
+            }
+        }
+    }
+}
+
+#nisCapitalMarketModal, 
+#nisAlternativeProductsModal {
+    .modal-dialog {
+        width: 100%;
+        max-width: 1380px;
+        .modal-body {
+            .tags-group {
+                padding: 0 20px 30px 20px;
+                .badge {
+                    height: 44px;
+                    color: #FFFFFF;
+                    font-size: 20px;
+                    font-weight: bold;
+                    border-radius: 22px;
+                    padding: 10px 30px;
+                    margin-left: 30px;
+                    &.badge-primary {
+                        background-color: #7ABBFC;
+                    }
+                    &.badge-gray {
+                        background-color: #BFC5D2;
+                    }
+                }
+            }
+            .form-group {
+                label {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+#nisProductsInProcessModal {
+    .modal-dialog {
+        width: 100%;
+        max-width: 950px;
+    }
 }

@@ -9980,6 +9980,88 @@ body .main .sidebar ul li.active a {
   font-weight: bold;
   color: #FFFFFF;
 }
+body .main .sidebar .side-nav li {
+  /* sidebar icon */
+  /* actived sidebar icon */
+}
+body .main .sidebar .side-nav li .cs-icon.ic-folder-shared {
+  background-image: url(../img/icons/ic_folder_shared.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-build {
+  background-image: url(../img/icons/ic_build.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-equalizer {
+  background-image: url(../img/icons/ic_equalizer.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-donut-small {
+  background-image: url(../img/icons/ic_donut_small.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-lightbulb-outline {
+  background-image: url(../img/icons/ic_lightbulb_outline.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-insert-drive-file {
+  background-image: url(../img/icons/ic_insert_drive_file.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-description {
+  background-image: url(../img/icons/ic_description.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-settings-input-component {
+  background-image: url(../img/icons/ic_settings_input_component.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-customer-preferences {
+  background-image: url(../img/icons/ic_customer_preferences.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-trending-up {
+  background-image: url(../img/icons/ic_trending_up.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-work-cost {
+  background-image: url(../img/icons/ic_work_cost.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-supervisor-account {
+  background-image: url(../img/icons/ic_supervisor_account.png);
+}
+body .main .sidebar .side-nav li .cs-icon.ic-insurance {
+  background-image: url(../img/icons/ic_insurance.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-folder-shared {
+  background-image: url(../img/icons/ic_folder_shared_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-build {
+  background-image: url(../img/icons/ic_build_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-equalizer {
+  background-image: url(../img/icons/ic_equalizer_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-donut-small {
+  background-image: url(../img/icons/ic_donut_small_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-lightbulb-outline {
+  background-image: url(../img/icons/ic_lightbulb_outline_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-insert-drive-file {
+  background-image: url(../img/icons/ic_insert_drive_file_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-description {
+  background-image: url(../img/icons/ic_description_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-settings-input-component {
+  background-image: url(../img/icons/ic_settings_input_component_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-customer-preferences {
+  background-image: url(../img/icons/ic_customer_preferences_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-trending-up {
+  background-image: url(../img/icons/ic_trending_up_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-work-cost {
+  background-image: url(../img/icons/ic_work_cost_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-supervisor-account {
+  background-image: url(../img/icons/ic_supervisor_account_white.png);
+}
+body .main .sidebar .side-nav li.active .cs-icon.ic-insurance {
+  background-image: url(../img/icons/ic_insurance_white.png);
+}
 body .main .app {
   position: fixed;
   width: 100%;
@@ -10100,6 +10182,18 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-store {
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-group-add {
   background-image: url(../img/icons/ic_group_add_blue.png);
 }
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-work {
+  background-image: url(../img/icons/ic_work_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-view-column {
+  background-image: url(../img/icons/ic_view_column_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-donut-small {
+  background-image: url(../img/icons/ic_donut_small_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-autorenew {
+  background-image: url(../img/icons/ic_autorenew_white.png);
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active {
   background-color: #7ABBFC;
   border: 0;
@@ -10135,6 +10229,18 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-store 
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-group-add {
   background-image: url(../img/icons/ic_group_add_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-work {
+  background-image: url(../img/icons/ic_work_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-view-column {
+  background-image: url(../img/icons/ic_view_column_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-donut-small {
+  background-image: url(../img/icons/ic_donut_small_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-autorenew {
+  background-image: url(../img/icons/ic_autorenew_white.png);
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link:hover {
   border: 0;
@@ -10530,6 +10636,7 @@ body .main.open-filter .filter-app {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  /* sidebar icon */
   /* tab nav icons css */
 }
 .cs-icon.ic-folder-shared {
@@ -10672,6 +10779,15 @@ body .main.open-filter .filter-app {
 }
 .cs-icon.ic-pencil-blue {
   background-image: url(../img/icons/ic_pencil_blue.png);
+}
+.cs-icon.ic-times-outline-red {
+  background-image: url(../img/icons/ic_times_outline_red.png);
+}
+.cs-icon.ic-checked-outline-green {
+  background-image: url(../img/icons/ic_checked_outline_green.png);
+}
+.cs-icon.ic-info-outline-blue {
+  background-image: url(../img/icons/ic_info_outline_blue.png);
 }
 
 /* width */
@@ -10850,6 +10966,229 @@ button:focus {
   box-sizing: border-box;
   transform: rotate(calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ));
   animation: fillAnimation 1s ease-in;
+}
+
+#nav-holding-portfolio {
+  padding: 0;
+}
+#nav-holding-portfolio .table-filter-group {
+  position: relative;
+  height: 44px;
+  width: 100%;
+  display: inline-flex;
+  background-color: #D7DDE9;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 10px 20px;
+}
+#nav-holding-portfolio .table-filter-group .input-group-prepend {
+  position: relative;
+  width: 145px;
+  margin-left: 20px;
+}
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle {
+  width: 145px;
+  height: 23px;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 10px;
+  line-height: 20px;
+  color: #4D4F5C;
+  font-family: "Heebo";
+  text-align: right;
+  background-color: #FFFFFF;
+  border: solid 1px #D7DAE2;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+}
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle::after {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+}
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu {
+  position: absolute;
+  width: 145px !important;
+  min-width: 145px !important;
+  padding: 0;
+  right: 0px !important;
+  overflow: hidden;
+}
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item {
+  width: 145px;
+  margin: 0;
+  padding: 5px 10px;
+  text-align: right;
+  font-size: 10px;
+  color: #4D4F5C;
+  font-family: "Heebo";
+}
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox] {
+  float: left;
+}
+#nav-holding-portfolio .pane-footer {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #485272;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFFFFF;
+  padding: 15px;
+}
+#nav-holding-portfolio .pane-footer label {
+  width: 200px;
+}
+
+.dataTables_wrapper .row:last-child {
+  display: none;
+}
+.dataTables_wrapper tr th {
+  padding-top: 19px;
+  padding-bottom: 19px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #7ABBFC;
+}
+.dataTables_wrapper tr td {
+  padding-top: 19px;
+  padding-bottom: 19px;
+  font-size: 16px;
+  color: #485272;
+}
+.dataTables_wrapper tr td:last-child {
+  display: flex;
+}
+.dataTables_wrapper tr td:last-child span {
+  margin-left: 10px;
+}
+.dataTables_wrapper tr td:last-child .btn-view-detail {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 27px;
+  border-right: solid 1px #BFC5D2;
+  text-align: center;
+  margin-right: auto;
+}
+.dataTables_wrapper tr td:last-child .btn-view-detail .cs-icon {
+  width: 27px;
+  height: 27px;
+}
+
+#nav-holdings-portfolio-by-group {
+  padding: 0;
+}
+#nav-holdings-portfolio-by-group .collapse-container {
+  width: 100%;
+}
+#nav-holdings-portfolio-by-group .collapse-container .collapse-item .collapse-header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #485272;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 12px 15px;
+  margin-bottom: 2px;
+}
+#nav-holdings-portfolio-by-group .collapse-container .collapse-item .collapse-header a .cs-icon {
+  width: 25px;
+  height: 25px;
+}
+#nav-holdings-portfolio-by-group .collapse-container .collapse-item .collapse-header a .cs-icon.ic-collapse {
+  background-image: url(../img/buttons/btn-minus.png);
+}
+#nav-holdings-portfolio-by-group .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon {
+  width: 25px;
+  height: 25px;
+}
+#nav-holdings-portfolio-by-group .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon.ic-collapse {
+  background-image: url(../img/buttons/btn-plus.png);
+}
+#nav-holdings-portfolio-by-group .collapse-container .collapse-item .collapse-header .collapse-header-title {
+  width: 250px;
+  text-align: right;
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-right: 20px;
+}
+#nav-holdings-portfolio-by-group .collapse-container .collapse-item .collapse-header .collapse-header-subtitle {
+  text-align: right;
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-right: 20px;
+}
+#nav-distribution-graph .donut {
+  width: 100%;
+  max-width: 255px;
+}
+#nav-distribution-graph .donut-captions {
+  position: absolute;
+  bottom: 10px;
+}
+#nav-distribution-graph .donut-captions .dount-caption-icon {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  margin-left: 20px;
+  top: 3px;
+  background: var(--bgColor);
+}
+#nav-distribution-graph .donut-captions .dount-caption-icon::after {
+  content: "";
+  background: #FFFFFF;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border-radius: 50%;
+  display: block;
+}
+
+#nisCapitalMarketModal .modal-dialog,
+#nisAlternativeProductsModal .modal-dialog {
+  width: 100%;
+  max-width: 1380px;
+}
+#nisCapitalMarketModal .modal-dialog .modal-body .tags-group,
+#nisAlternativeProductsModal .modal-dialog .modal-body .tags-group {
+  padding: 0 20px 30px 20px;
+}
+#nisCapitalMarketModal .modal-dialog .modal-body .tags-group .badge,
+#nisAlternativeProductsModal .modal-dialog .modal-body .tags-group .badge {
+  height: 44px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 22px;
+  padding: 10px 30px;
+  margin-left: 30px;
+}
+#nisCapitalMarketModal .modal-dialog .modal-body .tags-group .badge.badge-primary,
+#nisAlternativeProductsModal .modal-dialog .modal-body .tags-group .badge.badge-primary {
+  background-color: #7ABBFC;
+}
+#nisCapitalMarketModal .modal-dialog .modal-body .tags-group .badge.badge-gray,
+#nisAlternativeProductsModal .modal-dialog .modal-body .tags-group .badge.badge-gray {
+  background-color: #BFC5D2;
+}
+#nisCapitalMarketModal .modal-dialog .modal-body .form-group label,
+#nisAlternativeProductsModal .modal-dialog .modal-body .form-group label {
+  width: 100%;
+}
+
+#nisProductsInProcessModal .modal-dialog {
+  width: 100%;
+  max-width: 950px;
 }
 
 /*# sourceMappingURL=theme.css.map */
