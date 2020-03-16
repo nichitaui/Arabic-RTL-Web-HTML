@@ -10789,6 +10789,18 @@ body .main.open-filter .filter-app {
 .cs-icon.ic-info-outline-blue {
   background-image: url(../img/icons/ic_info_outline_blue.png);
 }
+.cs-icon.ic-plus-white {
+  background-image: url(../img/icons/ic_plus_white.png);
+}
+.cs-icon.ic-dollar-blue {
+  background-image: url(../img/icons/ic_dollar_blue.png);
+}
+.cs-icon.ic-graph-blue {
+  background-image: url(../img/icons/ic_graph_blue.png);
+}
+.cs-icon.ic-event-note {
+  background-image: url(../img/icons/ic_event_note.png);
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -11042,6 +11054,143 @@ button:focus {
   width: 200px;
 }
 
+#customer-management-chart {
+  padding: 30px;
+}
+#customer-management-chart .chart-header {
+  position: relative;
+  width: 100%;
+  background-color: #D7DDE9;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 20px;
+}
+#customer-management-chart .chart-header .label {
+  width: 75px;
+  font-size: 12px;
+  color: #4D4F5C;
+}
+#customer-management-chart .chart-header .tags-group {
+  display: inline-flex;
+}
+#customer-management-chart .chart-header .tags-group .tag {
+  height: 22px;
+  font-size: 9px;
+  color: #FFFFFF;
+  border-radius: 11px;
+  padding: 5px 15px;
+  margin-right: 20px;
+}
+#customer-management-chart .chart-header .tags-group .tag.tag-blue-magenta {
+  background-color: #A3A0FB;
+}
+#customer-management-chart .chart-header .tags-group .tag.tag-caparol {
+  background-color: #21D102;
+}
+#customer-management-chart .chart-header .tags-group .tag.tag-purple {
+  background-color: #B202D1;
+}
+#customer-management-chart .chart-header .tags-group .tag.tag-pantone {
+  background-color: #32D296;
+}
+#customer-management-chart .chart-header .tags-group .tag .cs-icon {
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+}
+#customer-management-chart .chart-header .btn-tag-add {
+  background-color: #78849E;
+  border: solid 1px #78849E;
+  color: #FFFFFF;
+  width: 22px;
+  height: 22px;
+  margin-right: 20px;
+  border-radius: 3px;
+  padding: 0px 2px;
+}
+#customer-management-chart .chart-header .btn-tag-add .cs-icon {
+  width: 15px;
+  height: 15px;
+}
+#customer-management-chart .chart-header .days-group {
+  display: inline-flex;
+  padding: 0;
+  list-style: none;
+  border: solid 2px #F4F6FC;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0;
+}
+#customer-management-chart .chart-header .days-group li {
+  width: 85px;
+  height: 34px;
+  border-right: solid 2px #F4F6FC;
+  font-size: 10px;
+  padding: 10px 5px;
+  text-align: center;
+}
+#customer-management-chart .chart-header .days-group li:first-child {
+  border-right: 0;
+}
+#customer-management-chart .chart-header .days-group li.active {
+  background-color: #7ABBFC;
+  color: #485272;
+  font-weight: bold;
+}
+#customer-management-chart .chart-header .input-group-prepend {
+  float: left;
+}
+#customer-management-chart .chart-header .input-group-prepend .dropdown-toggle {
+  width: 145px;
+  height: 23px;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 10px;
+  line-height: 20px;
+  color: #4D4F5C;
+  font-family: "Heebo";
+  text-align: right;
+  background-color: #FFFFFF;
+  border: solid 1px #D7DAE2;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+}
+#customer-management-chart .chart-header .input-group-prepend .dropdown-toggle::after {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+}
+#customer-management-chart .chart-header .dropdown-wrapper label {
+  text-align: center;
+  width: calc(100% - 145px);
+  border-right: solid 1px #FFFFFF;
+}
+#customer-management-chart .chart-header .dropdown-wrapper .daterange {
+  float: left;
+  width: 145px;
+  height: 23px;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 10px;
+  line-height: 20px;
+  color: #4D4F5C;
+  font-family: "Heebo";
+  text-align: right;
+  background-color: #FFFFFF;
+  border: solid 1px #D7DAE2;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+}
+#customer-management-chart .chart-body {
+  position: relative;
+  height: 320px;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+#customer-management-chart .chart-body #myChart {
+  padding: 20px 10px 10px 10px;
+}
+
 .dataTables_wrapper .row:last-child {
   display: none;
 }
@@ -11124,6 +11273,7 @@ button:focus {
   font-weight: bold;
   padding-right: 20px;
 }
+
 #nav-distribution-graph .donut {
   width: 100%;
   max-width: 255px;
