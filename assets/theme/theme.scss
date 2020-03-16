@@ -338,6 +338,9 @@ body {
                                 &.ic-folder-favorite {
                                     background-image: url(../img/icons/ic_folder_favorite_blue.png);
                                 }
+                                &.ic-library-books {
+                                    background-image: url(../img/icons/ic_library_books_blue.png);
+                                }
                             }
                             &.active {
                                 background-color: #7ABBFC;
@@ -393,6 +396,9 @@ body {
                                     }
                                     &.ic-folder-favorite {
                                         background-image: url(../img/icons/ic_folder_favorite_white.png);
+                                    }
+                                    &.ic-library-books {
+                                        background-image: url(../img/icons/ic_library_books_white.png);
                                     }
                                 }
                             }
@@ -1217,7 +1223,9 @@ button:focus {
 // ======== special components css ======== //
 #nav-holding-portfolio, 
 #nav-capital-market, 
-#nav-holdings-alternative {
+#nav-holdings-alternative,
+#nav-sustainability-loan,
+#nav-potential-loans {
     padding: 0;
     .table-filter-group {
         position: relative;

@@ -10200,6 +10200,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-insert-chart 
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-folder-favorite {
   background-image: url(../img/icons/ic_folder_favorite_blue.png);
 }
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-library-books {
+  background-image: url(../img/icons/ic_library_books_blue.png);
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active {
   background-color: #7ABBFC;
   border: 0;
@@ -10253,6 +10256,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-insert
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-folder-favorite {
   background-image: url(../img/icons/ic_folder_favorite_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-library-books {
+  background-image: url(../img/icons/ic_library_books_white.png);
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link:hover {
   border: 0;
@@ -10994,12 +11000,16 @@ button:focus {
 
 #nav-holding-portfolio,
 #nav-capital-market,
-#nav-holdings-alternative {
+#nav-holdings-alternative,
+#nav-sustainability-loan,
+#nav-potential-loans {
   padding: 0;
 }
 #nav-holding-portfolio .table-filter-group,
 #nav-capital-market .table-filter-group,
-#nav-holdings-alternative .table-filter-group {
+#nav-holdings-alternative .table-filter-group,
+#nav-sustainability-loan .table-filter-group,
+#nav-potential-loans .table-filter-group {
   position: relative;
   height: 44px;
   width: 100%;
@@ -11011,14 +11021,18 @@ button:focus {
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend,
 #nav-capital-market .table-filter-group .input-group-prepend,
-#nav-holdings-alternative .table-filter-group .input-group-prepend {
+#nav-holdings-alternative .table-filter-group .input-group-prepend,
+#nav-sustainability-loan .table-filter-group .input-group-prepend,
+#nav-potential-loans .table-filter-group .input-group-prepend {
   position: relative;
   width: 145px;
   margin-left: 20px;
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle,
-#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle {
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-toggle {
   width: 145px;
   height: 23px;
   border-radius: 4px;
@@ -11035,14 +11049,18 @@ button:focus {
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle::after,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle::after,
-#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle::after {
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle::after,
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-toggle::after,
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-toggle::after {
   position: absolute;
   left: 5px;
   top: 10px;
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu,
-#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu {
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu {
   position: absolute;
   width: 145px !important;
   min-width: 145px !important;
@@ -11052,7 +11070,9 @@ button:focus {
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
-#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item {
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item {
   width: 145px;
   margin: 0;
   padding: 5px 10px;
@@ -11063,12 +11083,16 @@ button:focus {
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
-#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox] {
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox] {
   float: left;
 }
 #nav-holding-portfolio .pane-footer,
 #nav-capital-market .pane-footer,
-#nav-holdings-alternative .pane-footer {
+#nav-holdings-alternative .pane-footer,
+#nav-sustainability-loan .pane-footer,
+#nav-potential-loans .pane-footer {
   position: relative;
   width: 100%;
   height: 50px;
@@ -11082,7 +11106,9 @@ button:focus {
 }
 #nav-holding-portfolio .pane-footer label,
 #nav-capital-market .pane-footer label,
-#nav-holdings-alternative .pane-footer label {
+#nav-holdings-alternative .pane-footer label,
+#nav-sustainability-loan .pane-footer label,
+#nav-potential-loans .pane-footer label {
   width: 200px;
 }
 
