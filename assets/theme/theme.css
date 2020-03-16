@@ -10209,6 +10209,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-insert-drive-
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-description {
   background-image: url(../img/icons/ic_description_white.png);
 }
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-settings-input-component {
+  background-image: url(../img/icons/ic_settings_input_component_white.png);
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active {
   background-color: #7ABBFC;
   border: 0;
@@ -10271,6 +10274,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-insert
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-description {
   background-image: url(../img/icons/ic_description_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-settings-input-component {
+  background-image: url(../img/icons/ic_settings_input_component_white.png);
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link:hover {
   border: 0;
@@ -10845,6 +10851,12 @@ body .main.open-filter .filter-app {
 }
 .cs-icon.ic-upload {
   background-image: url(../img/icons/ic_upload.png);
+}
+.cs-icon.ic-eye {
+  background-image: url(../img/icons/ic_eye.png);
+}
+.cs-icon.ic-trash-blue {
+  background-image: url(../img/icons/ic_trash_blue.png);
 }
 
 /* width */
@@ -11561,25 +11573,32 @@ button:focus {
   left: 10px;
 }
 
-#documentAddModal .modal-dialog {
+#documentAddModal .modal-dialog,
+#contactAddModal .modal-dialog {
   max-width: 440px;
   width: 100%;
   height: 100%;
   overflow: auto;
 }
-#documentAddModal .modal-dialog .modal-content .modal-body .form-group {
+#documentAddModal .modal-dialog .modal-content .modal-body .form-group,
+#contactAddModal .modal-dialog .modal-content .modal-body .form-group {
   margin-bottom: 20px;
 }
-#documentAddModal .modal-dialog .modal-content .modal-body .form-group label {
+#documentAddModal .modal-dialog .modal-content .modal-body .form-group label,
+#contactAddModal .modal-dialog .modal-content .modal-body .form-group label {
   color: #3ACCE1;
   font-size: 18px;
+  width: 100%;
+  text-align: right;
 }
-#documentAddModal .modal-dialog .modal-content .modal-body .form-group .form-textarea {
+#documentAddModal .modal-dialog .modal-content .modal-body .form-group .form-textarea,
+#contactAddModal .modal-dialog .modal-content .modal-body .form-group .form-textarea {
   max-width: 298px;
   width: 298px;
   height: 290px;
 }
-#documentAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload {
+#documentAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload,
+#contactAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload {
   background-color: #3ACCE1;
   border: solid 2px #E9E9E9;
   border-radius: 10px;
@@ -11589,7 +11608,8 @@ button:focus {
   padding: 15px;
   cursor: pointer;
 }
-#documentAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload .cs-icon {
+#documentAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload .cs-icon,
+#contactAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload .cs-icon {
   position: relative;
   display: block;
   margin-right: auto;
@@ -11597,14 +11617,16 @@ button:focus {
   width: 42px;
   height: 27px;
 }
-#documentAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload .upload-text {
+#documentAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload .upload-text,
+#contactAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload .upload-text {
   width: 100%;
   font-size: 8px;
   color: #FFFFFF;
   text-align: center;
   margin-top: 10px;
 }
-#documentAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload .btn-upload {
+#documentAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload .btn-upload,
+#contactAddModal .modal-dialog .modal-content .modal-body .form-group .file-upload .btn-upload {
   position: relative;
   display: block;
   width: 71px;
@@ -11619,11 +11641,103 @@ button:focus {
   margin-top: 25px;
 }
 
+#contactAddModal .form-control {
+  margin-bottom: 33px;
+}
+#contactAddModal .form-textarea {
+  height: 270px;
+}
+
 .hidden {
   visibility: hidden !important;
   height: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
+}
+
+#nav-contacts {
+  padding: 0;
+}
+#nav-contacts .filter-group {
+  padding: 10px;
+  border-bottom: solid 2px #BFC5D2;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+#nav-contacts .filter-group ul {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+}
+#nav-contacts .filter-group ul li {
+  margin-left: 25px;
+}
+#nav-contacts .filter-group ul li .form-control {
+  width: 142px;
+  height: 50px;
+  background-color: #F9F9F9;
+  border: solid 2px #E9E9E9;
+  border-radius: 8px;
+  font-size: 19px;
+  color: #485272;
+}
+#nav-contacts .collapse-container {
+  width: 100%;
+}
+#nav-contacts .collapse-container .collapse-item .collapse-header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 12px 15px;
+  margin-bottom: 2px;
+}
+#nav-contacts .collapse-container .collapse-item .collapse-header ul {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-right: 30px;
+}
+#nav-contacts .collapse-container .collapse-item .collapse-header ul li {
+  width: 142px;
+  padding: 10px 0;
+  margin-left: 25px;
+}
+#nav-contacts .collapse-container .collapse-item .collapse-header a {
+  padding: 13px 10px 13px 0px;
+}
+#nav-contacts .collapse-container .collapse-item .collapse-header a .cs-icon {
+  width: 15px;
+  height: 15px;
+}
+#nav-contacts .collapse-container .collapse-item .collapse-header a .cs-icon.ic-collapse-pm {
+  background-image: url(../img/icons/ic_minus_blue.png);
+}
+#nav-contacts .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon {
+  width: 15px;
+  height: 15px;
+}
+#nav-contacts .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon.ic-collapse-pm {
+  background-image: url(../img/icons/ic_plus_blue.png);
+}
+#nav-contacts .collapse-container .collapse-item .collapse-header a.btn-view, #nav-contacts .collapse-container .collapse-item .collapse-header a.btn-delete {
+  position: relative;
+  display: block;
+  float: left;
+  width: 50px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  border-right: solid 1px #BFC5D2;
+}
+#nav-contacts .collapse-container .collapse-item .collapse, #nav-contacts .collapse-container .collapse-item .collapsing {
+  max-height: 184px;
+  overflow: auto;
+  padding: 25px 70px;
 }
 
 /*# sourceMappingURL=theme.css.map */
