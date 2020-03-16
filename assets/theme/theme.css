@@ -10194,6 +10194,12 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-donut-small {
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-autorenew {
   background-image: url(../img/icons/ic_autorenew_white.png);
 }
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-insert-chart {
+  background-image: url(../img/icons/ic_insert_chart_blue.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-folder-favorite {
+  background-image: url(../img/icons/ic_folder_favorite_blue.png);
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active {
   background-color: #7ABBFC;
   border: 0;
@@ -10241,6 +10247,12 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-donut-
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-autorenew {
   background-image: url(../img/icons/ic_autorenew_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-insert-chart {
+  background-image: url(../img/icons/ic_insert_chart_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-folder-favorite {
+  background-image: url(../img/icons/ic_folder_favorite_white.png);
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link:hover {
   border: 0;
@@ -10980,10 +10992,14 @@ button:focus {
   animation: fillAnimation 1s ease-in;
 }
 
-#nav-holding-portfolio {
+#nav-holding-portfolio,
+#nav-capital-market,
+#nav-holdings-alternative {
   padding: 0;
 }
-#nav-holding-portfolio .table-filter-group {
+#nav-holding-portfolio .table-filter-group,
+#nav-capital-market .table-filter-group,
+#nav-holdings-alternative .table-filter-group {
   position: relative;
   height: 44px;
   width: 100%;
@@ -10993,12 +11009,16 @@ button:focus {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   padding: 10px 20px;
 }
-#nav-holding-portfolio .table-filter-group .input-group-prepend {
+#nav-holding-portfolio .table-filter-group .input-group-prepend,
+#nav-capital-market .table-filter-group .input-group-prepend,
+#nav-holdings-alternative .table-filter-group .input-group-prepend {
   position: relative;
   width: 145px;
   margin-left: 20px;
 }
-#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle {
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle {
   width: 145px;
   height: 23px;
   border-radius: 4px;
@@ -11013,12 +11033,16 @@ button:focus {
   -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
 }
-#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle::after {
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle::after,
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle::after,
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle::after {
   position: absolute;
   left: 5px;
   top: 10px;
 }
-#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu {
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu {
   position: absolute;
   width: 145px !important;
   min-width: 145px !important;
@@ -11026,7 +11050,9 @@ button:focus {
   right: 0px !important;
   overflow: hidden;
 }
-#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item {
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item {
   width: 145px;
   margin: 0;
   padding: 5px 10px;
@@ -11035,10 +11061,14 @@ button:focus {
   color: #4D4F5C;
   font-family: "Heebo";
 }
-#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox] {
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox] {
   float: left;
 }
-#nav-holding-portfolio .pane-footer {
+#nav-holding-portfolio .pane-footer,
+#nav-capital-market .pane-footer,
+#nav-holdings-alternative .pane-footer {
   position: relative;
   width: 100%;
   height: 50px;
@@ -11050,7 +11080,9 @@ button:focus {
   color: #FFFFFF;
   padding: 15px;
 }
-#nav-holding-portfolio .pane-footer label {
+#nav-holding-portfolio .pane-footer label,
+#nav-capital-market .pane-footer label,
+#nav-holdings-alternative .pane-footer label {
   width: 200px;
 }
 

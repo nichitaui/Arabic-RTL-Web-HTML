@@ -332,6 +332,12 @@ body {
                                 &.ic-autorenew {
                                     background-image: url(../img/icons/ic_autorenew_white.png);
                                 }
+                                &.ic-insert-chart {
+                                    background-image: url(../img/icons/ic_insert_chart_blue.png);
+                                }
+                                &.ic-folder-favorite {
+                                    background-image: url(../img/icons/ic_folder_favorite_blue.png);
+                                }
                             }
                             &.active {
                                 background-color: #7ABBFC;
@@ -381,6 +387,12 @@ body {
                                     }
                                     &.ic-autorenew {
                                         background-image: url(../img/icons/ic_autorenew_white.png);
+                                    }
+                                    &.ic-insert-chart {
+                                        background-image: url(../img/icons/ic_insert_chart_white.png);
+                                    }
+                                    &.ic-folder-favorite {
+                                        background-image: url(../img/icons/ic_folder_favorite_white.png);
                                     }
                                 }
                             }
@@ -1203,7 +1215,9 @@ button:focus {
 
 
 // ======== special components css ======== //
-#nav-holding-portfolio {
+#nav-holding-portfolio, 
+#nav-capital-market, 
+#nav-holdings-alternative {
     padding: 0;
     .table-filter-group {
         position: relative;
