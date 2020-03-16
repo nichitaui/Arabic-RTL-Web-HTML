@@ -88,12 +88,12 @@
           <div class="cs-icon ic-donut-small"></div>אלוקציה
         </a>
       </li>
-      <li class="active">
+      <li class="">
         <a href="customer-mana-leveraging.html">
           <div class="cs-icon ic-lightbulb-outline"></div>מנוף ונזילות
         </a>
       </li>
-      <li class="">
+      <li class="active">
         <a href="customer-mana-reports.html">
           <div class="cs-icon ic-insert-drive-file"></div>דוחות
         </a>
@@ -269,175 +269,106 @@
       </div>
     </div>
     <div class="app-body">
-      <div class="app-tab mt-5">
+      <div class="w-100 text-left pl-2">
+        <a class="cs-btn-icon btn-exit" href="javascript:avoid(0)"></a>
+        <a class="cs-btn-icon btn-xls" href="javascript:avoid(0)"></a>
+        <a class="cs-btn-icon btn-print" href="javascript:avoid(0)"></a>
+      </div>
+      <div class="app-tab">
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-sustainability-loan-tab" data-toggle="tab" href="#nav-sustainability-loan" role="tab" aria-controls="nav-sustainability-loan" aria-selected="true"><div class="cs-icon ic-library-books"></div>הלוואת קיימות </a>
-            <a class="nav-item nav-link" id="nav-potential-loans-tab" data-toggle="tab" href="#nav-potential-loans" role="tab" aria-controls="nav-potential-loans" aria-selected="false"><div class="cs-icon ic-library-books"></div>הלוואות פוטנציאליות</a>
+            <a class="nav-item nav-link active" id="nav-list-of-reports-tab" data-toggle="tab" href="#nav-list-of-reports" role="tab" aria-controls="nav-list-of-reports" aria-selected="true"><div class="cs-icon ic-insert-drive-file"></div>רשימת דוחות</a>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-sustainability-loan" role="tabpanel" aria-labelledby="nav-sustainability-loan-tab">
+          <div class="tab-pane fade show active" id="nav-list-of-reports" role="tabpanel" aria-labelledby="nav-list-of-reports-tab">
             <div class="table-filter-group">
-              <div class="input-group-prepend product-type-dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">סוג מוצר</button>
-                <div class="dropdown-menu">
-                  <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
-                  <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
-                  <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
-                </div>
-              </div>
+              <ul class="filter-year-wrapper">
+                <li class="active">2019</li>
+                <li class="">2018</li>
+                <li class="">2017</li>
+                <li class="">2016</li>
+                <li class="">2015</li>
+                <li class="">2014</li>
+                <li class="">2013</li>
+                <li class="">2012</li>
+                <li class="">2011</li>
+                <li class="">2010</li>
+              </ul>
             </div>
             <div class="pane-body">
               <table class="table datatable m-0" style="width:100%">
                 <thead>
                   <tr>
-                    <th>סוג מוצר </th>
-                    <th>שם מוצר</th>
-                    <th>מס' חשבון </th>
-                    <th>יתרה </th>
-                    <th>סכום נזיל </th>
-                    <th>הלוואה קיימת</th>
-                    <th>תאריך לקיחת ההלוואה</th>
-                    <th>תנאי הלוואה </th>
-                    <th>ריבית הלוואה</th>
-                    <th>סיבת ההלוואה</th>
+                    <th></th>
+                    <th>שנה/חודש</th>
+                    <th>שם דוח</th>
+                    <th>צס' חשבון</th>
+                    <th>סוג המסמך</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>קופת גמל </td>
-                    <td>ילין גמל לבני 50-60</td>
-                    <td>NUMERIC</td>
-                    <td>150,000 ש"ח</td>
-                    <td>150,000 ש"ח</td>
-                    <td>150,000 ש"ח</td>
-                    <td>01.01.2006</td>
-                    <td> NUMERIC </td>
-                    <td> NUMERIC </td>
+                    <td><input type="checkbox" class="" /></td>
+                    <td>03.11.2019</td>
+                    <td class="font-weight-bold">דו"ח מס הכנסה שנתי מקוון - טופס 1301</td>
+                    <td class="font-weight-bold">NUM</td>
                     <td>
-                      <span> מינוף</span>
+                      <a class="btn-download-file" href="javascript:avoid(0)">
+                        <div class="cs-icon ic-pdf"></div>
+                      </a>
+                      <div class="input-group-dropdown mr-auto">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">סוג מוצר</button>
+                        <div class="dropdown-menu">
+                          <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
+                          <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
+                          <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
+                        </div>
+                      </div>
                       <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisCapitalMarketModal">
                         <div class="cs-icon ic-info-outline-blue"></div>
                       </a>
                     </td>
                   </tr>
                   <tr>
-                    <td>קופת גמל </td>
-                    <td>ילין גמל לבני 50-60</td>
-                    <td>NUMERIC</td>
-                    <td>150,000 ש"ח</td>
-                    <td>150,000 ש"ח</td>
-                    <td>150,000 ש"ח</td>
-                    <td>01.01.2006</td>
-                    <td> NUMERIC </td>
-                    <td> NUMERIC </td>
+                    <td><input type="checkbox" class="" /></td>
+                    <td>03.11.2019</td>
+                    <td class="font-weight-bold">דו"ח מס הכנסה שנתי מקוון - טופס 1301</td>
+                    <td class="font-weight-bold">NUM</td>
                     <td>
-                      <span> מינוף</span>
+                      <a class="btn-download-file" href="javascript:avoid(0)">
+                        <div class="cs-icon ic-jpg"></div>
+                      </a>
+                      <div class="input-group-dropdown mr-auto">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">סוג מוצר</button>
+                        <div class="dropdown-menu">
+                          <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
+                          <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
+                          <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
+                        </div>
+                      </div>
                       <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisCapitalMarketModal">
                         <div class="cs-icon ic-info-outline-blue"></div>
                       </a>
                     </td>
                   </tr>
                   <tr>
-                    <td>קופת גמל </td>
-                    <td>ילין גמל לבני 50-60</td>
-                    <td>NUMERIC</td>
-                    <td>150,000 ש"ח</td>
-                    <td>150,000 ש"ח</td>
-                    <td>150,000 ש"ח</td>
-                    <td>01.01.2006</td>
-                    <td> NUMERIC </td>
-                    <td> NUMERIC </td>
+                    <td><input type="checkbox" class="" /></td>
+                    <td>03.11.2019</td>
+                    <td class="font-weight-bold">דו"ח מס הכנסה שנתי מקוון - טופס 1301</td>
+                    <td class="font-weight-bold">NUM</td>
                     <td>
-                      <span> מינוף</span>
-                      <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisCapitalMarketModal">
-                        <div class="cs-icon ic-info-outline-blue"></div>
+                      <a class="btn-download-file" href="javascript:avoid(0)">
+                        <div class="cs-icon ic-png"></div>
                       </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="pane-footer">
-              <table class="w-50 mx-auto">
-                <tbody>
-                  <tr>
-                    <td> סה"כ 2,474,000 ש"ח</td>
-                    <td> סה"כ 2,474,000 ש"ח</td>
-                    <td> סה"כ 2,474,000 ש"ח</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          
-          <div class="tab-pane fade" id="nav-potential-loans" role="tabpanel" aria-labelledby="nav-potential-loans-tab">
-            <div class="table-filter-group">
-              <div class="input-group-prepend product-type-dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">סוג מוצר</button>
-                <div class="dropdown-menu">
-                  <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
-                  <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
-                  <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
-                </div>
-              </div>
-            </div>
-            <div class="pane-body">
-              <table class="table datatable m-0" style="width:100%">
-                <thead>
-                  <tr>
-                    <th>סוג מוצר </th>
-                    <th>שם מוצר</th>
-                    <th>יתרה </th>
-                    <th>סכום נזיל </th>
-                    <th>הלוואה קיימת</th>
-                    <th>הלוואה פונטציאלית </th>
-                    <th>תנאי הלוואה </th>
-                    <th>ריבית הלוואה</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>קופת גמל </td>
-                    <td>ילין גמל לבני 50-60</td>
-                    <td>150,000</td>
-                    <td>150,000 ש"ח</td>
-                    <td>150,000 ש"ח</td>
-                    <td> NUMERIC</td>
-                    <td> NUMERIC</td>
-                    <td>
-                      <span> NUMERIC %</span>
-                      <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisCapitalMarketModal">
-                        <div class="cs-icon ic-info-outline-blue"></div>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>קופת גמל </td>
-                    <td>ילין גמל לבני 50-60</td>
-                    <td>150,000</td>
-                    <td>150,000 ש"ח</td>
-                    <td>150,000 ש"ח</td>
-                    <td> NUMERIC</td>
-                    <td> NUMERIC</td>
-                    <td>
-                      <span> NUMERIC %</span>
-                      <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisCapitalMarketModal">
-                        <div class="cs-icon ic-info-outline-blue"></div>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>קופת גמל </td>
-                    <td>ילין גמל לבני 50-60</td>
-                    <td>150,000</td>
-                    <td>150,000 ש"ח</td>
-                    <td>150,000 ש"ח</td>
-                    <td> NUMERIC</td>
-                    <td> NUMERIC</td>
-                    <td>
-                      <span> NUMERIC %</span>
+                      <div class="input-group-dropdown mr-auto">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">סוג מוצר</button>
+                        <div class="dropdown-menu">
+                          <li class="dropdown-item">קופות גמל <input type="checkbox" /></li>
+                          <li class="dropdown-item">קרנות השתלמות <input type="checkbox" /></li>
+                          <li class="dropdown-item">קרנות פנסיה <input type="checkbox" /></li>
+                        </div>
+                      </div>
                       <a class="btn-view-detail" href="javascript:avoid(0)" data-toggle="modal" data-target="#nisCapitalMarketModal">
                         <div class="cs-icon ic-info-outline-blue"></div>
                       </a>

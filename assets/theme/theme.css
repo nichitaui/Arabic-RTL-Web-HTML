@@ -10203,6 +10203,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-folder-favori
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-library-books {
   background-image: url(../img/icons/ic_library_books_blue.png);
 }
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-insert-drive-file {
+  background-image: url(../img/icons/ic_insert_drive_file_white.png);
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active {
   background-color: #7ABBFC;
   border: 0;
@@ -10259,6 +10262,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-folder
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-library-books {
   background-image: url(../img/icons/ic_library_books_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-insert-drive-file {
+  background-image: url(../img/icons/ic_insert_drive_file_white.png);
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link:hover {
   border: 0;
@@ -10819,6 +10825,15 @@ body .main.open-filter .filter-app {
 .cs-icon.ic-event-note {
   background-image: url(../img/icons/ic_event_note.png);
 }
+.cs-icon.ic-pdf {
+  background-image: url(../img/icons/ic_pdf.png);
+}
+.cs-icon.ic-jpg {
+  background-image: url(../img/icons/ic_jpg.png);
+}
+.cs-icon.ic-png {
+  background-image: url(../img/icons/ic_png.png);
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -11002,14 +11017,16 @@ button:focus {
 #nav-capital-market,
 #nav-holdings-alternative,
 #nav-sustainability-loan,
-#nav-potential-loans {
+#nav-potential-loans,
+#nav-list-of-reports {
   padding: 0;
 }
 #nav-holding-portfolio .table-filter-group,
 #nav-capital-market .table-filter-group,
 #nav-holdings-alternative .table-filter-group,
 #nav-sustainability-loan .table-filter-group,
-#nav-potential-loans .table-filter-group {
+#nav-potential-loans .table-filter-group,
+#nav-list-of-reports .table-filter-group {
   position: relative;
   height: 44px;
   width: 100%;
@@ -11023,7 +11040,8 @@ button:focus {
 #nav-capital-market .table-filter-group .input-group-prepend,
 #nav-holdings-alternative .table-filter-group .input-group-prepend,
 #nav-sustainability-loan .table-filter-group .input-group-prepend,
-#nav-potential-loans .table-filter-group .input-group-prepend {
+#nav-potential-loans .table-filter-group .input-group-prepend,
+#nav-list-of-reports .table-filter-group .input-group-prepend {
   position: relative;
   width: 145px;
   margin-left: 20px;
@@ -11032,7 +11050,8 @@ button:focus {
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle,
 #nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle,
 #nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-toggle,
-#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-toggle {
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-toggle {
   width: 145px;
   height: 23px;
   border-radius: 4px;
@@ -11051,7 +11070,8 @@ button:focus {
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle::after,
 #nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle::after,
 #nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-toggle::after,
-#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-toggle::after {
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-toggle::after,
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-toggle::after {
   position: absolute;
   left: 5px;
   top: 10px;
@@ -11060,7 +11080,8 @@ button:focus {
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu,
 #nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu,
 #nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-menu,
-#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu {
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-menu {
   position: absolute;
   width: 145px !important;
   min-width: 145px !important;
@@ -11072,7 +11093,8 @@ button:focus {
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
 #nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
 #nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
-#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item {
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item {
   width: 145px;
   margin: 0;
   padding: 5px 10px;
@@ -11085,14 +11107,56 @@ button:focus {
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
 #nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
 #nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
-#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox] {
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox] {
   float: left;
+}
+#nav-holding-portfolio .table-filter-group .filter-year-wrapper,
+#nav-capital-market .table-filter-group .filter-year-wrapper,
+#nav-holdings-alternative .table-filter-group .filter-year-wrapper,
+#nav-sustainability-loan .table-filter-group .filter-year-wrapper,
+#nav-potential-loans .table-filter-group .filter-year-wrapper,
+#nav-list-of-reports .table-filter-group .filter-year-wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+#nav-holding-portfolio .table-filter-group .filter-year-wrapper li,
+#nav-capital-market .table-filter-group .filter-year-wrapper li,
+#nav-holdings-alternative .table-filter-group .filter-year-wrapper li,
+#nav-sustainability-loan .table-filter-group .filter-year-wrapper li,
+#nav-potential-loans .table-filter-group .filter-year-wrapper li,
+#nav-list-of-reports .table-filter-group .filter-year-wrapper li {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 23px;
+  padding: 5px;
+  background-color: #FFFFFF;
+  border: solid 1px #D7DAE2;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  color: #7ABBFC;
+  font-size: 10px;
+  font-family: "Heebo";
+  text-align: center;
+  margin-right: 20px;
+}
+#nav-holding-portfolio .table-filter-group .filter-year-wrapper li.active,
+#nav-capital-market .table-filter-group .filter-year-wrapper li.active,
+#nav-holdings-alternative .table-filter-group .filter-year-wrapper li.active,
+#nav-sustainability-loan .table-filter-group .filter-year-wrapper li.active,
+#nav-potential-loans .table-filter-group .filter-year-wrapper li.active,
+#nav-list-of-reports .table-filter-group .filter-year-wrapper li.active {
+  background-color: #7ABBFC;
+  color: #FFFFFF;
 }
 #nav-holding-portfolio .pane-footer,
 #nav-capital-market .pane-footer,
 #nav-holdings-alternative .pane-footer,
 #nav-sustainability-loan .pane-footer,
-#nav-potential-loans .pane-footer {
+#nav-potential-loans .pane-footer,
+#nav-list-of-reports .pane-footer {
   position: relative;
   width: 100%;
   height: 50px;
@@ -11108,8 +11172,56 @@ button:focus {
 #nav-capital-market .pane-footer label,
 #nav-holdings-alternative .pane-footer label,
 #nav-sustainability-loan .pane-footer label,
-#nav-potential-loans .pane-footer label {
+#nav-potential-loans .pane-footer label,
+#nav-list-of-reports .pane-footer label {
   width: 200px;
+}
+#nav-holding-portfolio .input-group-dropdown,
+#nav-capital-market .input-group-dropdown,
+#nav-holdings-alternative .input-group-dropdown,
+#nav-sustainability-loan .input-group-dropdown,
+#nav-potential-loans .input-group-dropdown,
+#nav-list-of-reports .input-group-dropdown {
+  position: relative;
+}
+#nav-holding-portfolio .input-group-dropdown .dropdown-toggle,
+#nav-capital-market .input-group-dropdown .dropdown-toggle,
+#nav-holdings-alternative .input-group-dropdown .dropdown-toggle,
+#nav-sustainability-loan .input-group-dropdown .dropdown-toggle,
+#nav-potential-loans .input-group-dropdown .dropdown-toggle,
+#nav-list-of-reports .input-group-dropdown .dropdown-toggle {
+  width: 225px;
+  height: 22px;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 10px;
+  line-height: 20px;
+  color: #4D4F5C;
+  font-family: "Heebo";
+  text-align: right;
+  background-color: #FFFFFF;
+  border: solid 1px #D7DAE2;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+}
+#nav-holding-portfolio .input-group-dropdown .dropdown-toggle::after,
+#nav-capital-market .input-group-dropdown .dropdown-toggle::after,
+#nav-holdings-alternative .input-group-dropdown .dropdown-toggle::after,
+#nav-sustainability-loan .input-group-dropdown .dropdown-toggle::after,
+#nav-potential-loans .input-group-dropdown .dropdown-toggle::after,
+#nav-list-of-reports .input-group-dropdown .dropdown-toggle::after {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+}
+#nav-holding-portfolio .btn-download-file .cs-icon,
+#nav-capital-market .btn-download-file .cs-icon,
+#nav-holdings-alternative .btn-download-file .cs-icon,
+#nav-sustainability-loan .btn-download-file .cs-icon,
+#nav-potential-loans .btn-download-file .cs-icon,
+#nav-list-of-reports .btn-download-file .cs-icon {
+  width: 20px;
+  height: 25px;
 }
 
 #customer-management-chart {
