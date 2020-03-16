@@ -10383,6 +10383,45 @@ body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relati
 body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table tbody tr td {
   width: 14%;
 }
+body .main .app .app-body .app-chart {
+  margin: 100px 30px 30px 30px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+body .main .app .app-body .app-chart .chart-container {
+  padding: 20px 0;
+  background-color: #FFFFFF;
+  border-top: solid 17px #7ABBFC;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+body .main .app .app-body .app-chart .chart-container .chart-item {
+  padding: 20px 30px;
+}
+body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper {
+  position: relative;
+  background: #FFFFFF;
+  border: solid 1px #D7DDE9;
+  border-radius: 7px;
+  min-height: 165px;
+  height: 100%;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .label {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4D4F5C;
+  margin-top: 15px;
+}
+body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+}
 body .main .filter-bar {
   position: fixed;
   width: 75px;

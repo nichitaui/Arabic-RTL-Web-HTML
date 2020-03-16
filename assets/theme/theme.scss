@@ -562,6 +562,45 @@ body {
                         }
                     }
                 }
+                .app-chart {
+                  margin: 100px 30px 30px 30px;
+                  -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
+                  box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+                  .chart-container {
+                    padding: 20px 0;
+                    background-color: #FFFFFF;
+                    border-top: solid 17px #7ABBFC;
+                    display: grid;
+                    grid-template-columns: 20% 20% 20% 20% 20%;
+                    .chart-item {
+                      padding: 20px 30px;
+                      .chart-wrapper {
+                        position: relative;
+                        background: #FFFFFF;
+                        border: solid 1px #D7DDE9;
+                        border-radius: 7px;
+                        min-height: 165px;
+                        height: 100%;
+                        -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
+                        box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+                        .label {
+                          width: 100%;
+                          text-align: center;
+                          font-size: 18px;
+                          font-weight: bold;
+                          color: #4D4F5C;
+                          margin-top: 15px;
+                        }
+                        .semi-donut {
+                          position: absolute;
+                          bottom: 0;
+                          right: 50%;
+                          transform: translateX(50%);
+                        }
+                      }
+                    }
+                  }
+                }
             }
         }
         // filter app css
