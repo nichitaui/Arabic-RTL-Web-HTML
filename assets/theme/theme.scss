@@ -353,6 +353,9 @@ body {
                                 &.ic-trending-up {
                                   background-image: url(../img/icons/ic_trending_up_white.png);
                                 }
+                                &.ic-work-cost {
+                                  background-image: url(../img/icons/ic_work_cost_tab.png);
+                                }
                             }
                             &.active {
                                 background-color: #7ABBFC;
@@ -423,6 +426,9 @@ body {
                                     }
                                     &.ic-trending-up {
                                       background-image: url(../img/icons/ic_trending_up_white.png);
+                                    }
+                                    &.ic-work-cost {
+                                      background-image: url(../img/icons/ic_work_cost_tab.png);
                                     }
                                 }
                             }
@@ -666,6 +672,31 @@ body {
                       box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
                     }
                   }
+                }
+                .app-alert {
+                  position: fixed;
+                  height: 72px;
+                  width: 100%;
+                  bottom: 0px;
+                  padding: 20px;
+                  &.warning {
+                    // background-color: #FE0801;
+                    background: linear-gradient(90deg, #FE0801, #FF5300);
+                    span {
+                      color: #FFFFFF;
+                    }
+                  }
+                  .cs-btn-icon {
+                    width: 30px;
+                    height: 30px;
+                  }
+                  span {
+                    font-size: 14px;
+                  }
+                }
+
+                &.has-alert {
+                  padding-bottom: 90px;
                 }
             }
         }
@@ -921,6 +952,12 @@ body {
     &.btn-add {
         background-image: url(../img/buttons/btn-add.png);
     }
+    &.btn-close-transparent {
+      background-image: url(../img/buttons/btn-close-transparent.png);
+      &:hover {
+          background-image: url(../img/buttons/btn-close-transparent.png);
+      }
+  }
 }
 
 .cs-btn-img {
@@ -1475,6 +1512,9 @@ button:focus {
         background-color: #78849E;
         -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
         box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+        &.bg-accent {
+          background-color: #485272;
+        }
         td {
           font-size: 16px;
           font-weight: bold;

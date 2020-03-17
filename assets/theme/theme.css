@@ -10215,6 +10215,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-settings-inpu
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-trending-up {
   background-image: url(../img/icons/ic_trending_up_white.png);
 }
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-work-cost {
+  background-image: url(../img/icons/ic_work_cost_tab.png);
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active {
   background-color: #7ABBFC;
   border: 0;
@@ -10283,6 +10286,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-settin
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-trending-up {
   background-image: url(../img/icons/ic_trending_up_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-work-cost {
+  background-image: url(../img/icons/ic_work_cost_tab.png);
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link:hover {
   border: 0;
@@ -10485,6 +10491,29 @@ body .main .app .app-body .app-chart-group .chart-container .chart-body {
   background-color: #FFFFFF;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+body .main .app .app-body .app-alert {
+  position: fixed;
+  height: 72px;
+  width: 100%;
+  bottom: 0px;
+  padding: 20px;
+}
+body .main .app .app-body .app-alert.warning {
+  background: linear-gradient(90deg, #FE0801, #FF5300);
+}
+body .main .app .app-body .app-alert.warning span {
+  color: #FFFFFF;
+}
+body .main .app .app-body .app-alert .cs-btn-icon {
+  width: 30px;
+  height: 30px;
+}
+body .main .app .app-body .app-alert span {
+  font-size: 14px;
+}
+body .main .app .app-body.has-alert {
+  padding-bottom: 90px;
 }
 body .main .filter-bar {
   position: fixed;
@@ -10741,6 +10770,12 @@ body .main.open-filter .filter-app {
 }
 .cs-btn-icon.btn-add {
   background-image: url(../img/buttons/btn-add.png);
+}
+.cs-btn-icon.btn-close-transparent {
+  background-image: url(../img/buttons/btn-close-transparent.png);
+}
+.cs-btn-icon.btn-close-transparent:hover {
+  background-image: url(../img/buttons/btn-close-transparent.png);
 }
 
 .cs-btn-img {
@@ -11326,6 +11361,15 @@ button:focus {
   background-color: #78849E;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+#nav-holding-portfolio tfoot.bg-accent,
+#nav-capital-market tfoot.bg-accent,
+#nav-holdings-alternative tfoot.bg-accent,
+#nav-sustainability-loan tfoot.bg-accent,
+#nav-potential-loans tfoot.bg-accent,
+#nav-list-of-reports tfoot.bg-accent,
+#nav-aggregation tfoot.bg-accent {
+  background-color: #485272;
 }
 #nav-holding-portfolio tfoot td,
 #nav-capital-market tfoot td,
