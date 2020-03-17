@@ -10218,6 +10218,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-trending-up {
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-work-cost {
   background-image: url(../img/icons/ic_work_cost_tab.png);
 }
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-supervisor-account {
+  background-image: url(../img/icons/ic_supervisor_account_white.png);
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active {
   background-color: #7ABBFC;
   border: 0;
@@ -10290,6 +10293,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-trendi
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-work-cost {
   background-image: url(../img/icons/ic_work_cost_tab.png);
 }
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-supervisor-account {
+  background-image: url(../img/icons/ic_supervisor_account_white.png);
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link:hover {
   border: 0;
 }
@@ -10353,46 +10359,46 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .col
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .col-xl-9 .form-control, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-bank-account .col-xl-9 .form-control, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-medical-details .col-xl-9 .form-control {
   max-width: 1054px;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table {
   width: 100%;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table thead tr th {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
   color: #7ABBFC;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th:last-child {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table thead tr th:last-child {
   text-align: left;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table tbody tr {
   border-top: solid 2px #BFC5D2;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table tbody tr td {
   text-align: center;
   font-size: 18px;
   padding: 20px 0;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td:last-child {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table tbody tr td:last-child {
   text-align: left;
   display: inline-flex;
   width: 100% !important;
   justify-content: flex-end;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td .btn-icon {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table tbody tr td .btn-icon {
   width: 55px;
   height: 40px;
   display: inline-block;
   padding: 10px 17px;
   border-right: solid 1px #BFC5D2;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table thead tr th {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table.relatives-table thead tr th {
   width: 14%;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table tbody tr {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table.relatives-table tbody tr {
   border-top: solid 2px #BFC5D2;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table tbody tr td {
+body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table.relatives-table tbody tr td {
   width: 14%;
 }
 body .main .app .app-body .app-chart {
@@ -11924,6 +11930,32 @@ button:focus {
   max-height: 184px;
   overflow: auto;
   padding: 25px 70px;
+}
+
+#nav-beneficiaries table thead th:last-child {
+  padding: 0;
+  text-align: left;
+}
+#nav-beneficiaries table tbody tr td:last-child {
+  justify-content: flex-end;
+  padding-left: 0;
+}
+#nav-beneficiaries table tbody tr td .btn-icon {
+  width: 55px;
+  height: 40px;
+  display: inline-block;
+  padding: 10px 17px;
+  border-right: solid 1px #BFC5D2;
+}
+
+#newBeneficiaryModal .modal-body .form-group {
+  margin-bottom: 30px;
+}
+#newBeneficiaryModal .modal-body .form-group label {
+  color: #3ACCE1;
+}
+#newBeneficiaryModal .modal-body .form-group .form-control {
+  max-width: 190px;
 }
 
 /*# sourceMappingURL=theme.css.map */
