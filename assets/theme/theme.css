@@ -10221,6 +10221,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-work-cost {
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-supervisor-account {
   background-image: url(../img/icons/ic_supervisor_account_white.png);
 }
+body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-insurance {
+  background-image: url(../img/icons/ic_insurance_white.png);
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active {
   background-color: #7ABBFC;
   border: 0;
@@ -10295,6 +10298,9 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-work-c
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-supervisor-account {
   background-image: url(../img/icons/ic_supervisor_account_white.png);
+}
+body .main .app .app-body .app-tab .nav-tabs .nav-link.active .cs-icon.ic-insurance {
+  background-image: url(../img/icons/ic_insurance_white.png);
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link:hover {
   border: 0;

@@ -114,7 +114,7 @@
           <div class="cs-icon ic-trending-up"></div>תחזיות צבירה
         </a>
       </li>
-      <li class="active">
+      <li class="">
         <a href="customer-mana-costs.html">
           <div class="cs-icon ic-work-cost"></div>עלויות ניהול
         </a>
@@ -124,7 +124,7 @@
           <div class="cs-icon ic-supervisor-account"></div>מוטבים
         </a>
       </li>
-      <li class="">
+      <li class="active">
         <a href="customer-mana-insurance.html">
           <div class="cs-icon ic-insurance"></div>ביטוח
         </a>
@@ -264,7 +264,7 @@
         </div>
       </div>
     </div>
-    <div class="app-body has-alert">
+    <div class="app-body">
       <div class="w-100 text-left pl-2">
         <a class="cs-btn-icon btn-exit" href="javascript:avoid(0)"></a>
         <a class="cs-btn-icon btn-xls" href="javascript:avoid(0)"></a>
@@ -273,7 +273,7 @@
       <div class="app-tab">
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-aggregation-tab" data-toggle="tab" href="#nav-aggregation" role="tab" aria-controls="nav-aggregation" aria-selected="true"><div class="cs-icon ic-work-cost"></div>עלויות ניהול</a>
+            <a class="nav-item nav-link active" id="nav-aggregation-tab" data-toggle="tab" href="#nav-aggregation" role="tab" aria-controls="nav-aggregation" aria-selected="true"><div class="cs-icon ic-insurance"></div>ביטוח</a>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -282,79 +282,83 @@
               <table class="table datatable w-100 m-0">
                 <thead>
                   <tr>
-                    <th>שם מוצר </th>
-                    <th>מספר חשבון </th>
-                    <th>חברה מנהלת </th>
-                    <th>יתרה</th>
-                    <th> דמי ניהול מצבירה</th>
-                    <th>דמי ניהול מפרמיה</th>
-                    <th>דמי הצלחה </th>
-                    <th>HWM</th>
-                    <th>HURDLE </th>
-                    <th>Preferd</th>
+                    <th></th>
+                    <th>חברת ביטוח </th>
+                    <th>מספר פוליסה </th>
+                    <th>בעל הפוליסה</th>
+                    <th>ת.ז</th>
+                    <th>ענף ראשי</th>
+                    <th>ענף משני</th>
+                    <th>סוג מוצר </th>
+                    <th>פרמיה שנתית </th>
+                    <th>פרמיה חודשית </th>
+                    <th>ת.נכונות</th>
+                    <th>תחילת ביטוח </th>
+                    <th>תום ביטוח</th>
+                    <th>סכום הביטוח</th>
+                    <th>הערות </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="font-weight-bold">טקסט</td>
-                    <td>NOMERIC</td>
+                    <td><input type="checkbox" class="form-control" /></td>
+                    <td class="font-weight-bold">הראל </td>
+                    <td>24133894</td>
+                    <td>מיכאל מן </td>
+                    <td>24133894</td>
+                    <td>ביטוח בריאות </td>
+                    <td>ניתוחים</td>
+                    <td>ניתוחים</td>
+                    <td>1800 ש"ח</td>
+                    <td>150 ש"ח</td>
+                    <td>10.09.2019</td>
+                    <td>10.09.2019</td>
+                    <td>10.09.2019</td>
+                    <td>5,000,000 ש"ח</td>
                     <td>טקסט</td>
-                    <td>NOMERIC</td>
-                    <td>NOMERIC %</td>
-                    <td>NOMERIC %</td>
-                    <td>NOMERIC %</td>
-                    <td>NOMERIC</td>
-                    <td><div class="cs-icon ic-times-outline-red"></div></td>
-                    <td>NOMERIC</td>
                   </tr>
                   <tr>
-                    <td class="font-weight-bold">טקסט</td>
-                    <td>NOMERIC</td>
+                    <td><input type="checkbox" class="form-control" /></td>
+                    <td class="font-weight-bold">הראל </td>
+                    <td>24133894</td>
+                    <td>מיכאל מן </td>
+                    <td>24133894</td>
+                    <td>ביטוח בריאות </td>
+                    <td>ניתוחים</td>
+                    <td>ניתוחים</td>
+                    <td>1800 ש"ח</td>
+                    <td>150 ש"ח</td>
+                    <td>10.09.2019</td>
+                    <td>10.09.2019</td>
+                    <td>10.09.2019</td>
+                    <td>5,000,000 ש"ח</td>
                     <td>טקסט</td>
-                    <td>NOMERIC</td>
-                    <td>NOMERIC %</td>
-                    <td>NOMERIC %</td>
-                    <td>NOMERIC %</td>
-                    <td><div class="cs-icon ic-times-outline-red"></div></td>
-                    <td><div class="cs-icon ic-times-outline-red"></div></td>
-                    <td>NOMERIC</td>
                   </tr>
                   <tr>
-                    <td class="font-weight-bold">טקסט</td>
-                    <td>NOMERIC</td>
+                    <td><input type="checkbox" class="form-control" /></td>
+                    <td class="font-weight-bold">הראל </td>
+                    <td>24133894</td>
+                    <td>מיכאל מן </td>
+                    <td>24133894</td>
+                    <td>ביטוח בריאות </td>
+                    <td>ניתוחים</td>
+                    <td>ניתוחים</td>
+                    <td>1800 ש"ח</td>
+                    <td>150 ש"ח</td>
+                    <td>10.09.2019</td>
+                    <td>10.09.2019</td>
+                    <td>10.09.2019</td>
+                    <td>5,000,000 ש"ח</td>
                     <td>טקסט</td>
-                    <td>NOMERIC</td>
-                    <td>NOMERIC %</td>
-                    <td>NOMERIC %</td>
-                    <td>NOMERIC %</td>
-                    <td><div class="cs-icon ic-checked-outline-green"></div></td>
-                    <td><div class="cs-icon ic-checked-outline-green"></div></td>
-                    <td>NOMERIC</td>
                   </tr>
                 </tbody>
-                <tfoot class="bg-accent">
-                  <tr>
-                    <td colspan="2">היתרה הנוספת הניתנת לניצול</td>
-                    <td>2,474,000 ש"ח</td>
-                    <td>1.24 %</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>6,020.00 ש"ח</td>
-                  </tr>
-                </tfoot>
               </table>
             </div>
           </div>
           
         </div>
       </div>
-      <div class="app-alert warning">
-        <button type="button" class="cs-btn-icon btn-close-transparent close"></button>
-        <span>הערה לגבי חברה מנהלת ב IRA עם דמי הניהול שהיא גובה</span>
-      </div>
+      
     </div>
   </div>
 </div>
