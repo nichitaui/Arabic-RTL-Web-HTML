@@ -11056,6 +11056,10 @@ button:focus {
   left: 0px;
 }
 
+.m-w-100 {
+  max-width: 100% !important;
+}
+
 /* Modal Custom CSS */
 .modal-open .modal {
   background-color: #BFC5D2;
@@ -11962,6 +11966,172 @@ button:focus {
 }
 #newBeneficiaryModal .modal-body .form-group .form-control {
   max-width: 190px;
+}
+
+#newQuestionnaireModal .modal-dialog {
+  width: 100%;
+}
+#newQuestionnaireModal .modal-dialog .modal-content {
+  border: 0;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-header .btn-close {
+  top: 28px;
+  right: 28px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form {
+  text-align: right;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-flex;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step {
+  width: 49px;
+  height: 49px;
+  background-color: #D7DDE9;
+  color: #FFFFFF;
+  margin-left: 6px;
+  border-radius: 50%;
+  padding: 9px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step.active, #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step.done {
+  background-color: #7ABBFC;
+  color: #FFFFFF;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  border-top: solid 17px #7ABBFC;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  margin-top: 30px;
+  background-color: #FFFFFF;
+  padding-bottom: 120px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab {
+  display: none;
+  width: 100%;
+  padding: 30px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab.active {
+  display: block;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab h3 {
+  font-size: 26px;
+  color: #7ABBFC;
+  font-weight: bold;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 .form-group {
+  margin-bottom: 35px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 .form-group.grid-sum-2 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-group {
+  margin-bottom: 48px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-group .form-control {
+  max-width: 100%;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .navigators {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  padding: 30px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .navigators .btn {
+  width: 158px;
+  height: 60px;
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 35px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .navigators .btn.btn-prev {
+  float: right;
+  background-color: #BFC5D2;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .navigators .btn.btn-next {
+  float: left;
+  background-color: #7ABBFC;
+}
+
+#breakdown-of-monthly-expenses .form-group {
+  padding: 0 20px;
+}
+#breakdown-of-monthly-expenses .form-group .form-control {
+  max-width: 100%;
+  width: 100%;
+}
+#breakdown-of-monthly-expenses .col-xl-9 .form-control {
+  height: 50px;
+}
+
+#purpose-horizon-of-investment #purpose-of-investment-table thead,
+#purpose-horizon-of-investment #horizon-of-investment-table thead {
+  max-height: 105px;
+}
+#purpose-horizon-of-investment #purpose-of-investment-table thead tr:first-child th:first-child,
+#purpose-horizon-of-investment #horizon-of-investment-table thead tr:first-child th:first-child {
+  width: 270px;
+  background-color: #FFFFFF;
+}
+#purpose-horizon-of-investment #purpose-of-investment-table thead tr:first-child th:nth-child(2),
+#purpose-horizon-of-investment #horizon-of-investment-table thead tr:first-child th:nth-child(2) {
+  border-top-right-radius: 8px;
+  font-size: 24px;
+}
+#purpose-horizon-of-investment #purpose-of-investment-table thead tr:first-child th:last-child,
+#purpose-horizon-of-investment #horizon-of-investment-table thead tr:first-child th:last-child {
+  width: 335px;
+  border-top-left-radius: 8px;
+  font-size: 24px;
+}
+#purpose-horizon-of-investment #purpose-of-investment-table thead tr th,
+#purpose-horizon-of-investment #horizon-of-investment-table thead tr th {
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #BFC5D2;
+  border: solid 1.5px #FFFFFF;
+  vertical-align: middle;
+  padding: 3px;
+}
+#purpose-horizon-of-investment #purpose-of-investment-table tbody tr td,
+#purpose-horizon-of-investment #horizon-of-investment-table tbody tr td {
+  border: 0;
+  vertical-align: middle;
+}
+#purpose-horizon-of-investment #purpose-of-investment-table tbody tr td:first-child,
+#purpose-horizon-of-investment #horizon-of-investment-table tbody tr td:first-child {
+  text-align: left;
+  vertical-align: middle;
+  font-size: 18px;
+  padding-left: 25px;
+}
+#purpose-horizon-of-investment #horizon-of-investment-table thead th {
+  padding: 10px !important;
+}
+
+.mt-10 {
+  margin-top: 100px !important;
 }
 
 /*# sourceMappingURL=theme.css.map */

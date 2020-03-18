@@ -1239,6 +1239,10 @@ button:focus {
     }
 }
 
+.m-w-100 {
+  max-width: 100% !important;
+}
+
 /* Modal Custom CSS */
 .modal-open {
     .modal {
@@ -2132,4 +2136,194 @@ button:focus {
       }
     }
   }
+}
+
+#newQuestionnaireModal {
+  .modal-dialog {
+    width: 100%;
+    .modal-content {
+      border: 0;
+      .modal-header {
+        .btn-close {
+          top: 28px;
+          right: 28px;
+        }
+      }
+      .modal-body {
+        padding-left: 60px;
+        padding-right: 60px;
+        .multi-step-form {
+          text-align: right;
+          .indicators {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline-flex;
+            .step {
+              width: 49px;
+              height: 49px;
+              background-color: #D7DDE9;
+              color: #FFFFFF;
+              margin-left: 6px;
+              border-radius: 50%;
+              padding: 9px 0;
+              text-align: center;
+              font-size: 20px;
+              font-weight: bold;
+              &.active, &.done {
+                background-color: #7ABBFC;
+                color: #FFFFFF;
+              }
+            }
+          }
+          .tabs {
+            position: relative;
+            width: 100%;
+            min-height: 600px;
+            border-top: solid 17px #7ABBFC;
+            -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
+            box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+            margin-top: 30px;
+            background-color: #FFFFFF;
+            padding-bottom: 120px;
+            .mtab {
+              display: none;
+              width: 100%;
+              padding: 30px;
+              &.active {
+                display: block;
+              }
+              h3 {
+                font-size: 26px;
+                color: #7ABBFC;
+                font-weight: bold;
+              }
+              .grid-5 {
+                display: grid;
+                grid-template-columns: 20% 20% 20% 20% 20%;
+                
+                .form-group {
+                  margin-bottom: 35px;
+                  &.grid-sum-2 {
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                  }
+                }
+              }
+              &#children-dependents-detail {
+                .form-group {
+                  margin-bottom: 48px;
+                  .form-control {
+                    max-width: 100%;
+                  }
+                }
+              }
+            }
+            .navigators {
+              position: absolute;
+              display: block;
+              bottom: 0;
+              width: 100%;
+              padding: 30px;
+              .btn {
+                width: 158px;
+                height: 60px;
+                font-size: 20px;
+                color: #FFFFFF;
+                font-weight: bold;
+                border-radius: 35px;
+                &.btn-prev {
+                  float: right;
+                  background-color: #BFC5D2;
+                }
+                &.btn-next {
+                  float: left;
+                  background-color: #7ABBFC;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    
+  }
+}
+
+#breakdown-of-monthly-expenses {
+  .form-group {
+    padding: 0 20px;
+    .form-control {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  .col-xl-9 {
+    .form-control {
+      height: 50px;
+    }
+  }
+}
+
+#purpose-horizon-of-investment {
+  #purpose-of-investment-table, 
+  #horizon-of-investment-table {
+    thead {
+      max-height: 105px;
+      tr {
+        &:first-child {
+          th {
+            &:first-child {
+              width: 270px;
+              background-color: #FFFFFF;
+            }
+            &:nth-child(2) {
+              border-top-right-radius: 8px;
+              font-size: 24px;
+            }
+            &:last-child {
+              width: 335px;
+              border-top-left-radius: 8px;
+              font-size: 24px;
+            }
+          }
+        }
+        th {
+          text-align: center;
+          color: #FFFFFF;
+          font-size: 18px;
+          font-weight: bold;
+          background-color: #BFC5D2;
+          border: solid 1.5px #FFFFFF;
+          vertical-align: middle;
+          padding: 3px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border: 0;
+          vertical-align: middle;
+          &:first-child {
+            text-align: left;
+            vertical-align: middle;
+            font-size: 18px;
+            padding-left: 25px;
+          }
+        }
+      }
+    }
+  }
+  #horizon-of-investment-table {
+    thead {
+      th {
+        padding: 10px !important;
+      }
+    }
+  }
+}
+
+.mt-10 {
+  margin-top: 100px !important;
 }
