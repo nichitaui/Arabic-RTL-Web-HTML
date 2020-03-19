@@ -10365,46 +10365,46 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .col
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .col-xl-9 .form-control, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-bank-account .col-xl-9 .form-control, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-medical-details .col-xl-9 .form-control {
   max-width: 1054px;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table {
   width: 100%;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table thead tr th {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
   color: #7ABBFC;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table thead tr th:last-child {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th:last-child {
   text-align: left;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table tbody tr {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr {
   border-top: solid 2px #BFC5D2;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table tbody tr td {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td {
   text-align: center;
   font-size: 18px;
   padding: 20px 0;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table tbody tr td:last-child {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td:last-child {
   text-align: left;
   display: inline-flex;
   width: 100% !important;
   justify-content: flex-end;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table tbody tr td .btn-icon {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td .btn-icon {
   width: 55px;
   height: 40px;
   display: inline-block;
   padding: 10px 17px;
   border-right: solid 1px #BFC5D2;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table.relatives-table thead tr th {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table thead tr th {
   width: 14%;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table.relatives-table tbody tr {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table tbody tr {
   border-top: solid 2px #BFC5D2;
 }
-body .main .app .app-body .app-tab .tab-content .tab-pane x .customer-table.relatives-table tbody tr td {
+body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table tbody tr td {
   width: 14%;
 }
 body .main .app .app-body .app-chart {
@@ -11112,6 +11112,9 @@ button:focus {
   height: 50px;
   width: 298px;
   max-width: 298px;
+  background-color: #F9F9F9;
+  border: solid 2px #E9E9E9;
+  border-radius: 10px;
 }
 .modal-open .modal .modal-dialog .modal-content .modal-body .col-xl-9 .form-control {
   max-width: 963px;
@@ -11857,23 +11860,39 @@ button:focus {
   margin: 0 !important;
 }
 
+#nav-list-of-relatives,
+#nav-related-businesses,
 #nav-contacts {
   padding: 0;
 }
+#nav-list-of-relatives .btn-add,
+#nav-related-businesses .btn-add,
+#nav-contacts .btn-add {
+  margin-top: 5px !important;
+  margin-left: 10px !important;
+}
+#nav-list-of-relatives .filter-group,
+#nav-related-businesses .filter-group,
 #nav-contacts .filter-group {
   padding: 10px;
   border-bottom: solid 2px #BFC5D2;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
+#nav-list-of-relatives .filter-group ul,
+#nav-related-businesses .filter-group ul,
 #nav-contacts .filter-group ul {
   display: inline-flex;
   list-style: none;
   margin: 0;
 }
+#nav-list-of-relatives .filter-group ul li,
+#nav-related-businesses .filter-group ul li,
 #nav-contacts .filter-group ul li {
   margin-left: 25px;
 }
+#nav-list-of-relatives .filter-group ul li .form-control,
+#nav-related-businesses .filter-group ul li .form-control,
 #nav-contacts .filter-group ul li .form-control {
   width: 142px;
   height: 50px;
@@ -11883,9 +11902,13 @@ button:focus {
   font-size: 19px;
   color: #485272;
 }
+#nav-list-of-relatives .collapse-container,
+#nav-related-businesses .collapse-container,
 #nav-contacts .collapse-container {
   width: 100%;
 }
+#nav-list-of-relatives .collapse-container .collapse-item .collapse-header,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header,
 #nav-contacts .collapse-container .collapse-item .collapse-header {
   position: relative;
   display: flex;
@@ -11897,6 +11920,8 @@ button:focus {
   padding: 12px 15px;
   margin-bottom: 2px;
 }
+#nav-list-of-relatives .collapse-container .collapse-item .collapse-header ul,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header ul,
 #nav-contacts .collapse-container .collapse-item .collapse-header ul {
   display: inline-flex;
   margin: 0;
@@ -11904,29 +11929,45 @@ button:focus {
   list-style: none;
   padding-right: 30px;
 }
+#nav-list-of-relatives .collapse-container .collapse-item .collapse-header ul li,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header ul li,
 #nav-contacts .collapse-container .collapse-item .collapse-header ul li {
   width: 142px;
   padding: 10px 0;
   margin-left: 25px;
 }
+#nav-list-of-relatives .collapse-container .collapse-item .collapse-header a,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header a,
 #nav-contacts .collapse-container .collapse-item .collapse-header a {
   padding: 13px 10px 13px 0px;
 }
+#nav-list-of-relatives .collapse-container .collapse-item .collapse-header a .cs-icon,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header a .cs-icon,
 #nav-contacts .collapse-container .collapse-item .collapse-header a .cs-icon {
   width: 15px;
   height: 15px;
 }
+#nav-list-of-relatives .collapse-container .collapse-item .collapse-header a .cs-icon.ic-collapse-pm,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header a .cs-icon.ic-collapse-pm,
 #nav-contacts .collapse-container .collapse-item .collapse-header a .cs-icon.ic-collapse-pm {
   background-image: url(../img/icons/ic_minus_blue.png);
 }
+#nav-list-of-relatives .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon,
 #nav-contacts .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon {
   width: 15px;
   height: 15px;
 }
+#nav-list-of-relatives .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon.ic-collapse-pm,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon.ic-collapse-pm,
 #nav-contacts .collapse-container .collapse-item .collapse-header a.collapsed .cs-icon.ic-collapse-pm {
   background-image: url(../img/icons/ic_plus_blue.png);
 }
-#nav-contacts .collapse-container .collapse-item .collapse-header a.btn-view, #nav-contacts .collapse-container .collapse-item .collapse-header a.btn-delete {
+#nav-list-of-relatives .collapse-container .collapse-item .collapse-header a.btn-view, #nav-list-of-relatives .collapse-container .collapse-item .collapse-header a.btn-delete,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header a.btn-view,
+#nav-related-businesses .collapse-container .collapse-item .collapse-header a.btn-delete,
+#nav-contacts .collapse-container .collapse-item .collapse-header a.btn-view,
+#nav-contacts .collapse-container .collapse-item .collapse-header a.btn-delete {
   position: relative;
   display: block;
   float: left;
@@ -11936,7 +11977,11 @@ button:focus {
   text-align: center;
   border-right: solid 1px #BFC5D2;
 }
-#nav-contacts .collapse-container .collapse-item .collapse, #nav-contacts .collapse-container .collapse-item .collapsing {
+#nav-list-of-relatives .collapse-container .collapse-item .collapse, #nav-list-of-relatives .collapse-container .collapse-item .collapsing,
+#nav-related-businesses .collapse-container .collapse-item .collapse,
+#nav-related-businesses .collapse-container .collapse-item .collapsing,
+#nav-contacts .collapse-container .collapse-item .collapse,
+#nav-contacts .collapse-container .collapse-item .collapsing {
   max-height: 184px;
   overflow: auto;
   padding: 25px 70px;
@@ -12030,6 +12075,10 @@ button:focus {
   font-size: 26px;
   color: #7ABBFC;
   font-weight: bold;
+  padding-right: 15px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab h5 {
+  padding-right: 15px;
 }
 #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 {
   display: grid;
@@ -12132,6 +12181,130 @@ button:focus {
 
 .mt-10 {
   margin-top: 100px !important;
+}
+
+/* radio input customize */
+.cs-radio-container {
+  position: relative;
+  display: inline-flex;
+  padding-right: 25px;
+  line-height: 30px;
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-size: 18px;
+}
+.cs-radio-container [type=radio] {
+  opacity: 0;
+}
+.cs-radio-container .checkmark {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 3px #7FC4FD;
+  right: 0;
+}
+.cs-radio-container .checkmark::after {
+  content: "";
+  position: relative;
+  display: none;
+  width: 14px;
+  height: 14px;
+  top: 5px;
+  right: 5px;
+  border-radius: 50%;
+  background-color: #2699FB;
+}
+.cs-radio-container [type=radio]:checked ~ .checkmark::after {
+  display: block;
+}
+
+.text-dark {
+  color: #485272 !important;
+}
+
+.text-black {
+  color: #000000 !important;
+}
+
+/* checkbox input customize */
+.cs-checkbox-container {
+  position: relative;
+  display: inline-flex;
+  padding-right: 25px;
+  line-height: 30px;
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-size: 18px;
+}
+.cs-checkbox-container [type=checkbox] {
+  opacity: 0;
+}
+.cs-checkbox-container .checkmark {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: solid 2px #78849E;
+  background-color: #FFFFFF;
+  right: 0;
+}
+.cs-checkbox-container .checkmark::after {
+  content: "";
+  position: relative;
+  right: 8px;
+  top: 4px;
+  width: 10px;
+  height: 15px;
+  border: solid #3B86FF;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: none;
+}
+.cs-checkbox-container [type=checkbox]:checked ~ .checkmark::after {
+  display: block;
+}
+
+.thead-dark {
+  background-color: #BFC5D2;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+.thead-dark tr th {
+  color: #FFFFFF !important;
+  background-color: #BFC5D2 !important;
+  border: 0;
+}
+.thead-dark tr th:first-child {
+  border-top-right-radius: 8px;
+}
+.thead-dark tr th:last-child {
+  border-top-left-radius: 8px;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 175px;
+  background-color: #F9F9F9;
+  border: solid 2px #E9E9E9;
+  border-radius: 8px;
+}
+
+.text-dark {
+  color: #485272 !important;
+}
+
+.text-black {
+  color: #000000 !important;
+}
+
+.text-primary {
+  color: #7ABBFC !important;
 }
 
 /*# sourceMappingURL=theme.css.map */

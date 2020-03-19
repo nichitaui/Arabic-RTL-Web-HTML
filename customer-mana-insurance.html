@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" href="assets/bootstrap-4.3.1-dist/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/theme/theme.css">
   <!-- plugins css -->
   <link rel="stylesheet" type="text/css" href="assets/plugins/DataTables/datatables.css"/>
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
   <script src="assets/jquery/jquery.min.js"></script>
   <script src="assets/plugins/popper/popper.min.js"></script>
@@ -266,9 +266,9 @@
     </div>
     <div class="app-body">
       <div class="w-100 text-left pl-2">
-        <a class="cs-btn-icon btn-exit" href="javascript:avoid(0)"></a>
-        <a class="cs-btn-icon btn-xls" href="javascript:avoid(0)"></a>
-        <a class="cs-btn-icon btn-print" href="javascript:avoid(0)"></a>
+        <a class="cs-btn-icon btn-exit" href="javascript:void(0)"></a>
+        <a class="cs-btn-icon btn-xls" href="javascript:void(0)"></a>
+        <a class="cs-btn-icon btn-print" href="javascript:void(0)"></a>
       </div>
       <div class="app-tab">
         <nav>
@@ -648,7 +648,7 @@
               <a class="cs-btn-icon btn-add m-0" href="javascript:void(0)"></a>
             </div>
             <div class="mtab" id="revenue-breakdown">
-              <h3 class="mb-5">פירוט הכנסות</h3>
+              <h3 class="mb-4">פירוט הכנסות</h3>
               <div class="grid-5">
                 <div class="form-group">
                   <label>משכורת</label>
@@ -695,27 +695,36 @@
                 </div>
               </div>
 
-              <h3 class="my-5">צפי לשינוי בהכנסות בשנים הקרובות:</h3>
+              <h3 class="mt-5 mb-4 text-dark">צפי לשינוי בהכנסות בשנים הקרובות:</h3>
               <div class="grid-5">
                 <div class="form-group grid-sum-2">
                   <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <input type="checkbox" class="form-control" />
-                      <label>12</label>
+                      <label class="cs-radio-container text-black font-weight-light">
+                        <input type="radio" name="expected_revenue" >
+                        <span class="checkmark"></span>
+                        אין צפי לשינוי
+                      </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <input type="checkbox" class="form-control" />
-                      <label>12</label>
+                      <label class="cs-radio-container text-black font-weight-light">
+                        <input type="radio" checked="checked" name="expected_revenue" >
+                        <span class="checkmark"></span>
+                        יש צפי לעלייה
+                      </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <input type="checkbox" class="form-control" />
-                      <label>12</label>
+                      <label class="cs-radio-container text-black font-weight-light">
+                        <input type="radio" name="expected_revenue" >
+                        <span class="checkmark"></span>
+                        יש צפי לירידה
+                      </label>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <label>מועד השינוי</label>
-                  <input type="text" class="form-control" placeholder="TEXT" />
+                  <input id="datepicker1" class="form-control" />
                 </div>
                 <div class="form-group">
                   <label>?מהו המסכום</label>
@@ -758,14 +767,17 @@
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
                   <div class="form-group">
                     <label>ממוצע חודשי</label>
-                    <input type="text" class="form-control" placeholder="NUM" />
+                    <input id="datepicker2" class="form-control" />
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                   <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <input type="checkbox" />
-                      <label>אחר</label>
+                      <label class="cs-checkbox-container mr-4">
+                        <input type="checkbox" checked="checked" />
+                        <span class="checkmark"></span>
+                        אחר
+                      </label>
                     </div>
                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
                       <div class="form-group">
@@ -777,32 +789,35 @@
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
                   <div class="form-group">
-                    <label>החזר חודשי</label>
+                    <label>:סה"כ</label>
                     <input type="text" class="form-control" placeholder="NUM" />
                   </div>
                 </div>
               </div>
-              <h3 class="mb-5">:צפי לשינוי בהכנסות בשנים הקרובות</h3>
+              <h3 class="mt-5 mb-4 text-dark">:צפי לשינוי בהכנסות בשנים הקרובות</h3>
               <div class="grid-5">
                 <div class="form-group grid-sum-2">
                   <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <div class="form-group">
-                        <input type="checkbox" />
-                        <label>אין צפי לשינוי</label>
-                      </div>
+                      <label class="cs-radio-container text-black font-weight-light">
+                        <input type="radio" name="radio41" >
+                        <span class="checkmark"></span>
+                        אין צפי לשינוי
+                      </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <div class="form-group">
-                        <input type="checkbox" />
-                        <label>אין צפי לשינוי</label>
-                      </div>
+                      <label class="cs-radio-container text-black font-weight-light">
+                        <input type="radio" name="radio41" >
+                        <span class="checkmark"></span>
+                        יש צפי לעלייה
+                      </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <div class="form-group">
-                        <input type="checkbox" />
-                        <label>אין צפי לשינוי</label>
-                      </div>
+                      <label class="cs-radio-container text-black font-weight-light">
+                        <input type="radio" name="radio41" >
+                        <span class="checkmark"></span>
+                        יש צפי לירידה
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -811,35 +826,38 @@
                   <input type="text" class="form-control" placeholder="NUM" />
                 </div>
                 <div class="form-group">
-                  <label>מה סכום השינוי הצפוי</label>
+                  <label>?מועד השינוי  הצפוי</label>
                   <input type="text" class="form-control" placeholder="NUM" />
                 </div>
                 <div class="form-group">
-                  <label>מה סכום השינוי הצפוי</label>
+                  <label style="margin-top: -27px;">עודף / גרעון השוואת הכנסות מול הוצאות ברמה חודשית </label>
                   <input type="text" class="form-control" placeholder="NUM" />
                 </div>
               </div>
-              <h3 class="mb-5">:צפי למצבך הכלכלי בעוד 5  שנים</h3>
+              <h3 class="mt-5 mb-4 text-dark">:צפי למצבך הכלכלי בעוד 5  שנים</h3>
               <div class="grid-5 mb-5">
                 <div class="form-group grid-sum-2">
                   <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <div class="form-group">
-                        <input type="checkbox" />
-                        <label>אין צפי לשינוי</label>
-                      </div>
+                      <label class="cs-radio-container text-black font-weight-light mt-0">
+                        <input type="radio" name="radio42" >
+                        <span class="checkmark"></span>
+                        יותר טוב
+                      </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <div class="form-group">
-                        <input type="checkbox" />
-                        <label>אין צפי לשינוי</label>
-                      </div>
+                      <label class="cs-radio-container text-black font-weight-light mt-0">
+                        <input type="radio" name="radio42" >
+                        <span class="checkmark"></span>
+                        דומה
+                      </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <div class="form-group">
-                        <input type="checkbox" />
-                        <label>אין צפי לשינוי</label>
-                      </div>
+                      <label class="cs-radio-container text-black font-weight-light mt-0">
+                        <input type="radio" name="radio42" >
+                        <span class="checkmark"></span>
+                        פחות טוב
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -848,35 +866,50 @@
             <div class="mtab" id="retirement-planning">
               <h3 class="mb-5">תכנון פרישה</h3>
               <h5 class="text-primary mb-3">:מתכנן לפרוש לפנסיה בתוך כמה שנים</h5>
-              <div class="row">
+              <div class="row m-0">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                  <div class="row grid-5">
+                  <div class="row m-0 grid-5">
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>לאחר פרישה</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        לאחר פרישה
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>1-4</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        1-4
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>5-9</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        5-9
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>10-20</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        10-20
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>למעלה מ-20 שנה</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        למעלה מ-20 שנה
+                      </label>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="mtab" id="purpose-horizon-of-investment">
-              <h3 class="mb-4">מטרת ואופק ההשקעה</h3>
+              <h3 class="mb-5">מטרת ואופק ההשקעה</h3>
               <p>.מבין המוצרים הבאים, אנא התייחס למוצרים הרלוונטיים לך ובחר לכל אחד מהם את מטרת ההשעה וטווח ההשקעה. בנוסף, ציין ליד כל אחד מהמוצרים הרלוונטיים את הצבירה המשוערת</p>
               <table class="table" id="purpose-of-investment-table">
                 <thead>
@@ -1079,206 +1112,258 @@
               </table>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">היכרות והבנה של שוק ההון</h3>
-              <h5>:תאר את מידת הכרותך את שוק ההון</h5>
-              <div class="row">
+              <h3 class="mb-5">היכרות והבנה של שוק ההון</h3>
+              <h5 class="text-dark mb-4">:תאר את מידת הכרותך את שוק ההון</h5>
+              <div class="row m-0">
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
                   <div class="grid-5">
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>לא מכיר</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        לא מכיר
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>ידע כלילי בכלל</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        ידע כלילי בכלל
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>שליטה בינונית</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        שליטה בינונית
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>שליטה טובה</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        שליטה טובה
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>שליטה מלאה</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        שליטה מלאה
+                      </label>
                     </div>
                   </div>
                 </div>
               </div>
-              <h5>:תדירות המעקב אחר ביצועי ההשקעות הפיננסיות שלך</h5>
-              <div class="row">
+              <h5 class="text-dark mb-4">:תדירות המעקב אחר ביצועי ההשקעות הפיננסיות שלך</h5>
+              <div class="row m-0">
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
                   <div class="grid-5">
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>מעקב יומי</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        מעקב יומי
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>מעקב שבועי</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>מעקב שבועי
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>מעקב חודשי</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>מעקב חודשי
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>מעקב רבעוני</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>מעקב רבעוני
+                      </label>
                     </div>
                     <div class="form-group">
-                      <input type="checkbox" />
-                      <label>לא עוקב כלל</label>
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>לא עוקב כלל
+                      </label>
                     </div>
                   </div>
                 </div>
               </div>
-              <h5>?האם להערכתך, אתה מבין את השוני שבין השקעה במניות, באג"ח קונצרניות ובאג"ח ממשלתיות</h5>
-              <div class="row">
+              <h5 class="text-dark mb-4">?האם להערכתך, אתה מבין את השוני שבין השקעה במניות, באג"ח קונצרניות ובאג"ח ממשלתיות</h5>
+              <div class="row m-0">
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
                   <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                       <div class="form-group">
-                        <input type="checkbox" />
-                        <label>לא מבין כלל את השוני</label>
+                        <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                          <input type="checkbox" />
+                          <span class="checkmark"></span>לא מבין כלל את השוני
+                        </label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                       <div class="form-group">
-                        <input type="checkbox" />
-                        <label>מבין במידה מועטה</label>
+                        <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                          <input type="checkbox" />
+                          <span class="checkmark"></span>מבין במידה מועטה
+                        </label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                       <div class="form-group">
-                        <input type="checkbox" />
-                        <label> מבין במידה בינונית </label>
+                        <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                          <input type="checkbox" />
+                          <span class="checkmark"></span> מבין במידה בינונית 
+                        </label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                       <div class="form-group">
-                        <input type="checkbox" />
-                        <label>מבין היטב</label>
+                        <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                          <input type="checkbox" />
+                          <span class="checkmark"></span>מבין היטב
+                        </label>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <h5>?האם אתה מבין שסיכון פירושו גם אפשרות של הפסד חלק מקרן ההשקעה</h5>
-              <div class="row">
+              <h5 class="text-dark mb-4">?האם אתה מבין שסיכון פירושו גם אפשרות של הפסד חלק מקרן ההשקעה</h5>
+              <div class="row m-0">
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
                   <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                       <div class="form-group">
-                        <input type="radio" />
-                        <label>מבין</label>
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio81" />
+                          <span class="checkmark"></span>מבין
+                        </label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                       <div class="form-group">
-                        <input type="radio" />
-                        <label>לא מבין</label>
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio81" />
+                          <span class="checkmark"></span>לא מבין
+                        </label>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <h5>?באיזה אופן היית מעריך את יכולתך לנהל את השקעותיך באופן עצמאי</h5>
-              <div class="row">
+              <h5 class="text-dark mb-4">?באיזה אופן היית מעריך את יכולתך לנהל את השקעותיך באופן עצמאי</h5>
+              <div class="row m-0">
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
                   <div class="row">
-                      <div class="form-group">
-                        <input type="checkbox" />
-                        <label>אין לי את הידע הדרוש לניהול עצמאי של השקעותיי</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                          <input type="checkbox" />
+                          <span class="checkmark"></span>
+                          אין לי את הידע הדרוש לניהול עצמאי של השקעותיי</label>
                       </div>
                   </div>
                   <div class="row">
-                    <div class="form-group">
-                      <input type="checkbox" />
-                      <label>ש לי את היכולת לנהל את השקעותיי, אך באופן פחות טוב מאשר מנהל השקעות</label>
+                    <div class="form-group mb-3">
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        ש לי את היכולת לנהל את השקעותיי, אך באופן פחות טוב מאשר מנהל השקעות</label>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="form-group">
-                      <input type="checkbox" />
-                      <label>אני מנהל כרגע חלק מהשקעותיי באופן עצמאי </label>
+                    <div class="form-group mb-3">
+                      <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        אני מנהל כרגע חלק מהשקעותיי באופן עצמאי </label>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">היכרות והבנה של השקעות נדל"ן</h3>
-              <h5 class="mb-3">השקעה בנדל"ן מניב הינה השקעה שמוסיפה איזון לתיק ההשקעות הכולל, מסייעת ליציבות התיק בתקופות של ירידות שערים בבורסה , מייצרת תזרים רבעוני ולאורך זמן משפרת את התשואה הכוללת בתיק
+              <h3 class="mb-5">היכרות והבנה של השקעות נדל"ן</h3>
+              <h5 class="mb-4 text-dark">השקעה בנדל"ן מניב הינה השקעה שמוסיפה איזון לתיק ההשקעות הכולל, מסייעת ליציבות התיק בתקופות של ירידות שערים בבורסה , מייצרת תזרים רבעוני ולאורך זמן משפרת את התשואה הכוללת בתיק
                 ?מה יחסך להשקעת נדל"ן מניב</h5>
-              <div class="row">
+              <div class="row m-0">
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12">
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                      <label>:האם ביצעת בעבר השקעות נדל"ן </label>
+                      <label class="align-middle m-0">:האם ביצעת בעבר השקעות נדל"ן </label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio91" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                      <label>:האם אתה מבין שהשקעות נדל"ן היא השקעה לטווח בינוני / ארוך</label>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>מבין</label>
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא מבין</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio91" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                      <label>:האם אתה מבין שהשקעת נדל"ן היא אלטרנטיבה להשקעה בשוק ההון</label>
+                      <label class="align-middle m-0">:האם אתה מבין שהשקעות נדל"ן היא השקעה לטווח בינוני / ארוך</label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>מבין</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio92" />
+                          <span class="checkmark"></span>מבין</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא מבין</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio92" />
+                          <span class="checkmark"></span>לא מבין</label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                      <label>:האם אתה מעוניין בהשקעות מניבות</label>
+                      <label class="align-middle m-0">:האם אתה מבין שהשקעת נדל"ן היא אלטרנטיבה להשקעה בשוק ההון</label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio93" />
+                          <span class="checkmark"></span>מבין</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio93" />
+                          <span class="checkmark"></span>לא מבין</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                      <label class="align-middle m-0">:האם אתה מעוניין בהשקעות מניבות</label>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio94" />
+                          <span class="checkmark"></span>כן</label>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio94" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1286,25 +1371,27 @@
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">היכרות והבנה עם השקעות אלטרנטיביות נוספות</h3>
-              <h5 class="mb-3">השקעה בנדל"ן מניב הינה השקעה שמוסיפה איזון לתיק ההשקעות הכולל, מסייעת ליציבות התיק בתקופות של ירידות שערים בבורסה , מייצרת תזרים רבעוני ולאורך זמן משפרת את התשואה הכוללת בתיק
+              <h3 class="mb-5">היכרות והבנה עם השקעות אלטרנטיביות נוספות</h3>
+              <h5 class="mb-4">השקעה בנדל"ן מניב הינה השקעה שמוסיפה איזון לתיק ההשקעות הכולל, מסייעת ליציבות התיק בתקופות של ירידות שערים בבורסה , מייצרת תזרים רבעוני ולאורך זמן משפרת את התשואה הכוללת בתיק
                 ?מה יחסך להשקעת נדל"ן מניב</h5>
-              <div class="row">
+              <div class="row m-0">
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12">
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                       <label>:האם אתה מכיר את המושג קרן גידור </label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio101" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio101" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1313,15 +1400,17 @@
                       <label>:האם אתה מכיר את המושג קרןP2P </label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio102" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio102" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1330,15 +1419,17 @@
                       <label>:האם אתה מכיר את המושג קרן חוב </label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio103" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio103" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1347,15 +1438,17 @@
                       <label>:האם אתה מכיר את המושג קרן ריט </label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio104" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio104" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1364,15 +1457,17 @@
                       <label>:האם המושג "מתאם לשוק ההון " מובן לך</label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio105" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio105" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1380,24 +1475,26 @@
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">יחס למינוף התיק</h3>
-              <h5 class="mb-3">שימוש במינוף נכון עשוי לשפר משמעותית את התשואה על ההון העצמי</h5>
-              <div class="row">
+              <h3 class="mb-5">יחס למינוף התיק</h3>
+              <h5 class="mb-4">שימוש במינוף נכון עשוי לשפר משמעותית את התשואה על ההון העצמי</h5>
+              <div class="row m-0">
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12">
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                       <label>:האם אתה מבין את משמעות המינוף </label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio111" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio111" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1407,14 +1504,16 @@
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                       <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio112" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                       <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio112" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1422,23 +1521,25 @@
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">עולמות האלפא</h3>
-              <div class="row">
+              <h3 class="mb-5">עולמות האלפא</h3>
+              <div class="row m-0">
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12">
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                       <label>:האם אתה מכיר את המושג אלפא </label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio121" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio121" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1447,15 +1548,17 @@
                       <label>:האם אתה מבין את המשמעות של מנהל אלפא</label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio122" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio122" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1463,23 +1566,25 @@
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">דמי ניהול / ביצוע</h3>
-              <div class="row">
+              <h3 class="mb-5">דמי ניהול / ביצוע</h3>
+              <div class="row m-0">
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12">
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                       <label>:למה אתה מייחס חשיבות גבוהה יותר </label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>דמי ניהול</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio122" />
+                          <span class="checkmark"></span>דמי ניהול</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>ביצועים</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio122" />
+                          <span class="checkmark"></span>ביצועים</label>
                       </div>
                     </div>
                   </div>
@@ -1488,15 +1593,17 @@
                       <label>?האם אתה מבין שמנהל אלפא יבקש דמי ניהול גבוהים יותר ממנהל בינוני</label>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>כן</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" name="radio122" />
+                          <span class="checkmark"></span>כן</label>
                       </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-                      <div class="form-group">
-                        <input type="radio" />
-                        <label>לא</label>
+                      <div class="form-group mb-3">
+                        <label class="cs-radio-container text-black font-weight-light mt-0">
+                          <input type="radio" checked="checked" name="radio122" />
+                          <span class="checkmark"></span>לא</label>
                       </div>
                     </div>
                   </div>
@@ -1504,249 +1611,323 @@
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">?כיצד היית מגדיר את יחסך לסיכון כללי בהשקעות פיננסיות</h3>
-              <h5 class="mb-4">:אנא בחר בתשובה אשר מתארת את העדפותיך באופן המדוייק ביותר </h5>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>1 .אינני מסוגל לספוג כל הפסד, גם בטווח הקצר </label>
+              <h3 class="mb-5">?כיצד היית מגדיר את יחסך לסיכון כללי בהשקעות פיננסיות</h3>
+              <h5 class="mb-4 text-dark">:אנא בחר בתשובה אשר מתארת את העדפותיך באופן המדוייק ביותר </h5>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    1 .אינני מסוגל לספוג כל הפסד, גם בטווח הקצר </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>2 .אני מוכן להיחסף לסיכון סביר, שלא יוביל להפסד ניכר </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    2 .אני מוכן להיחסף לסיכון סביר, שלא יוביל להפסד ניכר </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>3 ,אני מוכן להיחשף לסיכון בינוני תוך ידיעה שיתכן הפסד ניכר בטווח הקצר 
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    3 ,אני מוכן להיחשף לסיכון בינוני תוך ידיעה שיתכן הפסד ניכר בטווח הקצר 
                     .אך עם זאת מגלם פוטנציאל לתשואה  משמעותית מעל ריבית חסרת סיכון בטווח הארוך </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>4 .אני מוכן להיחשף לסיכון גבוה ואני מודע לכך שסיכון גבוה כרוך באפשרות של הפסד גבוה בטווח הקצר </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    4 .אני מוכן להיחשף לסיכון גבוה ואני מודע לכך שסיכון גבוה כרוך באפשרות של הפסד גבוה בטווח הקצר </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>5 .אני מוכן לקחת סיכון גבוה מאוד, למען הסיכוי לקבל תשואה גבוהה מאוד בטווח הארוך </label>
-                </div>
-              </div>
-            </div>
-            <div class="mtab">
-              <h3 class="mb-4">במידה והייתה ירידה בשווקים שהייתה מסתכמת בירידה של 10% בערך המוצר הפיננסי שלך </h3>
-              <h5 class="mb-4">?לדוגמה - במוצר בשווי של 1 מיליון ש"ח היה הפסד של100  אלף ש"ח), איך היית מגיב </h5>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>1 .הייתי מבקש למכור/ לשנות מסלול השקעה </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>2 .הייתי שוקל להקטין את מרכיב המניות </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>3 .למרות ההפסדים הייתי ממשיך להתמיד במדיניות ההשקעה שבה בחרתי </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>4 .הייתי שוקל להגדיל את מרכיב המניות, לצורך ניצול הזדמנויות </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>5 .הייתי מגדיל את רכיב המניות </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    5 .אני מוכן לקחת סיכון גבוה מאוד, למען הסיכוי לקבל תשואה גבוהה מאוד בטווח הארוך </label>
                 </div>
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">?כיצד ניתן לתאר בצורה הטובה ביותר את הרכב הנכסים הפיננסיים שלך לאורך זמן </h3>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>1 .בעיקר פקדונות ואג"ח ממשלתי </label>
+              <h3 class="mb-5">במידה והייתה ירידה בשווקים שהייתה מסתכמת בירידה של 10% בערך המוצר הפיננסי שלך </h3>
+              <h5 class="mb-4 text-dark">?לדוגמה - במוצר בשווי של 1 מיליון ש"ח היה הפסד של100  אלף ש"ח), איך היית מגיב </h5>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    1 .הייתי מבקש למכור/ לשנות מסלול השקעה </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>2 .בעיקר אג"ח ומעט מניות </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    2 .הייתי שוקל להקטין את מרכיב המניות </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>3 .בעיקר אג"ח חברות ו/או ממשלתי בשילוב מניות במינון לא גבוה </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    3 .למרות ההפסדים הייתי ממשיך להתמיד במדיניות ההשקעה שבה בחרתי </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>4 .בעיקר אג"ח חברות בשילוב מניות במינון גבוה </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    4 .הייתי שוקל להגדיל את מרכיב המניות, לצורך ניצול הזדמנויות </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>5 .בעיקר מניות </label>
-                </div>
-              </div>
-            </div>
-            <div class="mtab">
-              <h3 class="mb-4">?פיזור גלובלי של ההשקעות, כלומר השקעה של חלק מהנכסים בחו"ל, יוצר גיוון ומפחית תנודתיות וסיכון. מהי עמדתך לגבי פיזור גלובלי של השקעותיך </h3>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>1 .אני מבין את החשיבות של פיזור גלובלי אך אינני מעוניין להשקיע נכסיי בחו"ל </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>2 .אני מבין את החשיבות של פיזור גלובלי ואני מוכן להשקיע עד 25% מנכסיי בחו"ל </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>3 .אני מבין את החשיבות של פיזור גלובלי ואני מוכן להשקיע-40%   25%מנכסיי בחו"ל </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>4 .אני מבין את החשיבות של פיזור גלובלי ואני מוכן להשקיע-60%   40%מנכסיי בחו"ל </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>5 .אני מבין את החשיבות של פיזור גלובלי ואני מוכן להשקיע את רוב נכסיי בחו"ל </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    5 .הייתי מגדיל את רכיב המניות </label>
                 </div>
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">?מבין האפשרויות הבאות, מה רמת הסיכון המועדפת עליך </h3>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>1 .שמרנית - מדיניות השקעה ללא חשיפה למניות ולאגרות חוב קונצרניות </label>
+              <h3 class="mb-5">?כיצד ניתן לתאר בצורה הטובה ביותר את הרכב הנכסים הפיננסיים שלך לאורך זמן </h3>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    1 .בעיקר פקדונות ואג"ח ממשלתי </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>2 .נמוכה - עד15%  נכסים מסוכנים (מניות + אג"ח לא מדורג) </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    2 .בעיקר אג"ח ומעט מניות </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>3 .מאוזנת - 15%-30% נכסים מסוכנים </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    3 .בעיקר אג"ח חברות ו/או ממשלתי בשילוב מניות במינון לא גבוה </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>4 .בינונית - 30%-50% נכסים מסוכנים </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    4 .בעיקר אג"ח חברות בשילוב מניות במינון גבוה </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>5 .גבוהה - 50%-75% נכסים מסוכנים </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>6 .גבוהה מאוד - לפחות 75% נכסים מסוכנים </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    5 .בעיקר מניות </label>
                 </div>
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">מדד מרכזי לבחינת סיכון בהשקעה הוא תנודתיות המכשירים הפיננסיים בהם משקיעים. בדר"כ, מכשירים שצפויים להניב את התשואה הגבוהה ביותר בטווח 
+              <h3 class="mb-5">?פיזור גלובלי של ההשקעות, כלומר השקעה של חלק מהנכסים בחו"ל, יוצר גיוון ומפחית תנודתיות וסיכון. מהי עמדתך לגבי פיזור גלובלי של השקעותיך </h3>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    1 .אני מבין את החשיבות של פיזור גלובלי אך אינני מעוניין להשקיע נכסיי בחו"ל </label>
+                </div>
+              </div>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    2 .אני מבין את החשיבות של פיזור גלובלי ואני מוכן להשקיע עד 25% מנכסיי בחו"ל </label>
+                </div>
+              </div>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    3 .אני מבין את החשיבות של פיזור גלובלי ואני מוכן להשקיע-40%   25%מנכסיי בחו"ל </label>
+                </div>
+              </div>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    4 .אני מבין את החשיבות של פיזור גלובלי ואני מוכן להשקיע-60%   40%מנכסיי בחו"ל </label>
+                </div>
+              </div>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    5 .אני מבין את החשיבות של פיזור גלובלי ואני מוכן להשקיע את רוב נכסיי בחו"ל </label>
+                </div>
+              </div>
+            </div>
+            <div class="mtab">
+              <h3 class="mb-5">?מבין האפשרויות הבאות, מה רמת הסיכון המועדפת עליך </h3>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    1 .שמרנית - מדיניות השקעה ללא חשיפה למניות ולאגרות חוב קונצרניות </label>
+                </div>
+              </div>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    2 .נמוכה - עד15%  נכסים מסוכנים (מניות + אג"ח לא מדורג) </label>
+                </div>
+              </div>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    3 .מאוזנת - 15%-30% נכסים מסוכנים </label>
+                </div>
+              </div>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    4 .בינונית - 30%-50% נכסים מסוכנים </label>
+                </div>
+              </div>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    5 .גבוהה - 50%-75% נכסים מסוכנים </label>
+                </div>
+              </div>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    6 .גבוהה מאוד - לפחות 75% נכסים מסוכנים </label>
+                </div>
+              </div>
+            </div>
+            <div class="mtab">
+              <h3 class="mb-5">מדד מרכזי לבחינת סיכון בהשקעה הוא תנודתיות המכשירים הפיננסיים בהם משקיעים. בדר"כ, מכשירים שצפויים להניב את התשואה הגבוהה ביותר בטווח 
                 ?הארוך, מאופיינים גם בתנודתיות בוהה יותר, כלומר, ערכם יכול לרדת יותר בטווח הקצר. כשמדובר בהשקעותיך, עד כמה תנודתות מהווה שיקול בעיניך </h3>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>1 .אני מייחס חשיבות רבה לתנודתיות ולכן אינני מעוניין להשקיע כלל במוצריםבעלי תנודתיות גבוהה על מנת לא לספוג אף הפסד בטווח הקצר </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    1 .אני מייחס חשיבות רבה לתנודתיות ולכן אינני מעוניין להשקיע כלל במוצריםבעלי תנודתיות גבוהה על מנת לא לספוג אף הפסד בטווח הקצר </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>2 .אני מייחס חשיבות רבה לתנודתיות ולכן אשקיע במכשירים בעלי תנודתיות גבוהה רק חלק קטן מנכסיי </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    2 .אני מייחס חשיבות רבה לתנודתיות ולכן אשקיע במכשירים בעלי תנודתיות גבוהה רק חלק קטן מנכסיי </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>3 .אינני מייחס חשיבות רבה לתנודתיות ולכן אשקיע חלק ניכר מנכסיי במכשירים בעלי תנודתיות גבוהה </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    3 .אינני מייחס חשיבות רבה לתנודתיות ולכן אשקיע חלק ניכר מנכסיי במכשירים בעלי תנודתיות גבוהה </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>4 .אינני מייחס חשיבות רבה לתנודתיות ולכן אשקיע חלק ניכר רוב נכסיי במכשירים בעלי תנודתיות גבוהה </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    4 .אינני מייחס חשיבות רבה לתנודתיות ולכן אשקיע חלק ניכר רוב נכסיי במכשירים בעלי תנודתיות גבוהה </label>
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group">
-                  <input type="checkbox" />
-                  <label>5 .אני מוכן להסתכן ולהשקיע את רוב נכסיי במוצרים בעלי תנודתיות גבוהה, בשביל הסיכוי לתשואה גבוהה יותר </label>
+              <div class="row m-0">
+                <div class="form-group mb-3">
+                  <label class="cs-checkbox-container text-black font-weight-light mt-0">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    5 .אני מוכן להסתכן ולהשקיע את רוב נכסיי במוצרים בעלי תנודתיות גבוהה, בשביל הסיכוי לתשואה גבוהה יותר </label>
                 </div>
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">?כיצד היית מגדיר את יחסך לסיכון כללי בהשקעות פיננסיות</h3>
-              <div class="row">
+              <h3 class="mb-5">?כיצד היית מגדיר את יחסך לסיכון כללי בהשקעות פיננסיות</h3>
+              <div class="row m-0">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                  <div class="row">
+                  <div class="row mb-3">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <input type="radio" />
-                      <label>1. 0% - 5% </label>
+                      <label class="cs-radio-container text-black font-weight-light mt-0">
+                        <input type="radio" name="radio20" />
+                        <span class="checkmark"></span>
+                        1. 0% - 5% </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <input type="radio" />
-                      <label>3. 10% - 20% </label>
+                      <label class="cs-radio-container text-black font-weight-light mt-0">
+                        <input type="radio" name="radio20" />
+                        <span class="checkmark"></span>
+                        3. 10% - 20% </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <input type="radio" />
-                      <label>5. 20% - 50% </label>
+                      <label class="cs-radio-container text-black font-weight-light mt-0">
+                        <input type="radio" name="radio20" />
+                        <span class="checkmark"></span>
+                        5. 20% - 50% </label>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="row mb-3">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <input type="radio" />
-                      <label>2. 5% - 10% </label>
+                      <label class="cs-radio-container text-black font-weight-light mt-0">
+                        <input type="radio" name="radio20" />
+                        <span class="checkmark"></span>
+                        2. 5% - 10% </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <input type="radio" />
-                      <label>4. 20% - 30% </label>
+                      <label class="cs-radio-container text-black font-weight-light mt-0">
+                        <input type="radio" name="radio20" />
+                        <span class="checkmark"></span>
+                        4. 20% - 30% </label>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <input type="radio" />
-                      <label>6. ללא הגבלה </label>
+                      <label class="cs-radio-container text-black font-weight-light mt-0">
+                        <input type="radio" name="radio20" />
+                        <span class="checkmark"></span>
+                        6. ללא הגבלה </label>
                     </div>
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                   <table class="table">
-                    <thead>
+                    <thead class="thead-dark">
                       <tr>
                         <th>סכום הנקודות</th>
                         <th>שיוך לרמת סיכון</th>
@@ -1790,12 +1971,12 @@
               </div>
             </div>
             <div class="mtab">
-              <h3 class="mb-4">הגדרות והסברים: רמת סיכון </h3>
-              <h5 class="mb-4">?לדוגמה - במוצר בשווי של 1 מיליון ש"ח היה הפסד של100  אלף ש"ח), איך היית מגיב </h5>
-              <div class="row">
+              <h3 class="mb-5">הגדרות והסברים: רמת סיכון </h3>
+              <h5 class="mb-4 text-dark">?לדוגמה - במוצר בשווי של 1 מיליון ש"ח היה הפסד של100  אלף ש"ח), איך היית מגיב </h5>
+              <div class="row m-0">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                   <table class="table">
-                    <thead>
+                    <thead class="thead-dark">
                       <tr>
                         <th>רמת סיכון</th>
                         <th>הרכב נכסים</th>
@@ -1833,24 +2014,24 @@
             </div>
             <div class="mtab">
               <h3 class="mb-4">:אישור הלקוח להתאמת רמת הסיכון</h3>
-              <p>:בחתימתי על גבי מסמך זה הינני מצהיר כי</p>
-              <p>.קביעת רמת הסיכון אליה תהיינה השקעותיי חשופות נעשתה בתיאום איתי ובהסתמך על המידע המפורט לעיל שהסכמתי למסור</p>
-              <p>.קיבלתי הסבר מבעל הרישיון על רמת הסיכון ועל משמעותה, לרבות פירוט אפיקי ההשקעה הפוטנציאליים באותה רמת סיכון</p>
-              <p>.הפרטים המופיעים לעיל, הינם הפרטים הנכונים והמלאים אודותיי/נו</p>
-              <p>.הובהר לי וידוע לי כי אי מסירת הפרטים המבוקשים או מסירת פרטים חלקיים עלולה לפגוע ביכולת להתאים עבורי, בצורה מיטבית את רמת הסיכון התואמת את הצרכים והמאפיינים היחודיים לי</p>
-              <p>.הנני לאשר כי הוסמכתי על ידי בעלי החשבון האחרים, ככל שקיימים, לענות בשמם להליך זה ולייצגם. במידה ונקבעה רמת סיכון שונה מזו המומלצת ע"י בעל הרישיון </p>
-              <p>:הנני מצהיר בזאת כי רמת הסיכון בה בחרתי היא</p>
-              <div class="row">
+              <p class="px-3">:בחתימתי על גבי מסמך זה הינני מצהיר כי</p>
+              <p class="px-3">.קביעת רמת הסיכון אליה תהיינה השקעותיי חשופות נעשתה בתיאום איתי ובהסתמך על המידע המפורט לעיל שהסכמתי למסור</p>
+              <p class="px-3">.קיבלתי הסבר מבעל הרישיון על רמת הסיכון ועל משמעותה, לרבות פירוט אפיקי ההשקעה הפוטנציאליים באותה רמת סיכון</p>
+              <p class="px-3">.הפרטים המופיעים לעיל, הינם הפרטים הנכונים והמלאים אודותיי/נו</p>
+              <p class="px-3">.הובהר לי וידוע לי כי אי מסירת הפרטים המבוקשים או מסירת פרטים חלקיים עלולה לפגוע ביכולת להתאים עבורי, בצורה מיטבית את רמת הסיכון התואמת את הצרכים והמאפיינים היחודיים לי</p>
+              <p class="px-3">.הנני לאשר כי הוסמכתי על ידי בעלי החשבון האחרים, ככל שקיימים, לענות בשמם להליך זה ולייצגם. במידה ונקבעה רמת סיכון שונה מזו המומלצת ע"י בעל הרישיון </p>
+              <p class="px-3">:הנני מצהיר בזאת כי רמת הסיכון בה בחרתי היא</p>
+              <div class="row m-0">
                 <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12">
                   <div class="form-group">
                     <label>אישור הצהרת הלקוח</label>
-                    <textarea class="form-textarea" placeholder="TEXT"></textarea>
+                    <textarea class="form-textarea w-100" placeholder="TEXT"></textarea>
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row m-0">
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                  <div class="row">
+                  <div class="row m-0">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                       <div class="row">
                         <div class="form-group">
@@ -1861,14 +2042,14 @@
                       <div class="row">
                         <div class="form-group">
                           <label>שם הלקוח</label>
-                          <input type="text" class="form-control" placeholder="DATE" />
+                          <input type="text" id="datepicker3" class="form-control" />
                         </div>
                       </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                       <div class="form-group">
                         <label>חתימת הלקוח</label>
-                        <textarea placeholder=""></textarea>
+                        <textarea class="form-textarea w-100" placeholder=""></textarea>
                       </div>
                     </div>
                   </div>
@@ -1876,8 +2057,8 @@
               </div>
             </div>
             <div class="navigators">
-              <button type="button" class="btn btn-prev" id="prevBtn" onclick="nextPrev(-1)">prev</button>
-              <button type="button" class="btn btn-next" id="nextBtn" onclick="nextPrev(1)">next</button>
+              <button type="button" class="btn btn-prev" id="prevBtn" onclick="nextPrev(-1)">קודם</button>
+              <button type="button" class="btn btn-next" id="nextBtn" onclick="nextPrev(1)">הבא</button>
             </div>
           </div>
         </form>
@@ -1889,8 +2070,13 @@
 
 <!-- plugins js -->
 <script type="text/javascript" src="assets/plugins/DataTables/datatables.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 
 <script>
+  // datepicker init
+  $('#datepicker1').datepicker({ uiLibrary: 'bootstrap4' });
+  $('#datepicker2').datepicker({ uiLibrary: 'bootstrap4' });
+  $('#datepicker3').datepicker({ uiLibrary: 'bootstrap4' });
   // datatable init
   $(document).ready(function() {
     $('.datatable').DataTable({
@@ -1902,7 +2088,7 @@
 } );
 </script>
 <script>
-  var currentTab = 10; // Current tab is set to be the first tab (0)
+  var currentTab = 19; // Current tab is set to be the first tab (0)
   showTab(currentTab); // Display the current tab
 
   function showTab(n) {
@@ -1916,9 +2102,9 @@
       document.getElementById("prevBtn").style.display = "inline";
     }
     if (n == (x.length - 1)) {
-      document.getElementById("nextBtn").innerHTML = "Submit";
+      document.getElementById("nextBtn").innerHTML = "סיים"; // Submit
     } else {
-      document.getElementById("nextBtn").innerHTML = "Next";
+      document.getElementById("nextBtn").innerHTML = "הבא"; // Next
     }
     //... and run a function that will display the correct step indicator:
     fixStepIndicator(n)

@@ -526,7 +526,7 @@ body {
                                         }
                                     }
                                 }
-                            }x
+                            }
                             .customer-table {
                                 width: 100%;
                                 thead {
@@ -1291,6 +1291,9 @@ button:focus {
                             height: 50px;
                             width: 298px;
                             max-width: 298px;
+                            background-color: #F9F9F9;
+                            border: solid 2px #E9E9E9;
+                            border-radius: 10px;
                         }
                     }
                     .col-xl-9 {
@@ -2004,8 +2007,14 @@ button:focus {
     margin: 0 !important;
 }
 
+#nav-list-of-relatives, 
+#nav-related-businesses, 
 #nav-contacts {
     padding: 0;
+    .btn-add {
+        margin-top: 5px !important;
+        margin-left: 10px !important;
+    }
     .filter-group {
         padding: 10px;
         border-bottom: solid 2px #BFC5D2;
@@ -2197,6 +2206,10 @@ button:focus {
                 font-size: 26px;
                 color: #7ABBFC;
                 font-weight: bold;
+                padding-right: 15px;
+              }
+              h5 {
+                  padding-right: 15px;
               }
               .grid-5 {
                 display: grid;
@@ -2326,4 +2339,132 @@ button:focus {
 
 .mt-10 {
   margin-top: 100px !important;
+}
+
+
+
+/* radio input customize */
+.cs-radio-container {
+    position: relative;
+    display: inline-flex;
+    padding-right: 25px;
+    line-height: 30px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    font-size: 18px;
+    [type=radio] {
+        opacity: 0;
+    }
+    .checkmark {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: solid 3px #7FC4FD;
+        right: 0;
+        &::after {
+            content: "";
+            position: relative;
+            display: none;
+            width: 14px;
+            height: 14px;
+            top: 5px;
+            right: 5px;
+            border-radius: 50%;
+            background-color: #2699FB;
+        }
+    }
+    [type=radio]:checked ~ .checkmark::after {
+        display: block;
+    }
+}
+
+.text-dark {
+    color: #485272 !important;
+}
+
+.text-black {
+    color: #000000 !important;
+}
+
+/* checkbox input customize */
+.cs-checkbox-container {
+    position: relative;
+    display: inline-flex;
+    padding-right: 25px;
+    line-height: 30px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    font-size: 18px;
+    [type=checkbox] {
+        opacity: 0;
+    }
+    .checkmark {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        border: solid 2px #78849E;
+        background-color: #FFFFFF;
+        right: 0;
+        &::after {
+            content: "";
+            position: relative;
+            right: 8px;
+            top: 4px;
+            width: 10px;
+            height: 15px;
+            border: solid #3B86FF;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            display: none;
+        }
+    }
+    [type=checkbox]:checked ~ .checkmark::after {
+        display: block;
+    }
+}
+
+.thead-dark {
+    background-color: #BFC5D2;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    tr {
+        th {
+            color: #FFFFFF !important;
+            background-color: #BFC5D2 !important;
+            border: 0;
+            &:first-child {
+                border-top-right-radius: 8px;
+            }
+            &:last-child {
+                border-top-left-radius: 8px;
+            }
+        }
+    }
+}
+
+.form-textarea {
+    width: 100%;
+    min-height: 175px;
+    background-color: #F9F9F9;
+    border: solid 2px #E9E9E9;
+    border-radius: 8px;
+}
+
+.text-dark {
+    color: #485272 !important;
+}
+
+.text-black {
+    color: #000000 !important;
+}
+
+.text-primary {
+    color: #7ABBFC !important;
 }
