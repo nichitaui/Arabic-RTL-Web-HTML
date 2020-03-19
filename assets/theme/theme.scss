@@ -532,6 +532,7 @@ body {
                                 thead {
                                     tr {
                                         th {
+                                            vertical-align: middle;
                                             text-align: center;
                                             font-size: 18px;
                                             font-weight: bold;
@@ -547,6 +548,7 @@ body {
                                         border-top: solid 2px #BFC5D2;
                                         td {
                                             text-align: center;
+                                            vertical-align: middle;
                                             font-size: 18px;
                                             padding: 20px 0;
                                             &:last-child {
@@ -569,6 +571,7 @@ body {
                                     thead {
                                         tr {
                                             th {
+                                                vertical-align: middle;
                                                 width: 14%;
                                             }
                                         }
@@ -577,6 +580,7 @@ body {
                                         tr {
                                             border-top: solid 2px #BFC5D2;
                                             td {
+                                                vertical-align: middle;
                                                 width: 14%;
                                             }
                                         }
@@ -637,9 +641,10 @@ body {
                         -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
                         box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
                         td {
-                          font-size: 16px;
-                          font-weight: bold;
-                          color: #FFFFFF;
+                            vertical-align: middle;
+                            font-size: 16px;
+                            font-weight: bold;
+                            color: #FFFFFF;
                         }
                     }
                   }
@@ -1527,6 +1532,20 @@ button:focus {
             width: 200px;
         }
     }
+    tbody {
+        .btn-view-detail {
+            display: block;
+            width: 50px;
+            height: 40px;
+            border-right: solid 1px #BFC5D2;
+            float: left;
+            padding-top: 10px;
+            .cs-icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
     tfoot {
         background-color: #78849E;
         -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
@@ -1535,9 +1554,10 @@ button:focus {
           background-color: #485272;
         }
         td {
-          font-size: 16px;
-          font-weight: bold;
-          color: #FFFFFF;
+            vertical-align: middle;
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFFFFF;
         }
     }
     .input-group-dropdown {
@@ -1718,6 +1738,7 @@ button:focus {
     }
     tr {
         th {
+            vertical-align: middle;
             padding-top: 19px;
             padding-bottom: 19px;
             font-size: 16px;
@@ -1725,6 +1746,7 @@ button:focus {
             color: #7ABBFC;
         }
         td {
+            vertical-align: middle;
             padding-top: 19px;
             padding-bottom: 19px;
             font-size: 16px;
@@ -1921,6 +1943,22 @@ button:focus {
                 }
             }
         }
+        tbody {
+            .btn-download-file {
+                .cs-icon {
+                    width: 20px;
+                    height: 25px;
+                }
+            }
+            .btn-view-detail {
+                display: block;
+                width: 50px;
+                height: 40px;
+                border-right: solid 1px #BFC5D2;
+                float: left;
+                padding-top: 10px;
+            }
+        }
     }
 }
 
@@ -2106,15 +2144,17 @@ button:focus {
   table {
     thead {
       th {
-        &:last-child {
-          padding: 0;
-          text-align: left;
-        }
+          vertical-align: middle;
+            &:last-child {
+            padding: 0;
+            text-align: left;
+            }
       }
     }
     tbody {
       tr {
         td {
+            vertical-align: middle;
           &:last-child {
             justify-content: flex-end;
             padding-left: 0;
@@ -2286,30 +2326,32 @@ button:focus {
       tr {
         &:first-child {
           th {
-            &:first-child {
-              width: 270px;
-              background-color: #FFFFFF;
-            }
-            &:nth-child(2) {
-              border-top-right-radius: 8px;
-              font-size: 24px;
-            }
-            &:last-child {
-              width: 335px;
-              border-top-left-radius: 8px;
-              font-size: 24px;
-            }
+              vertical-align: middle;
+                &:first-child {
+                width: 270px;
+                background-color: #FFFFFF;
+                }
+                &:nth-child(2) {
+                border-top-right-radius: 8px;
+                font-size: 24px;
+                }
+                &:last-child {
+                width: 335px;
+                border-top-left-radius: 8px;
+                font-size: 24px;
+                }
           }
         }
         th {
-          text-align: center;
-          color: #FFFFFF;
-          font-size: 18px;
-          font-weight: bold;
-          background-color: #BFC5D2;
-          border: solid 1.5px #FFFFFF;
-          vertical-align: middle;
-          padding: 3px;
+            vertical-align: middle;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #BFC5D2;
+            border: solid 1.5px #FFFFFF;
+            vertical-align: middle;
+            padding: 3px;
         }
       }
     }
@@ -2330,9 +2372,10 @@ button:focus {
   }
   #horizon-of-investment-table {
     thead {
-      th {
-        padding: 10px !important;
-      }
+        th {
+            vertical-align: middle;
+            padding: 10px !important;
+        }
     }
   }
 }
@@ -2392,6 +2435,7 @@ button:focus {
 .cs-checkbox-container {
     position: relative;
     display: inline-flex;
+    height: 30px;
     padding-right: 25px;
     line-height: 30px;
     margin-top: 50px;
@@ -2429,6 +2473,12 @@ button:focus {
     }
 }
 
+table {
+    th, td {
+        vertical-align: middle !important   ;
+    }
+}
+
 .thead-dark {
     background-color: #BFC5D2;
     border-top-left-radius: 10px;
@@ -2436,6 +2486,7 @@ button:focus {
     overflow: hidden;
     tr {
         th {
+            vertical-align: middle;
             color: #FFFFFF !important;
             background-color: #BFC5D2 !important;
             border: 0;

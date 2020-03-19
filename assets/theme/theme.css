@@ -10369,6 +10369,7 @@ body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table {
   width: 100%;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th {
+  vertical-align: middle;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
@@ -10382,6 +10383,7 @@ body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody 
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td {
   text-align: center;
+  vertical-align: middle;
   font-size: 18px;
   padding: 20px 0;
 }
@@ -10399,12 +10401,14 @@ body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody 
   border-right: solid 1px #BFC5D2;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table thead tr th {
+  vertical-align: middle;
   width: 14%;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table tbody tr {
   border-top: solid 2px #BFC5D2;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table.relatives-table tbody tr td {
+  vertical-align: middle;
   width: 14%;
 }
 body .main .app .app-body .app-chart {
@@ -10461,6 +10465,7 @@ body .main .app .app-body .app-table table tfoot {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 body .main .app .app-body .app-table table tfoot td {
+  vertical-align: middle;
   font-size: 16px;
   font-weight: bold;
   color: #FFFFFF;
@@ -11370,6 +11375,30 @@ button:focus {
 #nav-aggregation .pane-footer label {
   width: 200px;
 }
+#nav-holding-portfolio tbody .btn-view-detail,
+#nav-capital-market tbody .btn-view-detail,
+#nav-holdings-alternative tbody .btn-view-detail,
+#nav-sustainability-loan tbody .btn-view-detail,
+#nav-potential-loans tbody .btn-view-detail,
+#nav-list-of-reports tbody .btn-view-detail,
+#nav-aggregation tbody .btn-view-detail {
+  display: block;
+  width: 50px;
+  height: 40px;
+  border-right: solid 1px #BFC5D2;
+  float: left;
+  padding-top: 10px;
+}
+#nav-holding-portfolio tbody .btn-view-detail .cs-icon,
+#nav-capital-market tbody .btn-view-detail .cs-icon,
+#nav-holdings-alternative tbody .btn-view-detail .cs-icon,
+#nav-sustainability-loan tbody .btn-view-detail .cs-icon,
+#nav-potential-loans tbody .btn-view-detail .cs-icon,
+#nav-list-of-reports tbody .btn-view-detail .cs-icon,
+#nav-aggregation tbody .btn-view-detail .cs-icon {
+  width: 20px;
+  height: 20px;
+}
 #nav-holding-portfolio tfoot,
 #nav-capital-market tfoot,
 #nav-holdings-alternative tfoot,
@@ -11397,6 +11426,7 @@ button:focus {
 #nav-potential-loans tfoot td,
 #nav-list-of-reports tfoot td,
 #nav-aggregation tfoot td {
+  vertical-align: middle;
   font-size: 16px;
   font-weight: bold;
   color: #FFFFFF;
@@ -11594,6 +11624,7 @@ button:focus {
   display: none;
 }
 .dataTables_wrapper tr th {
+  vertical-align: middle;
   padding-top: 19px;
   padding-bottom: 19px;
   font-size: 16px;
@@ -11601,6 +11632,7 @@ button:focus {
   color: #7ABBFC;
 }
 .dataTables_wrapper tr td {
+  vertical-align: middle;
   padding-top: 19px;
   padding-bottom: 19px;
   font-size: 16px;
@@ -11776,6 +11808,18 @@ button:focus {
   position: absolute;
   top: 25px;
   left: 10px;
+}
+#nav-documents table tbody .btn-download-file .cs-icon {
+  width: 20px;
+  height: 25px;
+}
+#nav-documents table tbody .btn-view-detail {
+  display: block;
+  width: 50px;
+  height: 40px;
+  border-right: solid 1px #BFC5D2;
+  float: left;
+  padding-top: 10px;
 }
 
 #documentAddModal .modal-dialog,
@@ -11987,9 +12031,15 @@ button:focus {
   padding: 25px 70px;
 }
 
+#nav-beneficiaries table thead th {
+  vertical-align: middle;
+}
 #nav-beneficiaries table thead th:last-child {
   padding: 0;
   text-align: left;
+}
+#nav-beneficiaries table tbody tr td {
+  vertical-align: middle;
 }
 #nav-beneficiaries table tbody tr td:last-child {
   justify-content: flex-end;
@@ -12136,6 +12186,10 @@ button:focus {
 #purpose-horizon-of-investment #horizon-of-investment-table thead {
   max-height: 105px;
 }
+#purpose-horizon-of-investment #purpose-of-investment-table thead tr:first-child th,
+#purpose-horizon-of-investment #horizon-of-investment-table thead tr:first-child th {
+  vertical-align: middle;
+}
 #purpose-horizon-of-investment #purpose-of-investment-table thead tr:first-child th:first-child,
 #purpose-horizon-of-investment #horizon-of-investment-table thead tr:first-child th:first-child {
   width: 270px;
@@ -12154,6 +12208,7 @@ button:focus {
 }
 #purpose-horizon-of-investment #purpose-of-investment-table thead tr th,
 #purpose-horizon-of-investment #horizon-of-investment-table thead tr th {
+  vertical-align: middle;
   text-align: center;
   color: #FFFFFF;
   font-size: 18px;
@@ -12176,6 +12231,7 @@ button:focus {
   padding-left: 25px;
 }
 #purpose-horizon-of-investment #horizon-of-investment-table thead th {
+  vertical-align: middle;
   padding: 10px !important;
 }
 
@@ -12232,6 +12288,7 @@ button:focus {
 .cs-checkbox-container {
   position: relative;
   display: inline-flex;
+  height: 30px;
   padding-right: 25px;
   line-height: 30px;
   margin-top: 50px;
@@ -12269,6 +12326,10 @@ button:focus {
   display: block;
 }
 
+table th, table td {
+  vertical-align: middle !important;
+}
+
 .thead-dark {
   background-color: #BFC5D2;
   border-top-left-radius: 10px;
@@ -12276,6 +12337,7 @@ button:focus {
   overflow: hidden;
 }
 .thead-dark tr th {
+  vertical-align: middle;
   color: #FFFFFF !important;
   background-color: #BFC5D2 !important;
   border: 0;
