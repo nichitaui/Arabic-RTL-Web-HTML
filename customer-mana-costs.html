@@ -350,9 +350,11 @@
           
         </div>
       </div>
-      <div class="app-alert warning">
-        <button type="button" class="cs-btn-icon btn-close-transparent close"></button>
-        <span>הערה לגבי חברה מנהלת ב IRA עם דמי הניהול שהיא גובה</span>
+      <div class="app-alert-wrapper">
+        <div class="app-alert warning">
+          <button type="button" class="cs-btn-icon btn-close-transparent close"></button>
+          <span>הערה לגבי חברה מנהלת ב IRA עם דמי הניהול שהיא גובה</span>
+        </div>
       </div>
     </div>
   </div>
@@ -372,6 +374,15 @@
       // ordering:  false
     });
 } );
+</script>
+<script>
+  $(document).on('click', '.app-alert .close', function() {
+    $('.app-body').removeClass('has-alert');
+    $(this).parent('.app-alert').addClass('removing');
+    setTimeout(function() {
+      $(this).parent('.app-alert').remove();
+    }, 1500);
+  });
 </script>
 </body>
 </html>

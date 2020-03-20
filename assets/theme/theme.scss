@@ -467,7 +467,9 @@ body {
                                         .form-control {
                                             height: 50px;
                                             max-width: 300px;
-                                            border-radius: 0.25rem !important;
+                                            border-radius: 10px !important;
+                                            background-color: #F9F9F9;
+                                            border: solid 2px #E9E9E9;
                                         }
                                         .gj-datepicker {
                                             .input-group-append {
@@ -690,30 +692,40 @@ body {
                     }
                   }
                 }
-                .app-alert {
-                  position: fixed;
-                  height: 72px;
-                  width: 100%;
-                  bottom: 0px;
-                  padding: 20px;
-                  &.warning {
-                    // background-color: #FE0801;
-                    background: linear-gradient(90deg, #FE0801, #FF5300);
-                    span {
-                      color: #FFFFFF;
-                    }
-                  }
-                  .cs-btn-icon {
-                    width: 30px;
-                    height: 30px;
-                  }
-                  span {
-                    font-size: 14px;
-                  }
+                .app-alert-wrapper {
+                    .app-alert {
+                        position: fixed;
+                        height: 72px;
+                        width: 100%;
+                        bottom: 0px;
+                        padding: 20px;
+                        opacity: 1;
+                        transition: opacity 1.5s;
+                        &.removing {
+                            opacity: 0;
+                            transition: opacity 1.5s;
+                        }
+                        &.warning {
+                            // background-color: #FE0801;
+                            background: linear-gradient(90deg, #FE0801, #FF5300);
+                            span {
+                            color: #FFFFFF;
+                            }
+                        }
+                        .cs-btn-icon {
+                            width: 30px;
+                            height: 30px;
+                        }
+                        span {
+                            font-size: 14px;
+                        }
+                    }    
                 }
 
+                transition: padding-bottom 1.5s;
                 &.has-alert {
                   padding-bottom: 90px;
+                  transition: padding-bottom 1.5s;
                 }
             }
         }
@@ -1023,18 +1035,39 @@ body {
     margin-left: 20px;
     &.btn-new-customer {
         background-image: url(../img/buttons/btn-new-customer.png);
+        &:hover {
+            background-image: url(../img/buttons/btn-new-customer-hover.png);
+        }
     }
     &.btn-save {
         background-image: url(../img/buttons/btn-save.png);
+        &:hover {
+            background-image: url(../img/buttons/btn-save-hover.png);
+        }
     }
     &.btn-questionnaire {
         background-image: url(../img/buttons/btn-questionnaire.png);
+        &:hover {
+            background-image: url(../img/buttons/btn-questionnaire-hover.png);
+        }
     }
     &.btn-back {
         background-image: url(../img/buttons/btn-back.png);
+        &:hover {
+            background-image: url(../img/buttons/btn-back-hover.png);
+        }
     }
     &.btn-options {
         background-image: url(../img/buttons/btn-options.png);
+        &:hover {
+            background-image: url(../img/buttons/btn-options-hover.png);
+        }
+    }
+    &.btn-save-modal {
+        background-image: url(../img/buttons/btn-save-modal.png);
+        &:hover {
+            background-image: url(../img/buttons/btn-save-modal.png);
+        }
     }
 }
 
@@ -1553,6 +1586,7 @@ button:focus {
                 font-family: "Heebo";
                 text-align: center;
                 margin-right: 20px;
+                cursor: pointer;
                 &.active {
                     background-color: #7ABBFC;
                     color: #FFFFFF;
@@ -2343,7 +2377,11 @@ button:focus {
               text-align: center;
               font-size: 20px;
               font-weight: bold;
-              &.active, &.done {
+              &.active {
+                background-color: #21D102 !important;
+                color: #FFFFFF;
+              }
+              &.done {
                 background-color: #7ABBFC;
                 color: #FFFFFF;
               }
@@ -2695,4 +2733,15 @@ table {
 
 .text-primary {
     color: #7ABBFC !important;
+}
+
+.btn-primary {
+    color: #FFFFFF;
+    background-color: #7ABBFC;
+    border-color: #7ABBFC;
+    &:hover, &:focus, &:active {
+        color: #FFFFFF;
+        background-color: #7ABBFC;
+        border-color: #7ABBFC;
+    }
 }

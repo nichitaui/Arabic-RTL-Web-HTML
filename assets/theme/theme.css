@@ -10139,6 +10139,9 @@ body .main .app .app-header .app-header-bottom .card .card-body .chart-group .la
   font-size: 14px;
   margin-top: 5px;
 }
+body .main .app .app-body {
+  transition: padding-bottom 1.5s;
+}
 body .main .app .app-body .app-tab {
   padding: 0 30px 30px 30px;
 }
@@ -10322,7 +10325,9 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group 
 body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .form-control {
   height: 50px;
   max-width: 300px;
-  border-radius: 0.25rem !important;
+  border-radius: 10px !important;
+  background-color: #F9F9F9;
+  border: solid 2px #E9E9E9;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .gj-datepicker .input-group-append {
   position: absolute;
@@ -10509,28 +10514,35 @@ body .main .app .app-body .app-chart-group .chart-container .chart-body {
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
-body .main .app .app-body .app-alert {
+body .main .app .app-body .app-alert-wrapper .app-alert {
   position: fixed;
   height: 72px;
   width: 100%;
   bottom: 0px;
   padding: 20px;
+  opacity: 1;
+  transition: opacity 1.5s;
 }
-body .main .app .app-body .app-alert.warning {
+body .main .app .app-body .app-alert-wrapper .app-alert.removing {
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+body .main .app .app-body .app-alert-wrapper .app-alert.warning {
   background: linear-gradient(90deg, #FE0801, #FF5300);
 }
-body .main .app .app-body .app-alert.warning span {
+body .main .app .app-body .app-alert-wrapper .app-alert.warning span {
   color: #FFFFFF;
 }
-body .main .app .app-body .app-alert .cs-btn-icon {
+body .main .app .app-body .app-alert-wrapper .app-alert .cs-btn-icon {
   width: 30px;
   height: 30px;
 }
-body .main .app .app-body .app-alert span {
+body .main .app .app-body .app-alert-wrapper .app-alert span {
   font-size: 14px;
 }
 body .main .app .app-body.has-alert {
   padding-bottom: 90px;
+  transition: padding-bottom 1.5s;
 }
 body .main .filter-bar {
   position: fixed;
@@ -10841,17 +10853,38 @@ body .main.open-filter .filter-app {
 .cs-btn-img.btn-new-customer {
   background-image: url(../img/buttons/btn-new-customer.png);
 }
+.cs-btn-img.btn-new-customer:hover {
+  background-image: url(../img/buttons/btn-new-customer-hover.png);
+}
 .cs-btn-img.btn-save {
   background-image: url(../img/buttons/btn-save.png);
+}
+.cs-btn-img.btn-save:hover {
+  background-image: url(../img/buttons/btn-save-hover.png);
 }
 .cs-btn-img.btn-questionnaire {
   background-image: url(../img/buttons/btn-questionnaire.png);
 }
+.cs-btn-img.btn-questionnaire:hover {
+  background-image: url(../img/buttons/btn-questionnaire-hover.png);
+}
 .cs-btn-img.btn-back {
   background-image: url(../img/buttons/btn-back.png);
 }
+.cs-btn-img.btn-back:hover {
+  background-image: url(../img/buttons/btn-back-hover.png);
+}
 .cs-btn-img.btn-options {
   background-image: url(../img/buttons/btn-options.png);
+}
+.cs-btn-img.btn-options:hover {
+  background-image: url(../img/buttons/btn-options-hover.png);
+}
+.cs-btn-img.btn-save-modal {
+  background-image: url(../img/buttons/btn-save-modal.png);
+}
+.cs-btn-img.btn-save-modal:hover {
+  background-image: url(../img/buttons/btn-save-modal.png);
 }
 
 .cs-icon {
@@ -11393,6 +11426,7 @@ button:focus {
   font-family: "Heebo";
   text-align: center;
   margin-right: 20px;
+  cursor: pointer;
 }
 #nav-holding-portfolio .table-filter-group .filter-year-wrapper li.active,
 #nav-capital-market .table-filter-group .filter-year-wrapper li.active,
@@ -12232,7 +12266,11 @@ button:focus {
   font-size: 20px;
   font-weight: bold;
 }
-#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step.active, #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step.done {
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step.active {
+  background-color: #21D102 !important;
+  color: #FFFFFF;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step.done {
   background-color: #7ABBFC;
   color: #FFFFFF;
 }
@@ -12554,6 +12592,17 @@ table th, table td {
 
 .text-primary {
   color: #7ABBFC !important;
+}
+
+.btn-primary {
+  color: #FFFFFF;
+  background-color: #7ABBFC;
+  border-color: #7ABBFC;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  color: #FFFFFF;
+  background-color: #7ABBFC;
+  border-color: #7ABBFC;
 }
 
 /*# sourceMappingURL=theme.css.map */

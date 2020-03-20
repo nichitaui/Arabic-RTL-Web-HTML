@@ -283,16 +283,16 @@
           <div class="tab-pane fade show active" id="nav-list-of-reports" role="tabpanel" aria-labelledby="nav-list-of-reports-tab">
             <div class="table-filter-group">
               <ul class="filter-year-wrapper">
-                <li class="active">2019</li>
-                <li class="">2018</li>
-                <li class="">2017</li>
-                <li class="">2016</li>
-                <li class="">2015</li>
-                <li class="">2014</li>
-                <li class="">2013</li>
-                <li class="">2012</li>
-                <li class="">2011</li>
-                <li class="">2010</li>
+                <li class="btn-year active">2019</li>
+                <li class="btn-year">2018</li>
+                <li class="btn-year">2017</li>
+                <li class="btn-year">2016</li>
+                <li class="btn-year">2015</li>
+                <li class="btn-year">2014</li>
+                <li class="btn-year">2013</li>
+                <li class="btn-year">2012</li>
+                <li class="btn-year">2011</li>
+                <li class="btn-year">2010</li>
               </ul>
             </div>
             <div class="pane-body">
@@ -493,6 +493,12 @@
   $('#nav-distribution-graph-tab').on('shown.bs.tab', function(){
     renderDistributionGraphChart();
     $('#nav-distribution-graph-tab').off(); // to remove the binded event after the initial rendering
+  });
+</script>
+<script>
+  $(document).on('click', '.filter-year-wrapper .btn-year', function() {
+    $('.filter-year-wrapper .btn-year').removeClass('active');
+    $(this).addClass('active');
   });
 </script>
 </body>
