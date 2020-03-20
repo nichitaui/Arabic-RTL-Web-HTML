@@ -11351,6 +11351,16 @@ button:focus {
 #nav-aggregation .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox] {
   float: left;
 }
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item .cs-checkbox-container,
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item .cs-checkbox-container,
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item .cs-checkbox-container,
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item .cs-checkbox-container,
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item .cs-checkbox-container,
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item .cs-checkbox-container,
+#nav-aggregation .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item .cs-checkbox-container {
+  float: left;
+  padding-right: 15px;
+}
 #nav-holding-portfolio .table-filter-group .filter-year-wrapper,
 #nav-capital-market .table-filter-group .filter-year-wrapper,
 #nav-holdings-alternative .table-filter-group .filter-year-wrapper,
@@ -11887,8 +11897,14 @@ button:focus {
   height: 100%;
   background-color: #FFFFFF;
   border: solid 2px #E9E9E9;
+  color: #485272;
+  font-weight: 500;
   border-radius: 8px;
   padding: 10px;
+}
+#nav-documents table thead .input-search-wrapper .input-search::placeholder {
+  color: #485272;
+  font-weight: 500;
 }
 #nav-documents table thead .input-search-wrapper .cs-icon {
   position: absolute;
@@ -11905,6 +11921,8 @@ button:focus {
   border-radius: 8px;
   padding: 10px;
   font-size: 19px;
+  color: #485272;
+  font-weight: 500;
   width: 160px;
   height: 50px;
   text-align: right;
@@ -11913,6 +11931,17 @@ button:focus {
   position: absolute;
   top: 25px;
   left: 10px;
+}
+#nav-documents table thead .input-group-dropdown .dropdown-toggle:active {
+  color: #485272;
+}
+#nav-documents table thead .input-group-dropdown .dropdown-menu .dropdown-item {
+  padding: 5px 10px;
+  text-align: right;
+  font-size: 14px;
+}
+#nav-documents table thead .input-group-dropdown .dropdown-menu .dropdown-item .cs-checkbox-container {
+  top: 4px;
 }
 #nav-documents table tbody .btn-download-file .cs-icon {
   width: 20px;
@@ -12457,6 +12486,31 @@ button:focus {
   height: 11px;
   border: solid #D7DDE9;
   border-width: 0 3px 3px 0;
+}
+.cs-checkbox-container.checkbox-small {
+  height: 14px;
+  line-height: 14px;
+  float: left;
+  padding-right: 15px;
+}
+.cs-checkbox-container.checkbox-small [type=checkbox] {
+  width: 14px;
+  height: 14px;
+}
+.cs-checkbox-container.checkbox-small .checkmark {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: solid 1px #78849E;
+  background-color: transparent;
+}
+.cs-checkbox-container.checkbox-small .checkmark::after {
+  right: 4px;
+  top: 1px;
+  width: 5px;
+  height: 8px;
+  border: solid #7ABBFC;
+  border-width: 0 2px 2px 0;
 }
 
 table th, table td {
