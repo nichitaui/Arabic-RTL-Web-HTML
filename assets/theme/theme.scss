@@ -32,6 +32,12 @@ body {
             background-color: #485272;
             color: #D7D9E0;
             height: 80px;
+            @media (min-width: 1280px) and (max-width: 1359px) {
+                height: 76px;
+            }
+            @media (min-width: 1024px) and (max-width: 1279px) {
+                height: 67px;
+            }
             nav {
                 height: 100%;
                 .header-logo {
@@ -41,6 +47,9 @@ body {
                     color: #FFFFFF;
                     display: grid;
                     height: 100%;
+                    @media (min-width: 1024px) and (max-width: 1279px) {
+                        width: 270px;
+                    }
                     .logo-text {
                         font-size: 36px;
                         color: #FFFFFF;
@@ -58,6 +67,23 @@ body {
                             padding: 20px 60px;
                             font-size: 26px;
                             color: #FFFFFF;
+                            @media (min-width: 1600px) and (max-width: 1919px) {
+                                padding: 20px 50px;
+                            }
+                            @media (min-width: 1440px) and (max-width: 1549px) {
+                                padding: 20px 35px;
+                            }
+                            @media (min-width: 1360px) and (max-width: 1439px) {
+                                padding: 20px 30px;
+                            }
+                            @media (min-width: 1280px) and (max-width: 1359px) {
+                                padding: 20px 24px;
+                                font-size: 24px;
+                            }
+                            @media (min-width: 1024px) and (max-width: 1279px) {
+                                padding: 20px 20px;
+                                font-size: 18px;
+                            }
                         }
                         &.active {
                             background-color: #1A70C6;
@@ -83,6 +109,9 @@ body {
             -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
             box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
             z-index: 10;
+            @media (min-width: 1024px) and (max-width: 1279px) {
+                width: 270px;
+            }
             ul {
                 list-style: none;
                 padding: 0px;
@@ -92,13 +121,23 @@ body {
                     width: 100%;
                     padding-top: 15px;
                     padding-right: 125px;
+                    @media (min-width: 1024px) and (max-width: 1279px) {
+                        padding-right: 100px;
+                        padding-top: 20px;
+                    }
                     a {
                         font-size: 24px;
                         color: #485272;
+                        @media (min-width: 1024px) and (max-width: 1279px) {
+                            font-size: 20px;
+                        }
                         .cs-icon {
                             position: absolute;
                             right: 60px;
                             top: 25px;
+                            @media (min-width: 1024px) and (max-width: 1279px) {
+                                right: 50px;
+                            }
                         }
                     }
                     &.active {
@@ -2744,4 +2783,26 @@ table {
         background-color: #7ABBFC;
         border-color: #7ABBFC;
     }
+}
+
+
+// 
+@media (min-width: 1600px) and (max-width: 1919px) {
+    
+}
+
+@media (min-width: 1440px) and (max-width: 1549px) {
+    
+}
+
+@media (min-width: 1360px) and (max-width: 1439px) {
+    
+}
+
+@media (min-width: 1280px) and (max-width: 1359px) {
+    
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    
 }

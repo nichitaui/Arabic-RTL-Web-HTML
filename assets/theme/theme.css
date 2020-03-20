@@ -9905,6 +9905,16 @@ body .header .header-nav {
   color: #D7D9E0;
   height: 80px;
 }
+@media (min-width: 1280px) and (max-width: 1359px) {
+  body .header .header-nav {
+    height: 76px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .header .header-nav {
+    height: 67px;
+  }
+}
 body .header .header-nav nav {
   height: 100%;
 }
@@ -9915,6 +9925,11 @@ body .header .header-nav nav .header-logo {
   color: #FFFFFF;
   display: grid;
   height: 100%;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .header .header-nav nav .header-logo {
+    width: 270px;
+  }
 }
 body .header .header-nav nav .header-logo .logo-text {
   font-size: 36px;
@@ -9932,6 +9947,33 @@ body .header .header-nav nav ul li a {
   padding: 20px 60px;
   font-size: 26px;
   color: #FFFFFF;
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body .header .header-nav nav ul li a {
+    padding: 20px 50px;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1549px) {
+  body .header .header-nav nav ul li a {
+    padding: 20px 35px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .header .header-nav nav ul li a {
+    padding: 20px 30px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  body .header .header-nav nav ul li a {
+    padding: 20px 24px;
+    font-size: 24px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .header .header-nav nav ul li a {
+    padding: 20px 20px;
+    font-size: 18px;
+  }
 }
 body .header .header-nav nav ul li.active {
   background-color: #1A70C6;
@@ -9953,6 +9995,11 @@ body .main .sidebar {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   z-index: 10;
 }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .sidebar {
+    width: 270px;
+  }
+}
 body .main .sidebar ul {
   list-style: none;
   padding: 0px;
@@ -9964,14 +10011,30 @@ body .main .sidebar ul li {
   padding-top: 15px;
   padding-right: 125px;
 }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .sidebar ul li {
+    padding-right: 100px;
+    padding-top: 20px;
+  }
+}
 body .main .sidebar ul li a {
   font-size: 24px;
   color: #485272;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .sidebar ul li a {
+    font-size: 20px;
+  }
 }
 body .main .sidebar ul li a .cs-icon {
   position: absolute;
   right: 60px;
   top: 25px;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .sidebar ul li a .cs-icon {
+    right: 50px;
+  }
 }
 body .main .sidebar ul li.active {
   background-color: #485272;
