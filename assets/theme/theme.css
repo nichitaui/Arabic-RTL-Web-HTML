@@ -11267,6 +11267,18 @@ button:focus {
   left: 5px;
   top: 10px;
 }
+#nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle:active,
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle:active,
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle:active,
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-toggle:active,
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-toggle:active,
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-toggle:active,
+#nav-aggregation .table-filter-group .input-group-prepend .dropdown-toggle:active {
+  background-color: #FFFFFF;
+  border: solid 1px #D7DAE2;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+}
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu,
 #nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu,
@@ -11483,6 +11495,58 @@ button:focus {
   height: 25px;
 }
 
+.input-group-prepend {
+  position: relative;
+  width: 145px;
+  margin-left: 20px;
+}
+.input-group-prepend .dropdown-toggle {
+  width: 145px;
+  height: 23px;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 10px;
+  line-height: 20px;
+  color: #4D4F5C;
+  font-family: "Heebo";
+  text-align: right;
+  background-color: #FFFFFF;
+  border: solid 1px #D7DAE2;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+}
+.input-group-prepend .dropdown-toggle::after {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+}
+.input-group-prepend .dropdown-toggle:active {
+  background-color: #FFFFFF;
+  border: solid 1px #D7DAE2;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+}
+.input-group-prepend .dropdown-menu {
+  position: absolute;
+  width: 145px !important;
+  min-width: 145px !important;
+  padding: 0;
+  right: 0px !important;
+  overflow: hidden;
+}
+.input-group-prepend .dropdown-menu .dropdown-item {
+  width: 145px;
+  margin: 0;
+  padding: 5px 10px;
+  text-align: right;
+  font-size: 10px;
+  color: #4D4F5C;
+  font-family: "Heebo";
+}
+.input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox] {
+  float: left;
+}
+
 #customer-management-chart {
   padding: 30px;
 }
@@ -11499,10 +11563,10 @@ button:focus {
   font-size: 12px;
   color: #4D4F5C;
 }
-#customer-management-chart .chart-header .tags-group {
+#customer-management-chart .chart-header .chart-tags-group {
   display: inline-flex;
 }
-#customer-management-chart .chart-header .tags-group .tag {
+#customer-management-chart .chart-header .chart-tags-group .chart-tag {
   height: 22px;
   font-size: 9px;
   color: #FFFFFF;
@@ -11510,24 +11574,25 @@ button:focus {
   padding: 5px 15px;
   margin-right: 20px;
 }
-#customer-management-chart .chart-header .tags-group .tag.tag-blue-magenta {
+#customer-management-chart .chart-header .chart-tags-group .chart-tag.tag-blue-magenta {
   background-color: #A3A0FB;
 }
-#customer-management-chart .chart-header .tags-group .tag.tag-caparol {
+#customer-management-chart .chart-header .chart-tags-group .chart-tag.tag-caparol {
   background-color: #21D102;
 }
-#customer-management-chart .chart-header .tags-group .tag.tag-purple {
+#customer-management-chart .chart-header .chart-tags-group .chart-tag.tag-purple {
   background-color: #B202D1;
 }
-#customer-management-chart .chart-header .tags-group .tag.tag-pantone {
+#customer-management-chart .chart-header .chart-tags-group .chart-tag.tag-pantone {
   background-color: #32D296;
 }
-#customer-management-chart .chart-header .tags-group .tag .cs-icon {
+#customer-management-chart .chart-header .chart-tags-group .chart-tag .cs-icon {
   width: 8px;
   height: 8px;
   margin-right: 8px;
+  cursor: pointer;
 }
-#customer-management-chart .chart-header .btn-tag-add {
+#customer-management-chart .chart-header .btn-chart-tag-add {
   background-color: #78849E;
   border: solid 1px #78849E;
   color: #FFFFFF;
@@ -11537,34 +11602,37 @@ button:focus {
   border-radius: 3px;
   padding: 0px 2px;
 }
-#customer-management-chart .chart-header .btn-tag-add .cs-icon {
+#customer-management-chart .chart-header .btn-chart-tag-add .cs-icon {
   width: 15px;
   height: 15px;
 }
 #customer-management-chart .chart-header .days-group {
   display: inline-flex;
   padding: 0;
-  list-style: none;
   border: solid 2px #F4F6FC;
   border-radius: 8px;
   overflow: hidden;
   margin: 0;
 }
-#customer-management-chart .chart-header .days-group li {
+#customer-management-chart .chart-header .days-group .btn-day {
   width: 85px;
   height: 34px;
   border-right: solid 2px #F4F6FC;
   font-size: 10px;
-  padding: 10px 5px;
+  padding: 5px;
   text-align: center;
+  vertical-align: middle;
 }
-#customer-management-chart .chart-header .days-group li:first-child {
+#customer-management-chart .chart-header .days-group .btn-day:first-child {
   border-right: 0;
 }
-#customer-management-chart .chart-header .days-group li.active {
+#customer-management-chart .chart-header .days-group .btn-day.active {
   background-color: #7ABBFC;
   color: #485272;
   font-weight: bold;
+}
+#customer-management-chart .chart-header .days-group .btn-day:focus {
+  box-shadow: none;
 }
 #customer-management-chart .chart-header .input-group-prepend {
   float: left;
@@ -11588,6 +11656,9 @@ button:focus {
   position: absolute;
   left: 5px;
   top: 10px;
+}
+#customer-management-chart .chart-header .dropdown-wrapper {
+  display: flex;
 }
 #customer-management-chart .chart-header .dropdown-wrapper label {
   text-align: center;

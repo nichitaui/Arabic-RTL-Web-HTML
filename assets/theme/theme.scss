@@ -1466,6 +1466,12 @@ button:focus {
                     left: 5px;
                     top: 10px;
                 }
+                &:active {
+                    background-color: #FFFFFF;
+                    border: solid 1px #D7DAE2;
+                    -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.05);
+                    box-shadow: 0px 2px 3px rgba(0,0,0,0.05);
+                }
             }
             .dropdown-menu {
                 position: absolute;
@@ -1591,6 +1597,58 @@ button:focus {
     }
 }
 
+.input-group-prepend {
+    position: relative;
+    width: 145px;
+    margin-left: 20px;
+    .dropdown-toggle {
+        width: 145px;
+        height: 23px;
+        border-radius: 4px;
+        padding: 0 10px;
+        font-size: 10px;
+        line-height: 20px;
+        color: #4D4F5C;
+        font-family: "Heebo";
+        text-align: right;
+        background-color: #FFFFFF;
+        border: solid 1px #D7DAE2;
+        -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.05);
+        box-shadow: 0px 2px 3px rgba(0,0,0,0.05);
+        &::after {
+            position: absolute;
+            left: 5px;
+            top: 10px;
+        }
+        &:active {
+            background-color: #FFFFFF;
+            border: solid 1px #D7DAE2;
+            -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.05);
+            box-shadow: 0px 2px 3px rgba(0,0,0,0.05);
+        }
+    }
+    .dropdown-menu {
+        position: absolute;
+        width: 145px !important;
+        min-width: 145px !important;
+        padding: 0;
+        right: 0px !important;
+        overflow: hidden;
+        .dropdown-item {
+            width: 145px;
+            margin: 0;
+            padding: 5px 10px;
+            text-align: right;
+            font-size: 10px;
+            color: #4D4F5C;
+            font-family: "Heebo";
+            input[type=checkbox] {
+                float: left;
+            }
+        }
+    }
+}
+
 #customer-management-chart {
     padding: 30px;
     .chart-header {
@@ -1606,9 +1664,9 @@ button:focus {
             font-size: 12px;
             color: #4D4F5C;
         }
-        .tags-group {
+        .chart-tags-group {
             display: inline-flex;
-            .tag {
+            .chart-tag {
                 height: 22px;
                 font-size: 9px;
                 color: #FFFFFF;
@@ -1631,10 +1689,11 @@ button:focus {
                     width: 8px;
                     height: 8px;
                     margin-right: 8px;
+                    cursor: pointer;
                 }
             }
         }
-        .btn-tag-add {
+        .btn-chart-tag-add {
             background-color: #78849E;
             border: solid 1px #78849E;
             color: #FFFFFF;
@@ -1652,18 +1711,18 @@ button:focus {
         .days-group {
             display: inline-flex;
             padding: 0;
-            list-style: none;
             border: solid 2px #F4F6FC;
             border-radius: 8px;
             overflow: hidden;
             margin: 0;
-            li {
+            .btn-day {
                 width: 85px;
                 height: 34px;
                 border-right: solid 2px #F4F6FC;
                 font-size: 10px;
-                padding: 10px 5px;
+                padding: 5px;
                 text-align: center;
+                vertical-align: middle;
                 &:first-child {
                     border-right: 0;
                 }
@@ -1671,6 +1730,9 @@ button:focus {
                     background-color: #7ABBFC;
                     color: #485272;
                     font-weight: bold;
+                }
+                &:focus {
+                    box-shadow: none;
                 }
             }
         }
@@ -1698,6 +1760,7 @@ button:focus {
             }
         }
         .dropdown-wrapper {
+            display: flex;
             label {
                 text-align: center;
                 width: calc(100% - 145px);

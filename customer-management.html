@@ -385,27 +385,27 @@
         <div class="chart-header">
           <div class="row m-0">
             <div class="label pt-1">מוצרים</div>
-            <div class="tags-group">
-              <div class="tag tag-blue-magenta">IRA- TCA<div class="cs-icon ic-times"></div></div>
-              <div class="tag tag-caparol">IRA- PRESTIGE<div class="cs-icon ic-times"></div></div>
-              <div class="tag tag-purple">IRA- MONTEUX<div class="cs-icon ic-times"></div></div>
-              <div class="tag tag-pantone">IRA- TCA<div class="cs-icon ic-times"></div></div>
+            <div class="chart-tags-group">
+              <div class="chart-tag tag-blue-magenta" data-value="IRA- TCA">IRA- TCA<div class="cs-icon ic-times"></div></div>
+              <div class="chart-tag tag-caparol" data-value="IRA- PRESTIGE">IRA- PRESTIGE<div class="cs-icon ic-times"></div></div>
+              <div class="chart-tag tag-purple" data-value="IRA- MONTEUX">IRA- MONTEUX<div class="cs-icon ic-times"></div></div>
+              <div class="chart-tag tag-pantone" data-value="IRA- TCA">IRA- TCA<div class="cs-icon ic-times"></div></div>
             </div>
-            <button type="button" class="btn-tag-add"><div class="cs-icon ic-plus-white"></div></button>
+            <button type="button" class="btn-chart-tag-add"><div class="cs-icon ic-plus-white"></div></button>
           </div>
           <div class="row mt-4 mx-0">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
               <div class="row">
                 <div class="label pt-2">בחר תקופה</div>
-                <ul class="days-group">
-                  <li class="active">חודש</li>
-                  <li>רבעון</li>
-                  <li>חצי שנתי</li>
-                  <li>שנה</li>
-                  <li>שנתיים</li>
-                  <li>שלוש שנים</li>
-                  <li>חמש שנים</li>
-                </ul>
+                <div class="days-group">
+                  <button class="btn btn-day active" data-value="monday">חודש</button>
+                  <button class="btn btn-day" data-value="tuesday">רבעון</button>
+                  <button class="btn btn-day" data-value="wendesday">חצי שנתי</button>
+                  <button class="btn btn-day" data-value="thursday">שנה</button>
+                  <button class="btn btn-day" data-value="friday">שנתיים</button>
+                  <button class="btn btn-day" data-value="saturday">שלוש שנים</button>
+                  <button class="btn btn-day" data-value="sunday">חמש שנים</button>
+                </div>
               </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -587,6 +587,26 @@
           }]
         }
       }
+  });
+</script>
+<script>
+  // days group control
+  $(document).on('click', '.btn-day', function() {
+    $('.btn-day').removeClass('active');
+    $(this).addClass('active');
+    console.log('selected day: ', $(this).data('value'));
+  });
+  // chart-tags group control
+  $(document).on('click', '.chart-tags-group .chart-tag .ic-times', function() {
+    $parent = $(this).parent('.chart-tag').remove();
+    console.log("removed item: ", $parent.data('value'));
+  });
+  var default_chart_tags;
+  $(function() {
+    default_chart_tags = $('.chart-tags-group').html();
+  })
+  $(document).on('click', '.btn-chart-tag-add', function() {
+    $('.chart-tags-group').html(default_chart_tags);
   });
 </script>
 </body>
