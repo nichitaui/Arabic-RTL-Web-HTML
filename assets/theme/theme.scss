@@ -896,6 +896,10 @@ body {
                             .row {
                                 padding: 15px 0;
                                 border-bottom: solid 1px #EDEEF1;
+                                .form-control {
+                                    max-width: 200px;
+                                    margin-right: auto;
+                                }
                             }
                         }
                         .gender-group {
@@ -921,6 +925,38 @@ body {
                             border-bottom: solid 1px #EDEEF1;
                             label {
                                 font-size: 18px;
+                            }
+                        }
+                        .collapse-menu {
+                            position: relative;
+                            display: block;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 10px;
+                                left: 10px;
+                                width: 8px;
+                                height: 8px;
+                                border: solid #7ABBFC;
+                                border-width: 0 3px 3px 0;
+                                transform: rotate(225deg);
+                            }
+                            &.collapsed {
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    top: 5px;
+                                    left: 10px;
+                                    width: 8px;
+                                    height: 8px;
+                                    border: solid #7ABBFC;
+                                    border-width: 0 3px 3px 0;
+                                    transform: rotate(45deg);
+                                }
+                            }
+                            label {
+                                font-size: 18px;
+                                color: #485272;
                             }
                         }
                     }
@@ -2506,6 +2542,11 @@ button:focus {
     font-size: 18px;
     [type=checkbox] {
         opacity: 0;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 0;
+        z-index: 10;
     }
     .checkmark {
         position: absolute;
@@ -2533,6 +2574,29 @@ button:focus {
     }
     [type=checkbox]:checked ~ .checkmark::after {
         display: block;
+    }
+    &.checkbox-medium {
+        height: 23px;
+        line-height: 23px;
+        [type=checkbox] {
+            width: 23px;
+            height: 23px;
+        }
+        .checkmark {
+            width: 23px;
+            height: 23px;
+            border-radius: 3px;
+            border: solid 3px #D7DDE9;
+            background-color: transparent;
+            &::after {
+                right: 5px;
+                top: 2px;
+                width: 7px;
+                height: 11px;
+                border: solid #D7DDE9;
+                border-width: 0 3px 3px 0;
+            }
+        }
     }
 }
 

@@ -90,10 +90,12 @@
       <form class="filter-form">
         <div class="form-group name-wrapper">
           <div class="row mx-0">
-            שם פרטי
+            <label>שם פרטי</label>
+            <input type="text" class="form-control" placeholder="TEXT" />
           </div>
           <div class="row mx-0">
-            שם משפחה
+            <label>שם משפחה</label>
+            <input type="text" class="form-control" placeholder="TEXT" />
           </div>
         </div>
         <div class="form-group">
@@ -202,45 +204,53 @@
           <input type="checkbox" name="status" value="1" class="lcs_check" autocomplete="off" checked />
         </div>
         <div class="form-group">
-          <label>סטטוס</label>
-          <div class="custom-control custom-checkbox customer-type-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customer-type1">
-            <label class="custom-control-label checkbox-right" for="customer-type1">
-              סוג לקוח
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox customer-type-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customer-type2">
-            <label class="custom-control-label checkbox-right" for="customer-type2">
-              סוג לקוח
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox customer-type-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customer-type3">
-            <label class="custom-control-label checkbox-right" for="customer-type3">
-              סוג לקוח
-            </label>
+          <a class="collapse-menu" data-toggle="collapse" href="#collapse-customer-type" role="button" aria-expanded="true" aria-controls="collapse-customer-type">
+            <label>סטטוס</label>
+          </a>
+          <div class="collapse show" id="collapse-customer-type">
+            <div class="custom-control custom-checkbox customer-type-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customer-type1">
+              <label class="custom-control-label checkbox-right" for="customer-type1">
+                סוג לקוח
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox customer-type-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customer-type2">
+              <label class="custom-control-label checkbox-right" for="customer-type2">
+                סוג לקוח
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox customer-type-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customer-type3">
+              <label class="custom-control-label checkbox-right" for="customer-type3">
+                סוג לקוח
+              </label>
+            </div>
           </div>
         </div>
         <div class="form-group">
-          <label>סוג מוצר</label>
-          <div class="custom-control custom-checkbox product-type-checkbox">
-            <input type="checkbox" class="custom-control-input" id="product-type1">
-            <label class="custom-control-label checkbox-right" for="product-type1">
-              סוג מוצר
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox product-type-checkbox">
-            <input type="checkbox" class="custom-control-input" id="product-type2">
-            <label class="custom-control-label checkbox-right" for="product-type2">
-              סוג מוצר
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox product-type-checkbox">
-            <input type="checkbox" class="custom-control-input" id="product-type3">
-            <label class="custom-control-label checkbox-right" for="product-type3">
-              סוג מוצר
-            </label>
+          <a class="collapse-menu" data-toggle="collapse" href="#collapse-product-type" role="button" aria-expanded="true" aria-controls="collapse-product-type">
+            <label>סוג מוצר</label>  
+          </a>
+          <div class="collapse show" id="collapse-product-type">
+            <div class="custom-control custom-checkbox product-type-checkbox">
+              <input type="checkbox" class="custom-control-input" id="product-type1">
+              <label class="custom-control-label checkbox-right" for="product-type1">
+                סוג מוצר
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox product-type-checkbox">
+              <input type="checkbox" class="custom-control-input" id="product-type2">
+              <label class="custom-control-label checkbox-right" for="product-type2">
+                סוג מוצר
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox product-type-checkbox">
+              <input type="checkbox" class="custom-control-input" id="product-type3">
+              <label class="custom-control-label checkbox-right" for="product-type3">
+                סוג מוצר
+              </label>
+            </div>
           </div>
         </div>
         <div class="form-group">
@@ -260,108 +270,128 @@
           </select>
         </div>
         <div class="form-group">
-          <label>צוות מטפל</label>
-          <div class="custom-control custom-checkbox caring-staff-checkbox">
-            <input type="checkbox" class="custom-control-input" id="caring-staff1">
-            <label class="custom-control-label checkbox-right" for="caring-staff1">
-              צוות מטפל
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox caring-staff-checkbox">
-            <input type="checkbox" class="custom-control-input" id="caring-staff2">
-            <label class="custom-control-label checkbox-right" for="caring-staff2">
-              צוות מטפל
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox caring-staff-checkbox">
-            <input type="checkbox" class="custom-control-input" id="caring-staff3">
-            <label class="custom-control-label checkbox-right" for="caring-staff3">
-              צוות מטפל
-            </label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>מתכנן (סוכן) מטפל</label>
-          <div class="custom-control custom-checkbox agent-therapist-checkbox">
-            <input type="checkbox" class="custom-control-input" id="agent-therapist1">
-            <label class="custom-control-label checkbox-right" for="agent-therapist1">
-              מתכנן (סוכן) מטפל
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox agent-therapist-checkbox">
-            <input type="checkbox" class="custom-control-input" id="agent-therapist2">
-            <label class="custom-control-label checkbox-right" for="agent-therapist2">
-              מתכנן (סוכן) מטפל
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox agent-therapist-checkbox">
-            <input type="checkbox" class="custom-control-input" id="agent-therapist3">
-            <label class="custom-control-label checkbox-right" for="agent-therapist3">
-              מתכנן (סוכן) מטפל
-            </label>
+          <a class="collapse-menu" data-toggle="collapse" href="#collapse-caring-staff" role="button" aria-expanded="true" aria-controls="collapse-caring-staff">
+            <label>צוות מטפל</label>  
+          </a>
+          <div class="collapse show" id="collapse-caring-staff">
+            <div class="custom-control custom-checkbox caring-staff-checkbox">
+              <input type="checkbox" class="custom-control-input" id="caring-staff1">
+              <label class="custom-control-label checkbox-right" for="caring-staff1">
+                צוות מטפל
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox caring-staff-checkbox">
+              <input type="checkbox" class="custom-control-input" id="caring-staff2">
+              <label class="custom-control-label checkbox-right" for="caring-staff2">
+                צוות מטפל
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox caring-staff-checkbox">
+              <input type="checkbox" class="custom-control-input" id="caring-staff3">
+              <label class="custom-control-label checkbox-right" for="caring-staff3">
+                צוות מטפל
+              </label>
+            </div>
           </div>
         </div>
         <div class="form-group">
-          <label>סטוס משפחתי</label>
-          <div class="custom-control custom-checkbox family-status-checkbox">
-            <input type="checkbox" class="custom-control-input" id="family-status1">
-            <label class="custom-control-label checkbox-right" for="family-status1">
-              סטוס משפחתי
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox family-status-checkbox">
-            <input type="checkbox" class="custom-control-input" id="family-status2">
-            <label class="custom-control-label checkbox-right" for="family-status2">
-              סטוס משפחתי
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox family-status-checkbox">
-            <input type="checkbox" class="custom-control-input" id="family-status3">
-            <label class="custom-control-label checkbox-right" for="family-status3">
-              סטוס משפחתי
-            </label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>סוג עוסק</label>
-          <div class="custom-control custom-checkbox type-deals-checkbox">
-            <input type="checkbox" class="custom-control-input" id="type-deals1">
-            <label class="custom-control-label checkbox-right" for="type-deals1">
-              סוג עוסק
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox type-deals-checkbox">
-            <input type="checkbox" class="custom-control-input" id="type-deals2">
-            <label class="custom-control-label checkbox-right" for="type-deals2">
-              סוג עוסק
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox type-deals-checkbox">
-            <input type="checkbox" class="custom-control-input" id="type-deals3">
-            <label class="custom-control-label checkbox-right" for="type-deals3">
-              סוג עוסק
-            </label>
+          <a class="collapse-menu" data-toggle="collapse" href="#collapse-agent-therapist" role="button" aria-expanded="true" aria-controls="collapse-agent-therapist">
+            <label>מתכנן (סוכן) מטפל</label>
+          </a>
+          <div class="collapse show" id="collapse-agent-therapist">
+            <div class="custom-control custom-checkbox agent-therapist-checkbox">
+              <input type="checkbox" class="custom-control-input" id="agent-therapist1">
+              <label class="custom-control-label checkbox-right" for="agent-therapist1">
+                מתכנן (סוכן) מטפל
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox agent-therapist-checkbox">
+              <input type="checkbox" class="custom-control-input" id="agent-therapist2">
+              <label class="custom-control-label checkbox-right" for="agent-therapist2">
+                מתכנן (סוכן) מטפל
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox agent-therapist-checkbox">
+              <input type="checkbox" class="custom-control-input" id="agent-therapist3">
+              <label class="custom-control-label checkbox-right" for="agent-therapist3">
+                מתכנן (סוכן) מטפל
+              </label>
+            </div>
           </div>
         </div>
         <div class="form-group">
-          <label>מעמד</label>
-          <div class="custom-control custom-checkbox status-checkbox">
-            <input type="checkbox" class="custom-control-input" id="status1">
-            <label class="custom-control-label checkbox-right" for="status1">
-              מעמד
-            </label>
+          <a class="collapse-menu" data-toggle="collapse" href="#collapse-family-status" role="button" aria-expanded="true" aria-controls="collapse-family-status">
+            <label>סטוס משפחתי</label>
+          </a>
+          <div class="collapse show" id="collapse-family-status">
+            <div class="custom-control custom-checkbox family-status-checkbox">
+              <input type="checkbox" class="custom-control-input" id="family-status1">
+              <label class="custom-control-label checkbox-right" for="family-status1">
+                סטוס משפחתי
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox family-status-checkbox">
+              <input type="checkbox" class="custom-control-input" id="family-status2">
+              <label class="custom-control-label checkbox-right" for="family-status2">
+                סטוס משפחתי
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox family-status-checkbox">
+              <input type="checkbox" class="custom-control-input" id="family-status3">
+              <label class="custom-control-label checkbox-right" for="family-status3">
+                סטוס משפחתי
+              </label>
+            </div>
           </div>
-          <div class="custom-control custom-checkbox status-checkbox">
-            <input type="checkbox" class="custom-control-input" id="status2">
-            <label class="custom-control-label checkbox-right" for="status2">
-              מעמד
-            </label>
+        </div>
+        <div class="form-group">
+          <a class="collapse-menu" data-toggle="collapse" href="#collapse-type-deals" role="button" aria-expanded="true" aria-controls="collapse-type-deals">
+            <label>סוג עוסק</label>
+          </a>
+          <div class="collapse show" id="collapse-type-deals">
+            <div class="custom-control custom-checkbox type-deals-checkbox">
+              <input type="checkbox" class="custom-control-input" id="type-deals1">
+              <label class="custom-control-label checkbox-right" for="type-deals1">
+                סוג עוסק
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox type-deals-checkbox">
+              <input type="checkbox" class="custom-control-input" id="type-deals2">
+              <label class="custom-control-label checkbox-right" for="type-deals2">
+                סוג עוסק
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox type-deals-checkbox">
+              <input type="checkbox" class="custom-control-input" id="type-deals3">
+              <label class="custom-control-label checkbox-right" for="type-deals3">
+                סוג עוסק
+              </label>
+            </div>
           </div>
-          <div class="custom-control custom-checkbox status-checkbox">
-            <input type="checkbox" class="custom-control-input" id="status3">
-            <label class="custom-control-label checkbox-right" for="status3">
-              מעמד
-            </label>
+        </div>
+        <div class="form-group">
+          <a class="collapse-menu" data-toggle="collapse" href="#collapse-status" role="button" aria-expanded="true" aria-controls="collapse-status">
+            <label>מעמד</label>
+          </a>
+          <div class="collapse show" id="collapse-status">
+            <div class="custom-control custom-checkbox status-checkbox">
+              <input type="checkbox" class="custom-control-input" id="status1">
+              <label class="custom-control-label checkbox-right" for="status1">
+                מעמד
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox status-checkbox">
+              <input type="checkbox" class="custom-control-input" id="status2">
+              <label class="custom-control-label checkbox-right" for="status2">
+                מעמד
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox status-checkbox">
+              <input type="checkbox" class="custom-control-input" id="status3">
+              <label class="custom-control-label checkbox-right" for="status3">
+                מעמד
+              </label>
+            </div>
           </div>
         </div>
       </form>
@@ -519,23 +549,19 @@
     </div>
     <div class="app-body">
       <div class="app-filter-tags">
-        <div class="filter-tag">
-          סינון
-          <div class="cs-icon ic-times"></div>
-        </div>
-        <div class="filter-tag">
-          סינון
-          <div class="cs-icon ic-times"></div>
-        </div>
-        <div class="filter-tag">
-          סינון
-          <div class="cs-icon ic-times"></div>
-        </div>
+        <div class="filter-tag">סינון<div class="cs-icon ic-times"></div></div>
+        <div class="filter-tag">סינון<div class="cs-icon ic-times"></div></div>
+        <div class="filter-tag">סינון<div class="cs-icon ic-times"></div></div>
       </div>
       <div class="app-card-list">
         <div class="card customer-card">
           <div class="card-header">
-            <a href="#" class="float-right"><div class="cs-icon ic-square"></div></a>
+            <div class="float-right">
+              <div class="cs-checkbox-container checkbox-medium m-0">
+                <input type="checkbox" checked="checked" />
+                <span class="checkmark"></span>
+              </div>
+            </div>
             <a href="customer-info.html" class="float-left"><div class="cs-icon ic-pencil"></div></a>
           </div>
           <div class="card-body">
@@ -596,7 +622,12 @@
         </div>
         <div class="card customer-card">
           <div class="card-header">
-            <a href="#" class="float-right"><div class="cs-icon ic-square"></div></a>
+            <div class="float-right">
+              <div class="cs-checkbox-container checkbox-medium m-0">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </div>
+            </div>
             <a href="customer-info.html" class="float-left"><div class="cs-icon ic-pencil"></div></a>
           </div>
           <div class="card-body">
@@ -657,7 +688,12 @@
         </div>
         <div class="card customer-card">
           <div class="card-header">
-            <a href="#" class="float-right"><div class="cs-icon ic-square"></div></a>
+            <div class="float-right">
+              <div class="cs-checkbox-container checkbox-medium m-0">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </div>
+            </div>
             <a href="customer-info.html" class="float-left"><div class="cs-icon ic-pencil"></div></a>
           </div>
           <div class="card-body">
@@ -890,6 +926,20 @@
   });
   $(document).on('click', '.filter-close', function() {
     $('.main').removeClass('open-filter');
+  });
+</script>
+<script>
+  // filter tags control
+  $(document).on('click', '.app-filter-tags .filter-tag .ic-times', function() {
+    $parent = $(this).parent('.filter-tag').remove();
+    console.log('removed tag: ', $parent.text());
+  });
+  $(document).on('keyup', '.input-search', function(e) {
+    if(e.keyCode == 13 && e.target.value) {
+      tag = '<div class="filter-tag">'+ e.target.value +'<div class="cs-icon ic-times"></div></div>';
+      $('.app-filter-tags').append(tag);
+      $(this).val('');
+    }
   });
 </script>
 <!-- ./script -->
