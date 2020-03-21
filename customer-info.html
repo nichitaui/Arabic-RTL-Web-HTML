@@ -266,7 +266,7 @@
         </div>
       </div>
     </div>
-    <div class="app-body" style="display: none;">
+    <div class="app-body">
       <div class="w-100 text-left pl-2">
         <a class="cs-btn-icon btn-exit" href="javascript:void(0)"></a>
         <a class="cs-btn-icon btn-xls" href="javascript:void(0)"></a>
@@ -274,7 +274,7 @@
       </div>
       <div class="app-tab">
         <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <div class="nav nav-tabs xl-tabs" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-customer-detail-tab" data-toggle="tab" href="#nav-customer-detail" role="tab" aria-controls="nav-customer-detail" aria-selected="true"><div class="cs-icon ic-user"></div>פרטי לקוח</a>
             <a class="nav-item nav-link" id="nav-contact-information-tab" data-toggle="tab" href="#nav-contact-information" role="tab" aria-controls="nav-contact-information" aria-selected="false"><div class="cs-icon ic-call"></div>פרטי התקשרות</a>
             <a class="nav-item nav-link" id="nav-employer-tab" data-toggle="tab" href="#nav-employer" role="tab" aria-controls="nav-employer" aria-selected="false"><div class="cs-icon ic-assignment"></div>מעסיק</a>
@@ -1405,7 +1405,6 @@
   
   // semi chart init
   $(window).on( 'resize', function () {
-    console.log(">>", $('.semi-donut').width());
     $('.semi-donut').height( $('.semi-donut').width() / 2 );
     $('head').append('<style>.semi-donut::before{height:'+ $('.semi-donut').width() +'px !important;}</style>');
   }).resize();

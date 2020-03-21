@@ -10339,6 +10339,41 @@ body .main .app .app-body .app-tab {
 body .main .app .app-body .app-tab .nav-tabs {
   border-bottom: solid 17px #7ABBFC;
   height: 86px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body .main .app .app-body .app-tab .nav-tabs {
+    height: 70px;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .main .app .app-body .app-tab .nav-tabs {
+    height: 65px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-body .app-tab .nav-tabs {
+    height: 60px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  body .main .app .app-body .app-tab .nav-tabs {
+    height: 60px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app .app-body .app-tab .nav-tabs {
+    height: 60px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app .app-body .app-tab .nav-tabs.xl-tabs {
+    height: 100px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    background-color: #7abbfc2b;
+  }
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link {
   color: #485272;
@@ -10346,8 +10381,64 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link {
   padding: 19px;
   /* tab nav icons css */
 }
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body .main .app .app-body .app-tab .nav-tabs .nav-link {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .main .app .app-body .app-tab .nav-tabs .nav-link {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-body .app-tab .nav-tabs .nav-link {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  body .main .app .app-body .app-tab .nav-tabs .nav-link {
+    font-size: 12px;
+    padding: 9px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app .app-body .app-tab .nav-tabs .nav-link {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+}
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
   margin-left: 10px;
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
+    width: 14px;
+    height: 14px;
+  }
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-user {
   background-image: url(../img/icons/ic_user_blue.png);

@@ -665,7 +665,6 @@
   } );
   // semi chart init
   $(window).on( 'resize', function () {
-    console.log(">>", $('.semi-donut').width());
     $('.semi-donut').height( $('.semi-donut').width() / 2 );
     $('head').append('<style>.semi-donut::before{height:'+ $('.semi-donut').width() +'px !important;}</style>');
   }).resize();
