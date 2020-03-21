@@ -70,7 +70,7 @@ body {
                             @media (min-width: 1600px) and (max-width: 1919px) {
                                 padding: 20px 50px;
                             }
-                            @media (min-width: 1440px) and (max-width: 1549px) {
+                            @media (min-width: 1440px) and (max-width: 1599px) {
                                 padding: 20px 35px;
                             }
                             @media (min-width: 1360px) and (max-width: 1439px) {
@@ -111,6 +111,7 @@ body {
             z-index: 10;
             @media (min-width: 1024px) and (max-width: 1279px) {
                 width: 270px;
+                height: calc(100% - 142px);
             }
             ul {
                 list-style: none;
@@ -248,16 +249,51 @@ body {
             padding-right: 324px;
             height: calc(100% - 150px);
             overflow: auto;
+            @media (min-width: 1024px) and (max-width: 1279px) {
+                padding-right: 270px;
+                height: calc(100% - 142px);
+            }
             .app-header {
-                padding: 30px;
+                padding: 30px 30px 0 30px;
                 .app-header-top {
                     padding: 10px 0;
                     .title {
                         font-size: 35px;
                         font-weight: 500;
+                        @media (min-width: 1440px) and (max-width: 1599px) {
+                            font-size: 30px;
+                        }
+                        @media (min-width: 1360px) and (max-width: 1439px) {
+                            font-size: 26px;
+                        }
+                        @media (min-width: 1280px) and (max-width: 1359px) {
+                            font-size: 24px;
+                        }
+                        @media (min-width: 1024px) and (max-width: 1279px) {
+                            font-size: 20px;
+                        }
                     }
                     .cs-btn-img {
                         float: left;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        @media (min-width: 1440px) and (max-width: 1599px) {
+                            width: 155px;
+                            height: 46px;
+                        }
+                        @media (min-width: 1360px) and (max-width: 1439px) {
+                            width: 144px;
+                            height: 43px;
+                        }
+                        @media (min-width: 1280px) and (max-width: 1359px) {
+                            width: 130px;
+                            height: 39px;
+                        }
+                        @media (min-width: 1024px) and (max-width: 1279px) {
+                            width: 119px;
+                            height: 36px;
+                            margin-left: 10px;
+                        }
                         &:first-child {
                             margin-left: 0px;
                         }
@@ -284,6 +320,12 @@ body {
                         .card-body {
                             position: relative;
                             font-size: 20px;
+                            @media (min-width: 1600px) and (max-width: 1919px) {
+                                font-size: 14px;
+                            }
+                            @media (min-width: 1024px) and (max-width: 1279px) {
+                                font-size: 14px;
+                            }
                             .action-group {
                                 position: absolute;
                                 top: 0px;
@@ -293,25 +335,112 @@ body {
                                 height: 100%;
                                 .btn-action {
                                     padding: 13px 10px;
+                                    @media (min-width: 1600px) and (max-width: 1919px) {
+                                        padding: 10px 10px;
+                                    }
+                                    @media (min-width: 1024px) and (max-width: 1279px) {
+                                        padding: 10px 10px;
+                                    }
                                 }
                             }
-                            .label {
-                                font-size: 20px;
-                                text-align: center;
-                            }
-                            .value {
-                                font-size: 27px;
-                                font-weight: bold;
-                                text-align: center;
-                                color: #1E87F0;
-                            }
-                            .chart-group {
-                                position: absolute;
-                                top: 50%;
-                                transform: translateY(-50%);
+                            
+                        }
+                        &.value-card {
+                            .card-body {
+                                padding-top: 45px;
+                                padding-bottom: 25px;
+                                @media (min-width: 1600px) and (max-width: 1919px) {
+                                    padding-top: 25px;
+                                }
                                 .label {
-                                    font-size: 14px;
-                                    margin-top: 5px;
+                                    font-size: 20px;
+                                    text-align: center;
+                                }
+                                .value {
+                                    font-size: 27px;
+                                    font-weight: bold;
+                                    text-align: center;
+                                    color: #1E87F0;
+                                    @media (min-width: 1600px) and (max-width: 1919px) {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                        }
+                        &.chart-card {
+                            .card-body {
+                                .chart-group-container {
+                                    position: absolute;
+                                    width: 100%;
+                                    // height: 100%;
+                                    top: 50%;
+                                    right: 50%;
+                                    transform: translate(50%, -50%);
+                                    .chart-group {
+                                        position: relative;
+                                        width: 100%;
+                                        height: 100%;
+                                        display: flex;
+                                        .label {
+                                            font-size: 14px;
+                                            margin-top: 5px;
+                                            text-align: center;
+                                        }
+                                        .semi-donut{
+                                            --percentage: 0;
+                                            --fill: #ff0;
+                                            // width: 120px;
+                                            width: 100%;
+                                            height: 60px;
+                                            position: relative;
+                                            color: #fff;
+                                            font-size: 25px;
+                                            font-weight: 700;
+                                            line-height: 25px;
+                                            overflow: hidden;
+                                            color: var(--fill);
+                                            display: flex;
+                                            align-items: flex-end;
+                                            justify-content: center;
+                                            box-sizing : border-box;
+                                            &:before{
+                                                content: '';
+                                                // width: 120px;
+                                                width: 100%;
+                                                height: 120px;
+                                                border:20px solid;
+                                                border-color : rgba(0,0,0,0.15) rgba(0,0,0,0.15) var(--fill) var(--fill);
+                                                position: absolute;
+                                                border-radius: 50%;
+                                                left: 0;
+                                                top: 0;
+                                                box-sizing : border-box;
+                                                transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ) );
+                                                animation : fillAnimation 1s ease-in;
+                                            }
+                                            // &:after{
+                                            // // content: attr(data-name) ;
+                                            // content: attr(data-name);
+                                            // counter-reset: varible var(--percentage);
+                                            // background: var(--fill) ;
+                                            // box-sizing : border-box;
+                                            // border-radius : 2px;
+                                            // color: #fff;
+                                            // font-weight: 200;
+                                            // font-size: 12px;
+                                            // height: 20px;
+                                            // padding: 3px 5px;
+                                            // top: 0px;
+                                            // position: absolute;
+                                            // left: 0;
+                                            // transform: rotate(calc( -1deg * var(--percentage) * 0 ))  translate(calc(1px * var(--percentage) * 1.5) , calc(-1px * var(--percentage) * 0));
+                                            // // transform: rotate(calc( -1deg * var(--percentage) * 1.8 ))  translate(-30px , 0px);
+                                            // // transition:0.2s ease-in;
+                                            // // transform-origin: 0 50% 0;
+                                            // opacity: 1;
+                                            // }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -641,8 +770,23 @@ body {
                     border-top: solid 17px #7ABBFC;
                     display: grid;
                     grid-template-columns: 20% 20% 20% 20% 20%;
+                    @media (min-width: 1360px) and (max-width: 1439px) {
+                        grid-template-columns: 25% 25% 25% 25%;
+                    }
+                    @media (min-width: 1280px) and (max-width: 1359px) {
+                        grid-template-columns: 25% 25% 25% 25%;
+                    }
+                    @media (min-width: 1024px) and (max-width: 1279px) {
+                        grid-template-columns: 33.33333% 33.33333% 33.33333%;
+                    }
                     .chart-item {
                       padding: 20px 30px;
+                      @media (min-width: 1440px) and (max-width: 1599px) {
+                        padding: 20px 25px;
+                      }
+                      @media (min-width: 1280px) and (max-width: 1359px) {
+                        padding: 20px 25px;
+                      }
                       .chart-wrapper {
                         position: relative;
                         background: #FFFFFF;
@@ -653,19 +797,70 @@ body {
                         -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
                         box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
                         .label {
-                          width: 100%;
-                          text-align: center;
-                          font-size: 18px;
-                          font-weight: bold;
-                          color: #4D4F5C;
-                          margin-top: 15px;
+                            width: 100%;
+                            text-align: center;
+                            font-size: 18px;
+                            font-weight: bold;
+                            color: #4D4F5C;
+                            margin-top: 15px;
                         }
-                        .semi-donut {
-                          position: absolute;
-                          bottom: 0;
-                          right: 50%;
-                          transform: translateX(50%);
-                        }
+                        .semi-donut-main {
+                            --percentage: 0;
+                            --fill: #ff0;
+                            width: 120px;
+                            height: 60px;
+                            position: relative;
+                            color: #fff;
+                            font-size: 25px;
+                            font-weight: 700;
+                            line-height: 25px;
+                            overflow: hidden;
+                            color: var(--fill);
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: center;
+                            box-sizing : border-box;
+                            position: absolute;
+                            bottom: 0px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            &:before{
+                              content: '';
+                              width: 120px;
+                              height: 120px;
+                              border:20px solid;
+                              border-color : rgba(0,0,0,0.15) rgba(0,0,0,0.15) var(--fill) var(--fill);
+                              position: absolute;
+                              border-radius: 50%;
+                              left: 0;
+                              top: 0;
+                              box-sizing : border-box;
+                              transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ) );
+                              animation : fillAnimation 1s ease-in;
+                            }
+                          //   &:after{
+                          //     // content: attr(data-name) ;
+                          //     content: attr(data-name);
+                          //     counter-reset: varible var(--percentage);
+                          //     background: var(--fill) ;
+                          //     box-sizing : border-box;
+                          //     border-radius : 2px;
+                          //     color: #fff;
+                          //     font-weight: 200;
+                          //     font-size: 12px;
+                          //     height: 20px;
+                          //     padding: 3px 5px;
+                          //     top: 0px;
+                          //     position: absolute;
+                          //     left: 0;
+                          //     transform: rotate(calc( -1deg * var(--percentage) * 0 ))  translate(calc(1px * var(--percentage) * 1.5) , calc(-1px * var(--percentage) * 0));
+                          //     // transform: rotate(calc( -1deg * var(--percentage) * 1.8 ))  translate(-30px , 0px);
+                          //     // transition:0.2s ease-in;
+                          //     // transform-origin: 0 50% 0;
+                          //     opacity: 1;
+                          //   }
+                          }
+                          
                       }
                     }
                   }
@@ -1480,57 +1675,57 @@ button:focus {
 
 // ===================Semi Donut Chart model-1========================
 
-.semi-donut{
-  --percentage: 0;
-  --fill: #ff0;
-  width: 120px;
-  height: 60px;
-  position: relative;
-  color: #fff;
-  font-size: 25px;
-  font-weight: 700;
-  overflow: hidden;
-  color: var(--fill);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  box-sizing : border-box;
-  &:before{
-    content: '';
-    width: 120px;
-    height: 120px;
-    border:20px solid;
-    border-color : rgba(0,0,0,0.15) rgba(0,0,0,0.15) var(--fill) var(--fill);
-    position: absolute;
-    border-radius: 50%;
-    left: 0;
-    top: 0;
-    box-sizing : border-box;
-    transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ) );
-    animation : fillAnimation 1s ease-in;
-  }
-//   &:after{
-//     // content: attr(data-name) ;
-//     content: attr(data-name);
-//     counter-reset: varible var(--percentage);
-//     background: var(--fill) ;
-//     box-sizing : border-box;
-//     border-radius : 2px;
-//     color: #fff;
-//     font-weight: 200;
-//     font-size: 12px;
-//     height: 20px;
-//     padding: 3px 5px;
-//     top: 0px;
+// .semi-donut{
+//   --percentage: 0;
+//   --fill: #ff0;
+//   width: 120px;
+//   height: 60px;
+//   position: relative;
+//   color: #fff;
+//   font-size: 25px;
+//   font-weight: 700;
+//   overflow: hidden;
+//   color: var(--fill);
+//   display: flex;
+//   align-items: flex-end;
+//   justify-content: center;
+//   box-sizing : border-box;
+//   &:before{
+//     content: '';
+//     width: 120px;
+//     height: 120px;
+//     border:20px solid;
+//     border-color : rgba(0,0,0,0.15) rgba(0,0,0,0.15) var(--fill) var(--fill);
 //     position: absolute;
+//     border-radius: 50%;
 //     left: 0;
-//     transform: rotate(calc( -1deg * var(--percentage) * 0 ))  translate(calc(1px * var(--percentage) * 1.5) , calc(-1px * var(--percentage) * 0));
-//     // transform: rotate(calc( -1deg * var(--percentage) * 1.8 ))  translate(-30px , 0px);
-//     // transition:0.2s ease-in;
-//     // transform-origin: 0 50% 0;
-//     opacity: 1;
+//     top: 0;
+//     box-sizing : border-box;
+//     transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ) );
+//     animation : fillAnimation 1s ease-in;
 //   }
-}
+// //   &:after{
+// //     // content: attr(data-name) ;
+// //     content: attr(data-name);
+// //     counter-reset: varible var(--percentage);
+// //     background: var(--fill) ;
+// //     box-sizing : border-box;
+// //     border-radius : 2px;
+// //     color: #fff;
+// //     font-weight: 200;
+// //     font-size: 12px;
+// //     height: 20px;
+// //     padding: 3px 5px;
+// //     top: 0px;
+// //     position: absolute;
+// //     left: 0;
+// //     transform: rotate(calc( -1deg * var(--percentage) * 0 ))  translate(calc(1px * var(--percentage) * 1.5) , calc(-1px * var(--percentage) * 0));
+// //     // transform: rotate(calc( -1deg * var(--percentage) * 1.8 ))  translate(-30px , 0px);
+// //     // transition:0.2s ease-in;
+// //     // transform-origin: 0 50% 0;
+// //     opacity: 1;
+// //   }
+// }
 
 
 // ======== special components css ======== //
@@ -2787,11 +2982,58 @@ table {
 
 
 // 
-@media (min-width: 1600px) and (max-width: 1919px) {
-    
+@media (min-width: 1600px) {
+    .col-cxl-1 {
+        flex: 0 0 8.3333333333%;
+        max-width: 8.3333333333%;
+    }
+    .col-cxl-2 {
+        flex: 0 0 16.6666666667%;
+        max-width: 16.6666666667%;
+    }
+    .col-cxl-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .col-cxl-4 {
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%;
+    }
+    .col-cxl-5 {
+        flex: 0 0 41.6666666667%;
+        max-width: 41.6666666667%;
+    }
+    .col-cxl-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-cxl-7 {
+        flex: 0 0 58.3333333333%;
+        max-width: 58.3333333333%;
+    }
+    .col-cxl-8 {
+        flex: 0 0 66.6666666667%;
+        max-width: 66.6666666667%;
+    }
+    .col-cxl-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    .col-cxl-10 {
+        flex: 0 0 83.333333333%;
+        max-width: 83.333333333%;
+    }
+    .col-cxl-11 {
+        flex: 0 0 91.6666666667%;
+        max-width: 91.6666666667%;
+    }
+    .col-cxl-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
-@media (min-width: 1440px) and (max-width: 1549px) {
+@media (min-width: 1440px) and (max-width: 1599px) {
     
 }
 

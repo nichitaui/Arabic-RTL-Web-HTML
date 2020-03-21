@@ -9953,7 +9953,7 @@ body .header .header-nav nav ul li a {
     padding: 20px 50px;
   }
 }
-@media (min-width: 1440px) and (max-width: 1549px) {
+@media (min-width: 1440px) and (max-width: 1599px) {
   body .header .header-nav nav ul li a {
     padding: 20px 35px;
   }
@@ -9998,6 +9998,7 @@ body .main .sidebar {
 @media (min-width: 1024px) and (max-width: 1279px) {
   body .main .sidebar {
     width: 270px;
+    height: calc(100% - 142px);
   }
 }
 body .main .sidebar ul {
@@ -10132,8 +10133,14 @@ body .main .app {
   height: calc(100% - 150px);
   overflow: auto;
 }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app {
+    padding-right: 270px;
+    height: calc(100% - 142px);
+  }
+}
 body .main .app .app-header {
-  padding: 30px;
+  padding: 30px 30px 0 30px;
 }
 body .main .app .app-header .app-header-top {
   padding: 10px 0;
@@ -10142,8 +10149,55 @@ body .main .app .app-header .app-header-top .title {
   font-size: 35px;
   font-weight: 500;
 }
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .main .app .app-header .app-header-top .title {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-header .app-header-top .title {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  body .main .app .app-header .app-header-top .title {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app .app-header .app-header-top .title {
+    font-size: 20px;
+  }
+}
 body .main .app .app-header .app-header-top .cs-btn-img {
   float: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .main .app .app-header .app-header-top .cs-btn-img {
+    width: 155px;
+    height: 46px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-header .app-header-top .cs-btn-img {
+    width: 144px;
+    height: 43px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  body .main .app .app-header .app-header-top .cs-btn-img {
+    width: 130px;
+    height: 39px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app .app-header .app-header-top .cs-btn-img {
+    width: 119px;
+    height: 36px;
+    margin-left: 10px;
+  }
 }
 body .main .app .app-header .app-header-top .cs-btn-img:first-child {
   margin-left: 0px;
@@ -10172,6 +10226,16 @@ body .main .app .app-header .app-header-bottom .card .card-body {
   position: relative;
   font-size: 20px;
 }
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body .main .app .app-header .app-header-bottom .card .card-body {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app .app-header .app-header-bottom .card .card-body {
+    font-size: 14px;
+  }
+}
 body .main .app .app-header .app-header-bottom .card .card-body .action-group {
   position: absolute;
   top: 0px;
@@ -10183,24 +10247,88 @@ body .main .app .app-header .app-header-bottom .card .card-body .action-group {
 body .main .app .app-header .app-header-bottom .card .card-body .action-group .btn-action {
   padding: 13px 10px;
 }
-body .main .app .app-header .app-header-bottom .card .card-body .label {
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body .main .app .app-header .app-header-bottom .card .card-body .action-group .btn-action {
+    padding: 10px 10px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app .app-header .app-header-bottom .card .card-body .action-group .btn-action {
+    padding: 10px 10px;
+  }
+}
+body .main .app .app-header .app-header-bottom .card.value-card .card-body {
+  padding-top: 45px;
+  padding-bottom: 25px;
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body .main .app .app-header .app-header-bottom .card.value-card .card-body {
+    padding-top: 25px;
+  }
+}
+body .main .app .app-header .app-header-bottom .card.value-card .card-body .label {
   font-size: 20px;
   text-align: center;
 }
-body .main .app .app-header .app-header-bottom .card .card-body .value {
+body .main .app .app-header .app-header-bottom .card.value-card .card-body .value {
   font-size: 27px;
   font-weight: bold;
   text-align: center;
   color: #1E87F0;
 }
-body .main .app .app-header .app-header-bottom .card .card-body .chart-group {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body .main .app .app-header .app-header-bottom .card.value-card .card-body .value {
+    font-size: 20px;
+  }
 }
-body .main .app .app-header .app-header-bottom .card .card-body .chart-group .label {
+body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .label {
   font-size: 14px;
   margin-top: 5px;
+  text-align: center;
+}
+body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut {
+  --percentage: 0;
+  --fill: #ff0;
+  width: 100%;
+  height: 60px;
+  position: relative;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 25px;
+  overflow: hidden;
+  color: var(--fill);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+}
+body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut:before {
+  content: "";
+  width: 100%;
+  height: 120px;
+  border: 20px solid;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) var(--fill) var(--fill);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  transform: rotate(calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ));
+  animation: fillAnimation 1s ease-in;
 }
 body .main .app .app-body {
   transition: padding-bottom 1.5s;
@@ -10491,8 +10619,33 @@ body .main .app .app-body .app-chart .chart-container {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
 }
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-body .app-chart .chart-container {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  body .main .app .app-body .app-chart .chart-container {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body .main .app .app-body .app-chart .chart-container {
+    grid-template-columns: 33.33333% 33.33333% 33.33333%;
+  }
+}
 body .main .app .app-body .app-chart .chart-container .chart-item {
   padding: 20px 30px;
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .main .app .app-body .app-chart .chart-container .chart-item {
+    padding: 20px 25px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  body .main .app .app-body .app-chart .chart-container .chart-item {
+    padding: 20px 25px;
+  }
 }
 body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper {
   position: relative;
@@ -10512,11 +10665,40 @@ body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper
   color: #4D4F5C;
   margin-top: 15px;
 }
-body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut {
+body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut-main {
+  --percentage: 0;
+  --fill: #ff0;
+  width: 120px;
+  height: 60px;
+  position: relative;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 25px;
+  overflow: hidden;
+  color: var(--fill);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
   position: absolute;
-  bottom: 0;
-  right: 50%;
-  transform: translateX(50%);
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut-main:before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  border: 20px solid;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) var(--fill) var(--fill);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  transform: rotate(calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ));
+  animation: fillAnimation 1s ease-in;
 }
 body .main .app .app-body .app-table {
   padding: 30px;
@@ -11296,37 +11478,6 @@ button:focus {
 }
 .gj-datepicker .input-group-append .btn .gj-icon {
   top: 15px;
-}
-
-.semi-donut {
-  --percentage: 0;
-  --fill: #ff0;
-  width: 120px;
-  height: 60px;
-  position: relative;
-  color: #fff;
-  font-size: 25px;
-  font-weight: 700;
-  overflow: hidden;
-  color: var(--fill);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  box-sizing: border-box;
-}
-.semi-donut:before {
-  content: "";
-  width: 120px;
-  height: 120px;
-  border: 20px solid;
-  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) var(--fill) var(--fill);
-  position: absolute;
-  border-radius: 50%;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  transform: rotate(calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ));
-  animation: fillAnimation 1s ease-in;
 }
 
 #nav-holding-portfolio,
@@ -12666,6 +12817,68 @@ table th, table td {
   color: #FFFFFF;
   background-color: #7ABBFC;
   border-color: #7ABBFC;
+}
+
+@media (min-width: 1600px) {
+  .col-cxl-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+
+  .col-cxl-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+
+  .col-cxl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-cxl-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+
+  .col-cxl-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+
+  .col-cxl-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-cxl-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+
+  .col-cxl-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+
+  .col-cxl-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .col-cxl-10 {
+    flex: 0 0 83.333333333%;
+    max-width: 83.333333333%;
+  }
+
+  .col-cxl-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+
+  .col-cxl-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */

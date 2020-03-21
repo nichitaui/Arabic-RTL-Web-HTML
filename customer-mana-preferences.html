@@ -137,10 +137,10 @@
   <div class="app">
     <div class="app-header">
       <div class="row app-header-top">
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+        <div class="col-xl-4 col-lg-3 col-md-3 col-sm-6">
           <span class="title">פרטי לקוח</span>
         </div>
-        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+        <div class="col-xl-8 col-lg-9 col-md-9 col-sm-6">
           <button class="cs-btn-img btn-options"></button>
           <button class="cs-btn-img btn-back"></button>
           <button class="cs-btn-img btn-save"></button>
@@ -148,7 +148,7 @@
         </div>
       </div>
       <div class="row app-header-bottom">
-        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+        <div class="col-cxl-7 col-xl-12 col-lg-12 col-md-12 col-sm-12 pb-4">
           <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
               <div class="card">
@@ -198,27 +198,29 @@
               </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-              <div class="card">
+              <div class="card chart-card">
                 <div class="card-header header-green"></div>
-                <div class="card-body">
-                  <div class="row chart-group">
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 px-2">
-                      <div class="semi-donut"  data-name="5" style="--percentage : 50; --fill: #20CC02;">
-                        6
+                <div class="card-body p-0">
+                  <div class="chart-group-container">
+                    <div class="chart-group">
+                      <div class="col-cxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 px-2">
+                        <div class="semi-donut"  data-name="5" style="--percentage : 50; --fill: #20CC02;">
+                          6
+                        </div>
+                        <div class="label">רמת סיכון</div>
                       </div>
-                      <div class="label">רמת סיכון</div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 px-2">
-                      <div class="semi-donut"  data-name="5" style="--percentage : 40; --fill: #20CC02;">
-                        9
+                      <div class="col-cxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 px-2">
+                        <div class="semi-donut"  data-name="5" style="--percentage : 40; --fill: #20CC02;">
+                          9
+                        </div>
+                        <div class="label">רמת מינוף</div>
                       </div>
-                      <div class="label">רמת מינוף</div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 px-2">
-                      <div class="semi-donut"  data-name="5" style="--percentage : 20; --fill: #20CC02;">
-                        7
+                      <div class="col-cxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 px-2">
+                        <div class="semi-donut"  data-name="5" style="--percentage : 20; --fill: #20CC02;">
+                          7
+                        </div>
+                        <div class="label">רמת חשיפה</div>
                       </div>
-                      <div class="label">רמת חשיפה</div>
                     </div>
                   </div>
                 </div>
@@ -226,10 +228,10 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5">
-          <div class="card">
+        <div class="col-cxl-5 col-xl-12 col-lg-12 col-md-12 col-sm-12 pb-4">
+          <div class="card value-card">
             <div class="card-header"></div>
-            <div class="card-body pt-5 pb-4">
+            <div class="card-body">
               <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 border-left-primary">
                   <div class="label pb-3">שווי נכסים</div>
@@ -273,7 +275,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">רמת סיכון</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 50; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 50; --fill: #7ABBFC;">
                 6
               </div>
             </div>
@@ -281,7 +283,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">רמת מינוף</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
             </div>
@@ -289,7 +291,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">יחס להפסד</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
                 7
               </div>
             </div>
@@ -297,7 +299,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">חשיפה למט"ח</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
             </div>
@@ -305,7 +307,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">חשיפה לחו"ל</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
             </div>
@@ -313,7 +315,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">נזילות </div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
                 7
               </div>
             </div>
@@ -321,7 +323,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">תנודתיות התיק מול מדד הייחוס</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 50; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 50; --fill: #7ABBFC;">
                 6
               </div>
             </div>
@@ -329,7 +331,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">השקעות אלטרנטיביות</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 50; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 50; --fill: #7ABBFC;">
                 6
               </div>
             </div>
@@ -337,7 +339,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">תשואת יעד רב שנתית</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
             </div>
@@ -345,12 +347,12 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">אלפא</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
                 7
               </div>
             </div>
           </div>
-          <div class="chart-item">
+          <!-- <div class="chart-item">
 
           </div>
           <div class="chart-item">
@@ -358,11 +360,11 @@
           </div>
           <div class="chart-item">
             
-          </div>
+          </div> -->
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">חשיפה למניות</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
             </div>
@@ -370,7 +372,7 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">חשיפה לנדלן</div>
-              <div class="semi-donut"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
+              <div class="semi-donut-main"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
                 7
               </div>
             </div>
@@ -464,7 +466,19 @@
       searching: false
       // ordering:  false
     });
-} );
+  } );
+  // semi chart init
+  $(window).on( 'resize', function () {
+    console.log(">>", $('.semi-donut').width());
+    $('.semi-donut').height( $('.semi-donut').width() / 2 );
+    $('head').append('<style>.semi-donut::before{height:'+ $('.semi-donut').width() +'px !important;}</style>');
+  }).resize();
+  // main semi chart init
+  $(window).on( 'resize', function () {
+    console.log(">>", $('.semi-donut').width());
+    $('.semi-donut-main').height( $('.semi-donut-main').width() / 2 );
+    $('head').append('<style>.semi-donut-main::before{height:'+ $('.semi-donut-main').width() +'px !important;}</style>');
+  }).resize();
 </script>
 <script type="text/javascript">
   $(document).ready(function(e) {
