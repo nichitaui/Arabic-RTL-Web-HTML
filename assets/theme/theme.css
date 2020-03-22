@@ -11608,6 +11608,7 @@ button:focus {
 .modal-open .modal .modal-dialog .modal-content .modal-body .form-group {
   margin-bottom: 60px;
   text-align: right;
+  max-width: 298px;
 }
 .modal-open .modal .modal-dialog .modal-content .modal-body .form-group label {
   font-size: 18px;
@@ -11618,14 +11619,15 @@ button:focus {
 }
 .modal-open .modal .modal-dialog .modal-content .modal-body .form-group .form-control {
   height: 50px;
-  width: 298px;
-  max-width: 298px;
+  width: 100%;
   background-color: #F9F9F9;
   border: solid 2px #E9E9E9;
   border-radius: 10px;
 }
-.modal-open .modal .modal-dialog .modal-content .modal-body .col-xl-9 .form-control {
+.modal-open .modal .modal-dialog .modal-content .modal-body .col-xl-9 .form-group {
   max-width: 963px;
+}
+.modal-open .modal .modal-dialog .modal-content .modal-body .col-xl-9 .form-group .form-control {
   width: 100%;
   height: 136px;
 }
@@ -11645,14 +11647,20 @@ button:focus {
   box-shadow: 0 0 2px #7ABBFC inset;
 }
 
+#relatedBusinessAddModal .modal-body .col-xl-6 .form-group {
+  width: 300px;
+}
 #relatedBusinessAddModal .modal-body .col-xl-12 .form-control {
   max-width: 630px;
-  width: 100%;
+  width: 630px;
 }
 
 #contactsAddModal .modal-body, #contactsAddModal .modal-footer {
-  margin-right: 170px;
-  margin-left: 75px;
+  margin-right: 120px;
+  margin-left: 45px;
+}
+#contactsAddModal .modal-body .form-group, #contactsAddModal .modal-footer .form-group {
+  width: 300px;
 }
 
 /* datepicker css custom */
@@ -12507,6 +12515,7 @@ button:focus {
 }
 #documentAddModal .modal-dialog .modal-content .modal-body .form-group,
 #contactAddModal .modal-dialog .modal-content .modal-body .form-group {
+  width: 300px;
   margin-bottom: 20px;
 }
 #documentAddModal .modal-dialog .modal-content .modal-body .form-group label,

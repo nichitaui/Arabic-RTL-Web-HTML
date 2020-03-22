@@ -1,8 +1,9 @@
 .lcs_wrap {
-	display: contents;	
+	/* display: contents;	 */
+	display: block;	
 	direction: ltr;
 	height: 28px;
-    vertical-align: middle;
+    /* vertical-align: middle; */
 }
 .lcs_wrap input {
 	display: none;	
