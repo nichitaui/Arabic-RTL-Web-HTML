@@ -693,22 +693,39 @@ body {
                                 .row {
                                     margin-bottom: 35px;
                                     .form-group {
+                                        max-width: 300px;
                                         label {
                                             font-size: 18px;
                                             font-weight: bold;
                                             color: #7ABBFC;
+                                            @media (min-width: 1600px) and (max-width: 1919px) {
+                                                font-size: 16px;
+                                            }
+                                            @media (min-width: 1440px) and (max-width: 1599px) {
+                                                font-size: 14px;
+                                            }
+                                            @media (min-width: 1360px) and (max-width: 1439px) {
+                                                font-size: 14px;
+                                            }
+                                            @media (min-width: 1024px) and (max-width: 1359px) {
+                                                font-size: 12px;
+                                            }
                                         }
                                         .form-control {
                                             height: 50px;
-                                            max-width: 300px;
+                                            // max-width: 300px;
                                             border-radius: 10px !important;
                                             background-color: #F9F9F9;
                                             border: solid 2px #E9E9E9;
+                                            @media (min-width: 1024px) and (max-width: 1599px) {
+                                                height: 45px;
+                                            }
                                         }
                                         .gj-datepicker {
                                             .input-group-append {
                                                 position: absolute;
-                                                right: 260px;
+                                                // right: 260px;
+                                                left: 0;
                                                 top: 0px;
                                                 height: 100%;
                                                 z-index: 10;
@@ -725,9 +742,10 @@ body {
                                 }
                                 &.form-employer {
                                     .button-group {
-                                        position: absolute;
-                                        width: 100%;
-                                        bottom: 0px;
+                                        // position: absolute;
+                                        // width: 100%;
+                                        // bottom: 0px;
+                                        margin-top: 30px;
                                         .form-control {
                                             border: 0;
                                             label {
@@ -744,6 +762,7 @@ body {
                                     .lcs_wrap {
                                         width: 100%;
                                         margin-top: 5px;
+                                        display: block;
                                         .lcs_switch {
                                             &.lcs_on {
                                                 background-color: #7ABBFC;
@@ -1780,7 +1799,8 @@ button:focus {
 .gj-datepicker {
     .input-group-append {
         position: absolute;
-        right: 260px;
+        // right: 260px;
+        left: 0;
         top: 0px;
         height: 100%;
         z-index: 10;
@@ -1850,6 +1870,16 @@ button:focus {
 
 
 // ======== special components css ======== //
+#nav-customer-detail, 
+#nav-contact-information, 
+#nav-employer, 
+#nav-partner, 
+#nav-bank-account, 
+#nav-medical-details, 
+#nav-distribution-graph {
+    padding: 30px !important;
+}
+
 #nav-holding-portfolio, 
 #nav-capital-market, 
 #nav-holdings-alternative,
@@ -1994,11 +2024,6 @@ button:focus {
             height: 40px;
             border-right: solid 1px #BFC5D2;
             float: left;
-            // padding-top: 10px;
-            // .cs-icon {
-            //     width: 20px;
-            //     height: 20px;
-            // }
         }
     }
     tfoot {
@@ -2106,7 +2131,7 @@ button:focus {
         background-color: #D7DDE9;
         -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
         box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
-        padding: 20px;
+        padding: 20px 20px 0 20px;
         .label {
             width: 75px;
             font-size: 12px;
@@ -2183,6 +2208,9 @@ button:focus {
                     box-shadow: none;
                 }
             }
+        }
+        .filter-options {
+            max-width: 767px;
         }
         .input-group-prepend {
             float: left;
@@ -3212,7 +3240,58 @@ table {
 
 
 // 
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
+    .col-mxl-1 {
+        flex: 0 0 8.3333333333%;
+        max-width: 8.3333333333%;
+    }
+    .col-mxl-2 {
+        flex: 0 0 16.6666666667%;
+        max-width: 16.6666666667%;
+    }
+    .col-mxl-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .col-mxl-4 {
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%;
+    }
+    .col-mxl-5 {
+        flex: 0 0 41.6666666667%;
+        max-width: 41.6666666667%;
+    }
+    .col-mxl-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-mxl-7 {
+        flex: 0 0 58.3333333333%;
+        max-width: 58.3333333333%;
+    }
+    .col-mxl-8 {
+        flex: 0 0 66.6666666667%;
+        max-width: 66.6666666667%;
+    }
+    .col-mxl-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    .col-mxl-10 {
+        flex: 0 0 83.333333333%;
+        max-width: 83.333333333%;
+    }
+    .col-mxl-11 {
+        flex: 0 0 91.6666666667%;
+        max-width: 91.6666666667%;
+    }
+    .col-mxl-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
     .col-cxl-1 {
         flex: 0 0 8.3333333333%;
         max-width: 8.3333333333%;

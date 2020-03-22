@@ -10601,21 +10601,48 @@ body .main .app .app-body .app-tab .tab-content .tab-pane {
 body .main .app .app-body .app-tab .tab-content .tab-pane form .row {
   margin-bottom: 35px;
 }
+body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group {
+  max-width: 300px;
+}
 body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group label {
   font-size: 18px;
   font-weight: bold;
   color: #7ABBFC;
 }
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group label {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group label {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group label {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1359px) {
+  body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group label {
+    font-size: 12px;
+  }
+}
 body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .form-control {
   height: 50px;
-  max-width: 300px;
   border-radius: 10px !important;
   background-color: #F9F9F9;
   border: solid 2px #E9E9E9;
 }
+@media (min-width: 1024px) and (max-width: 1599px) {
+  body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .form-control {
+    height: 45px;
+  }
+}
 body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .gj-datepicker .input-group-append {
   position: absolute;
-  right: 260px;
+  left: 0;
   top: 0px;
   height: 100%;
   z-index: 10;
@@ -10628,9 +10655,7 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group 
   top: 15px;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .button-group {
-  position: absolute;
-  width: 100%;
-  bottom: 0px;
+  margin-top: 30px;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .button-group .form-control {
   border: 0;
@@ -10643,6 +10668,7 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .bu
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .lcs_wrap, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-bank-account .lcs_wrap, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-medical-details .lcs_wrap {
   width: 100%;
   margin-top: 5px;
+  display: block;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-partner .lcs_wrap .lcs_switch.lcs_on, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-bank-account .lcs_wrap .lcs_switch.lcs_on, body .main .app .app-body .app-tab .tab-content .tab-pane form.form-medical-details .lcs_wrap .lcs_switch.lcs_on {
   background-color: #7ABBFC;
@@ -11632,7 +11658,7 @@ button:focus {
 /* datepicker css custom */
 .gj-datepicker .input-group-append {
   position: absolute;
-  right: 260px;
+  left: 0;
   top: 0px;
   height: 100%;
   z-index: 10;
@@ -11643,6 +11669,16 @@ button:focus {
 }
 .gj-datepicker .input-group-append .btn .gj-icon {
   top: 15px;
+}
+
+#nav-customer-detail,
+#nav-contact-information,
+#nav-employer,
+#nav-partner,
+#nav-bank-account,
+#nav-medical-details,
+#nav-distribution-graph {
+  padding: 30px !important;
 }
 
 #nav-holding-portfolio,
@@ -12067,7 +12103,7 @@ button:focus {
   background-color: #D7DDE9;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 #customer-management-chart .chart-header .label {
   width: 75px;
@@ -12144,6 +12180,9 @@ button:focus {
 }
 #customer-management-chart .chart-header .days-group .btn-day:focus {
   box-shadow: none;
+}
+#customer-management-chart .chart-header .filter-options {
+  max-width: 767px;
 }
 #customer-management-chart .chart-header .input-group-prepend {
   float: left;
@@ -13116,7 +13155,68 @@ table th, table td {
   border-color: #7ABBFC;
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
+  .col-mxl-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+
+  .col-mxl-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+
+  .col-mxl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-mxl-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+
+  .col-mxl-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+
+  .col-mxl-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-mxl-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+
+  .col-mxl-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+
+  .col-mxl-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .col-mxl-10 {
+    flex: 0 0 83.333333333%;
+    max-width: 83.333333333%;
+  }
+
+  .col-mxl-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+
+  .col-mxl-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
   .col-cxl-1 {
     flex: 0 0 8.3333333333%;
     max-width: 8.3333333333%;
