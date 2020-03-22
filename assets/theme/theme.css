@@ -10595,6 +10595,8 @@ body .main .app .app-body .app-tab .tab-content .tab-pane {
   padding: 25px;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  overflow-x: auto;
+  padding: 0;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane form .row {
   margin-bottom: 35px;
@@ -10662,6 +10664,18 @@ body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead 
   font-weight: bold;
   color: #7ABBFC;
 }
+@media (min-width: 1360px) and (max-width: 1919px) {
+  body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1359px) {
+  body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+}
 body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th:last-child {
   text-align: left;
 }
@@ -10673,6 +10687,18 @@ body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody 
   vertical-align: middle;
   font-size: 18px;
   padding: 20px 0;
+}
+@media (min-width: 1360px) and (max-width: 1919px) {
+  body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1359px) {
+  body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td {
+    font-size: 12px;
+    padding: 5px 0;
+  }
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td:last-child {
   text-align: left;
@@ -10794,20 +10820,22 @@ body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper
 body .main .app .app-body .app-table {
   padding: 30px;
 }
-body .main .app .app-body .app-table table {
+body .main .app .app-body .app-table .table-container {
+  overflow-x: auto;
+}
+body .main .app .app-body .app-table .table-container table {
   background-color: #FFFFFF;
   border-top: solid 17px #7ABBFC;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
-body .main .app .app-body .app-table table tfoot {
+body .main .app .app-body .app-table .table-container table tfoot {
   background-color: #78849E;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
-body .main .app .app-body .app-table table tfoot td {
+body .main .app .app-body .app-table .table-container table tfoot td {
   vertical-align: middle;
-  font-size: 16px;
   font-weight: bold;
   color: #FFFFFF;
 }
@@ -10816,13 +10844,14 @@ body .main .app .app-body .app-chart-group {
 }
 body .main .app .app-body .app-chart-group ul {
   width: 100%;
-  display: inline-flex;
+  display: table;
   margin: 0;
   padding: 0;
   list-style: none;
   margin-bottom: 30px;
 }
 body .main .app .app-body .app-chart-group ul li {
+  display: table-cell;
   width: 20%;
   height: 62px;
   background-color: #7ABBFC;
@@ -10831,17 +10860,37 @@ body .main .app .app-body .app-chart-group ul li {
   color: #FFFFFF;
   font-size: 16px;
   padding: 20px 10px;
+  vertical-align: middle;
+}
+@media (min-width: 1024px) and (max-width: 1919px) {
+  body .main .app .app-body .app-chart-group ul li {
+    font-size: 12px;
+    padding: 10px;
+  }
 }
 body .main .app .app-body .app-chart-group .chart-container .chart-header {
+  width: 100%;
+  display: table;
   background-color: #D7DDE9;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  height: 58px;
   text-align: center;
+}
+body .main .app .app-body .app-chart-group .chart-container .chart-header span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
   font-size: 16px;
   font-weight: 500;
   color: #4D4F5C;
-  height: 58px;
   padding: 15px;
+}
+@media (min-width: 1024px) and (max-width: 1919px) {
+  body .main .app .app-body .app-chart-group .chart-container .chart-header span {
+    font-size: 12px;
+    padding: 10px;
+  }
 }
 body .main .app .app-body .app-chart-group .chart-container .chart-body {
   max-height: 450px;
@@ -11142,6 +11191,19 @@ body .main.open-filter .filter-app {
   border-radius: 50%;
   padding: 15px;
   margin-left: 20px;
+  background-size: contain;
+}
+@media (min-width: 1360px) and (max-width: 1919px) {
+  .cs-btn-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .cs-btn-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 .cs-btn-icon.btn-exit {
   background-image: url(../img/buttons/btn-exit.png);
@@ -11232,6 +11294,12 @@ body .main.open-filter .filter-app {
   background-position: center center;
   /* sidebar icon */
   /* tab nav icons css */
+}
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .cs-icon {
+    width: 16px;
+    height: 16px;
+  }
 }
 .cs-icon.ic-folder-shared {
   background-image: url(../img/icons/ic_folder_shared.png);
@@ -11385,6 +11453,12 @@ body .main.open-filter .filter-app {
 }
 .cs-icon.ic-plus-white {
   background-image: url(../img/icons/ic_plus_white.png);
+}
+.cs-icon.ic-plus-blue {
+  background-image: url(../img/icons/ic_plus_blue.png);
+}
+.cs-icon.ic-minus-blue {
+  background-image: url(../img/icons/ic_minus_blue.png);
 }
 .cs-icon.ic-dollar-blue {
   background-image: url(../img/icons/ic_dollar_blue.png);
@@ -11579,6 +11653,7 @@ button:focus {
 #nav-list-of-reports,
 #nav-aggregation {
   padding: 0;
+  overflow: auto;
 }
 #nav-holding-portfolio .table-filter-group,
 #nav-capital-market .table-filter-group,
@@ -11589,12 +11664,23 @@ button:focus {
 #nav-aggregation .table-filter-group {
   position: relative;
   height: 44px;
-  width: 100%;
   display: inline-flex;
   background-color: #D7DDE9;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   padding: 10px 20px;
+  min-width: 1024px;
+}
+@media (min-width: 1360px) {
+  #nav-holding-portfolio .table-filter-group,
+#nav-capital-market .table-filter-group,
+#nav-holdings-alternative .table-filter-group,
+#nav-sustainability-loan .table-filter-group,
+#nav-potential-loans .table-filter-group,
+#nav-list-of-reports .table-filter-group,
+#nav-aggregation .table-filter-group {
+    width: 100%;
+  }
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend,
 #nav-capital-market .table-filter-group .input-group-prepend,
@@ -11606,6 +11692,26 @@ button:focus {
   position: relative;
   width: 145px;
   margin-left: 20px;
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  #nav-holding-portfolio .table-filter-group .input-group-prepend,
+#nav-capital-market .table-filter-group .input-group-prepend,
+#nav-holdings-alternative .table-filter-group .input-group-prepend,
+#nav-sustainability-loan .table-filter-group .input-group-prepend,
+#nav-potential-loans .table-filter-group .input-group-prepend,
+#nav-list-of-reports .table-filter-group .input-group-prepend,
+#nav-aggregation .table-filter-group .input-group-prepend {
+    width: 140px;
+  }
+  #nav-holding-portfolio .table-filter-group .input-group-prepend:last-child,
+#nav-capital-market .table-filter-group .input-group-prepend:last-child,
+#nav-holdings-alternative .table-filter-group .input-group-prepend:last-child,
+#nav-sustainability-loan .table-filter-group .input-group-prepend:last-child,
+#nav-potential-loans .table-filter-group .input-group-prepend:last-child,
+#nav-list-of-reports .table-filter-group .input-group-prepend:last-child,
+#nav-aggregation .table-filter-group .input-group-prepend:last-child {
+    margin-left: 0;
+  }
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle,
@@ -11627,6 +11733,17 @@ button:focus {
   border: solid 1px #D7DAE2;
   -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-toggle,
+#nav-aggregation .table-filter-group .input-group-prepend .dropdown-toggle {
+    width: 140px;
+  }
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle::after,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle::after,
@@ -11665,6 +11782,18 @@ button:focus {
   right: 0px !important;
   overflow: hidden;
 }
+@media (min-width: 1360px) and (max-width: 1439px) {
+  #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-menu,
+#nav-aggregation .table-filter-group .input-group-prepend .dropdown-menu {
+    width: 140px !important;
+    min-width: 140px !important;
+  }
+}
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
 #nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
@@ -11679,6 +11808,17 @@ button:focus {
   font-size: 10px;
   color: #4D4F5C;
   font-family: "Heebo";
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-sustainability-loan .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-potential-loans .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-list-of-reports .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item,
+#nav-aggregation .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item {
+    width: 140px;
+  }
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-menu .dropdown-item input[type=checkbox],
@@ -11782,17 +11922,6 @@ button:focus {
   height: 40px;
   border-right: solid 1px #BFC5D2;
   float: left;
-  padding-top: 10px;
-}
-#nav-holding-portfolio tbody .btn-view-detail .cs-icon,
-#nav-capital-market tbody .btn-view-detail .cs-icon,
-#nav-holdings-alternative tbody .btn-view-detail .cs-icon,
-#nav-sustainability-loan tbody .btn-view-detail .cs-icon,
-#nav-potential-loans tbody .btn-view-detail .cs-icon,
-#nav-list-of-reports tbody .btn-view-detail .cs-icon,
-#nav-aggregation tbody .btn-view-detail .cs-icon {
-  width: 20px;
-  height: 20px;
 }
 #nav-holding-portfolio tfoot,
 #nav-capital-market tfoot,
@@ -11822,7 +11951,6 @@ button:focus {
 #nav-list-of-reports tfoot td,
 #nav-aggregation tfoot td {
   vertical-align: middle;
-  font-size: 16px;
   font-weight: bold;
   color: #FFFFFF;
 }
@@ -12074,8 +12202,17 @@ button:focus {
   padding: 20px 10px 10px 10px;
 }
 
+.dataTables_wrapper {
+  min-width: 1024px;
+}
+.dataTables_wrapper .row {
+  margin: 0;
+}
 .dataTables_wrapper .row:last-child {
   display: none;
+}
+.dataTables_wrapper .row [class*=col-] {
+  padding: 0;
 }
 .dataTables_wrapper tr th {
   vertical-align: middle;
@@ -12085,31 +12222,55 @@ button:focus {
   font-weight: bold;
   color: #7ABBFC;
 }
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .dataTables_wrapper tr th {
+    font-size: 12px;
+    padding: 10px 5px;
+  }
+}
 .dataTables_wrapper tr td {
   vertical-align: middle;
-  padding-top: 19px;
-  padding-bottom: 19px;
   font-size: 16px;
   color: #485272;
 }
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .dataTables_wrapper tr td {
+    font-size: 12px;
+    padding: 10px 5px;
+  }
+}
 .dataTables_wrapper tr td:last-child {
   display: flex;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 .dataTables_wrapper tr td:last-child span {
   margin-left: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .dataTables_wrapper tr td:last-child .btn-view-detail {
   position: relative;
   display: inline-block;
   width: 50px;
-  height: 27px;
+  height: 40px;
   border-right: solid 1px #BFC5D2;
   text-align: center;
   margin-right: auto;
+  padding-top: 7px;
 }
 .dataTables_wrapper tr td:last-child .btn-view-detail .cs-icon {
   width: 27px;
   height: 27px;
+}
+
+.input-group-dropdown .dropdown-menu .dropdown-item {
+  text-align: right;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.input-group-dropdown .dropdown-menu .dropdown-item .cs-checkbox-container {
+  top: 5px;
 }
 
 #nav-holdings-portfolio-by-group {
@@ -12157,6 +12318,9 @@ button:focus {
   color: #FFFFFF;
   font-weight: bold;
   padding-right: 20px;
+}
+#nav-holdings-portfolio-by-group .collapse-container .collapse-item .collapse {
+  overflow: auto;
 }
 
 #nav-distribution-graph .donut {
@@ -12502,6 +12666,48 @@ button:focus {
   max-height: 184px;
   overflow: auto;
   padding: 25px 70px;
+}
+
+#nav-contacts .form-control {
+  background-color: #F9F9F9;
+  border: solid 2px #E9E9E9;
+}
+@media (min-width: 1920px) {
+  #nav-contacts .form-control {
+    height: 50px;
+    border-radius: 8px;
+  }
+}
+#nav-contacts table tbody tr th:first-child {
+  width: 40px;
+  min-width: 40px;
+}
+#nav-contacts table tbody tr td:first-child {
+  width: 40px;
+  min-width: 40px;
+  text-align: center;
+}
+#nav-contacts table tbody tr td .details-control .cs-icon {
+  width: 15px;
+  height: 15px;
+}
+#nav-contacts table tbody tr td .details-control .cs-icon.ic-collapse-pm {
+  background-image: url(../img/icons/ic_plus_blue.png);
+}
+#nav-contacts table tbody tr td .details-control.shown .ic-collapse-pm {
+  background-image: url(../img/icons/ic_minus_blue.png);
+}
+#nav-contacts table tbody tr td:last-child {
+  min-width: 100px;
+  padding-left: 0;
+  display: block;
+}
+#nav-contacts table tbody tr td:last-child a {
+  display: inline-flex;
+  width: 50px;
+  height: 40px;
+  border-right: solid 1px #BFC5D2;
+  padding: 10px 15px;
 }
 
 #nav-beneficiaries table thead th {
