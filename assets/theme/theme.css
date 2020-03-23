@@ -11616,6 +11616,19 @@ button:focus {
   font-family: "Heebo";
   color: #7ABBFC;
   text-align: right;
+  line-height: 20px;
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  .modal-open .modal .modal-dialog .modal-content .modal-body .form-group label {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .modal-open .modal .modal-dialog .modal-content .modal-body .form-group label {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 .modal-open .modal .modal-dialog .modal-content .modal-body .form-group .form-control {
   height: 50px;
@@ -12825,6 +12838,24 @@ button:focus {
   font-size: 20px;
   font-weight: bold;
 }
+@media (min-width: 1280px) and (max-width: 1359px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    padding: 10px 0;
+    margin-left: 5px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    padding: 7px 0;
+    margin-left: 3px;
+  }
+}
 #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step.active {
   background-color: #21D102 !important;
   color: #FFFFFF;
@@ -12858,8 +12889,23 @@ button:focus {
   font-weight: bold;
   padding-right: 15px;
 }
+@media (min-width: 1280px) and (max-width: 1359px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab h3 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab h3 {
+    font-size: 22px;
+  }
+}
 #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab h5 {
   padding-right: 15px;
+}
+@media (min-width: 1024px) and (max-width: 1599px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .form-control {
+    height: 45px;
+  }
 }
 #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 {
   display: grid;
@@ -12867,10 +12913,37 @@ button:focus {
 }
 #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 .form-group {
   margin-bottom: 35px;
+  padding: 0 10px;
 }
 #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 .form-group.grid-sum-2 {
   grid-column-start: 1;
   grid-column-end: 3;
+  min-width: 600px;
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 .form-group.grid-sum-2 {
+    min-width: 560px;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 .form-group.grid-sum-2 {
+    min-width: 500px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 .form-group.grid-sum-2 {
+    min-width: 450px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1359px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 .form-group.grid-sum-2 {
+    min-width: 440px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .grid-5 .form-group.grid-sum-2 {
+    min-width: 335px;
+  }
 }
 #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-group {
   margin-bottom: 48px;
@@ -12976,9 +13049,14 @@ button:focus {
   display: inline-flex;
   padding-right: 25px;
   line-height: 30px;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 0;
   font-size: 18px;
+}
+@media (min-width: 1024px) and (max-width: 1599px) {
+  .cs-radio-container {
+    margin-top: 30px;
+  }
 }
 .cs-radio-container [type=radio] {
   opacity: 0;
@@ -13022,7 +13100,7 @@ button:focus {
   height: 30px;
   padding-right: 25px;
   line-height: 30px;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 0;
   font-size: 18px;
 }
