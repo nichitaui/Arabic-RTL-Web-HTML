@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="assets/plugins/sliding-toggle-switch/lc_switch.css">
   <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="assets/plugins/DataTables/datatables.css"/>
-  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="assets/plugins/svg-pie-donut-chart/css/jquery.listtopie.css" />
+  <link rel="stylesheet" href="node_modules/chart.js/dist/Chart.min.css" />
 
   <script src="assets/jquery/jquery.min.js"></script>
   <script src="assets/plugins/popper/popper.min.js"></script>
@@ -517,16 +516,12 @@
 
           <div class="tab-pane fade" id="nav-distribution-graph" role="tabpanel" aria-labelledby="nav-distribution-graph-tab">
             <div class="row">
-              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="col-mxl-4 col-cxl-4 col-xl-6 col-lg-12 col-md-12 col-sm-12">
                 <div class="row py-4">
                   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                     <div class="w-100 text-center font-weight-bold">מוצרים אלטרנטיביים</div>
-                    <div class="w-100">
-                      <div class='donut'>
-                        <div data-lcolor="#7ABBFC">34</div>
-                        <div data-lcolor="#3ACCE1">72</div>
-                        <div data-lcolor="#32D296">34</div>
-                      </div>
+                    <div class="doughnut-wrapper">
+                      <canvas class="doughnut"></canvas>
                     </div>
                     <div class="w-100 text-center font-weight-bold">סה"כ  <span class="text-primary">2,474,000</span></div>
                   </div>
@@ -545,16 +540,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="col-mxl-4 col-cxl-4 col-xl-6 col-lg-12 col-md-12 col-sm-12">
                 <div class="row py-4">
                   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                     <div class="w-100 text-center font-weight-bold">שוק ההון</div>
-                    <div class="w-100">
-                      <div class='donut'>
-                        <div data-lcolor="#7ABBFC">34</div>
-                        <div data-lcolor="#3ACCE1">72</div>
-                        <div data-lcolor="#32D296">34</div>
-                      </div>
+                    <div class="doughnut-wrapper">
+                      <canvas class="doughnut"></canvas>
                     </div>
                     <div class="w-100 text-center font-weight-bold">סה"כ  <span class="text-primary">2,474,000</span></div>
                   </div>
@@ -573,16 +564,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="col-mxl-4 col-cxl-4 col-xl-6 col-lg-12 col-md-12 col-sm-12">
                 <div class="row py-4">
                   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                     <div class="w-100 text-center font-weight-bold">מוצרים אלטרנטיביים ושוק ההון</div>
-                    <div class="w-100">
-                      <div class='donut'>
-                        <div data-lcolor="#7ABBFC">34</div>
-                        <div data-lcolor="#3ACCE1">72</div>
-                        <div data-lcolor="#32D296">34</div>
-                      </div>
+                    <div class="doughnut-wrapper">
+                      <canvas class="doughnut"></canvas>
                     </div>
                     <div class="w-100 text-center font-weight-bold">סה"כ  <span class="text-primary">2,474,000</span></div>
                   </div>
@@ -602,16 +589,12 @@
                 </div>
               </div>
 
-              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="col-mxl-4 col-cxl-4 col-xl-6 col-lg-12 col-md-12 col-sm-12">
                 <div class="row py-4">
                   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                     <div class="w-100 text-center font-weight-bold">חשיפה מטבעית</div>
-                    <div class="w-100">
-                      <div class='donut'>
-                        <div data-lcolor="#7ABBFC">34</div>
-                        <div data-lcolor="#3ACCE1">72</div>
-                        <div data-lcolor="#32D296">34</div>
-                      </div>
+                    <div class="doughnut-wrapper">
+                      <canvas class="doughnut"></canvas>
                     </div>
                     <div class="w-100 text-center font-weight-bold">סה"כ  <span class="text-primary">2,474,000</span></div>
                   </div>
@@ -630,16 +613,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="col-mxl-4 col-cxl-4 col-xl-6 col-lg-12 col-md-12 col-sm-12">
                 <div class="row py-4">
                   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                     <div class="w-100 text-center font-weight-bold">מיסוי</div>
-                    <div class="w-100">
-                      <div class='donut'>
-                        <div data-lcolor="#7ABBFC">34</div>
-                        <div data-lcolor="#3ACCE1">72</div>
-                        <div data-lcolor="#32D296">34</div>
-                      </div>
+                    <div class="doughnut-wrapper">
+                      <canvas class="doughnut"></canvas>
                     </div>
                     <div class="w-100 text-center font-weight-bold">סה"כ  <span class="text-primary">2,474,000</span></div>
                   </div>
@@ -658,16 +637,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+              <div class="col-mxl-4 col-cxl-4 col-xl-6 col-lg-12 col-md-12 col-sm-12">
                 <div class="row py-4">
                   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                     <div class="w-100 text-center font-weight-bold">סוגי מוצרים</div>
-                    <div class="w-100">
-                      <div class='donut'>
-                        <div data-lcolor="#7ABBFC">34</div>
-                        <div data-lcolor="#3ACCE1">72</div>
-                        <div data-lcolor="#32D296">34</div>
-                      </div>
+                    <div class="doughnut-wrapper">
+                      <canvas class="doughnut"></canvas>
                     </div>
                     <div class="w-100 text-center font-weight-bold">סה"כ  <span class="text-primary">2,474,000</span></div>
                   </div>
@@ -1216,9 +1191,8 @@
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 <script src="assets/plugins/sliding-toggle-switch/lc_switch.js" type="text/javascript"></script>
 <script type="text/javascript" src="assets/plugins/DataTables/datatables.min.js"></script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
-<script src="./assets/plugins/svg-pie-donut-chart/js/jquery.listtopie.js"></script>
+<script type="text/javascript" src="node_modules/chart.js/dist/Chart.min.js"></script>
+<script type="text/javascript" src="node_modules/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
 
 <script>
   // datepicker init
@@ -1284,32 +1258,44 @@
 </script>
 
 <script>
-  var renderDistributionGraphChart = function() {
-    $('.donut').listtopie({
-      startAngle:180,
-      strokeWidth:1,
-      hoverEvent:true,
-      hoverBorderColor:'#2a363b',
-      hoverAnimate:false,
-      drawType:'round',
-      speedDraw:150,
-      hoverColor:'#ffffff',
-      textColor:'#ffffff',
-      strokeColor:'#ffffff',
-      textSize:"17",
-      fontWeight: "300",
-      hoverAnimate:true,
-      marginCenter:70,
-      useMenu: true,
-      usePercent: true,
-      // valList:
+  // var ctx = document.getElementById('pie').getContext('2d');
+
+  function drawDoughnutCharts(chartEle) {
+    var ctx = chartEle.getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+          labels: ['Red', 'Yellow', 'Blue'],
+          datasets: [{
+              label: '# of Votes',
+              data: [34, 32, 34],
+              backgroundColor: ['#bcddfd', '#9ce5f0', '#98e8ca'],
+              // borderColor: '#A3A0FB',
+              borderWidth: 1,
+            }]
+      },
+      options: {
+        legend: {
+            display: false
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        cutoutPercentage: 60,
+        plugins: {
+          labels: {
+            render: 'percentage',
+            fontColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF'],
+            precision: 2
+          }
+        }
+      }
     });
   }
 
-  $('#nav-distribution-graph-tab').on('shown.bs.tab', function(){
-    renderDistributionGraphChart();
-    $('#nav-distribution-graph-tab').off(); // to remove the binded event after the initial rendering
-  });
+  var chartEles = document.getElementsByClassName('doughnut');
+  for(var i = 0; i < chartEles.length; i++) {
+    drawDoughnutCharts(chartEles[i]);
+  }
 </script>
 </body>
 </html>

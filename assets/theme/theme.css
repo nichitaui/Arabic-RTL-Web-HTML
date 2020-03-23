@@ -12412,6 +12412,11 @@ button:focus {
   border-radius: 50%;
   display: block;
 }
+#nav-distribution-graph .doughnut-wrapper {
+  width: 100%;
+  height: 220px;
+  padding: 10px;
+}
 
 #nisCapitalMarketModal .modal-dialog,
 #nisAlternativeProductsModal .modal-dialog {
