@@ -538,7 +538,7 @@
             <option>מיון לפי</option>
           </select>
           <div class="input-search-wrapper">
-            <input type="text" class="form-control input-search" placeholder="חיפש" />
+            <input type="text" class="form-control input-search" id="input_search" placeholder="חיפש" />
             <img src="assets/img/icons/ic_search.png" alt="icon search" class="input-icon" />
           </div>
         </div>
@@ -773,19 +773,25 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>שם פרטי</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_f_name" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>שם משפחה</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_l_name" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>מגדר</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_gender" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
           </div>
@@ -793,19 +799,25 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>ת.ז</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_id_num" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>סוג עוסק</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_type_deals" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>מעמד</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_status" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
           </div>
@@ -813,39 +825,51 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>כתובת</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_address" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>ישוב</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_settlement" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>טלפון</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_phone_num" class="form-control" placeholder="NUM" />
+                </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-              <div class="form-group">
+              <div class="form-group invalid">
                 <label>טלפון</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_phone_num_2" class="form-control" placeholder="NUM" />
+                </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>אימייל</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_email" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>צוות מטפל</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_caring_staff" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
           </div>
@@ -853,7 +877,9 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
               <div class="form-group">
                 <label>מתכנן (סוכן) מטפל</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="_agent" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
           </div>
@@ -873,7 +899,27 @@
 <script src='assets/plugins/addSlider/res/Obj.min.js'></script>
 <script src='assets/plugins/addSlider/src/addSlider.js'></script>
 <script src="assets/plugins/sliding-toggle-switch/lc_switch.js" type="text/javascript"></script>
+<script src="assets/js/autocomplete.js" type="text/javascript"></script>
+<script src="assets/js/form-validation.js" type="text/javascript"></script>
+
 <!-- ./plugin js -->
+<script>
+  // autocomplete form-control proximity
+  autocomplete(document.getElementById("_f_name"), countries);
+  autocomplete(document.getElementById("_l_name"), countries);
+  autocomplete(document.getElementById("_id_num"), countries);
+  autocomplete(document.getElementById("_type_deals"), countries);
+  autocomplete(document.getElementById("_gender"), countries);
+  autocomplete(document.getElementById("_status"), countries);
+  autocomplete(document.getElementById("_address"), countries);
+  autocomplete(document.getElementById("_settlement"), countries);
+  autocomplete(document.getElementById("_settlement"), countries);
+  autocomplete(document.getElementById("_phone_num"), countries);
+  autocomplete(document.getElementById("_email"), countries);
+  autocomplete(document.getElementById("_caring_staff"), countries);
+  autocomplete(document.getElementById("_agent"), countries);
+  autocomplete(document.getElementById("_phone_num_2"), countries);
+</script>
 <script type="text/javascript">
   $(document).ready(function(e) {
       $('input.lcs_check').lc_switch('פעיל', 'deactive');

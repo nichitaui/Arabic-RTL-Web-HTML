@@ -11610,6 +11610,11 @@ button:focus {
   text-align: right;
   max-width: 298px;
 }
+@media (min-width: 1600px) {
+  .modal-open .modal .modal-dialog .modal-content .modal-body .form-group {
+    width: 300px;
+  }
+}
 .modal-open .modal .modal-dialog .modal-content .modal-body .form-group label {
   font-size: 18px;
   font-weight: bold;
@@ -11649,6 +11654,59 @@ button:focus {
   text-align: right;
   justify-content: flex-start;
   padding: 30px 50px 60px 30px;
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
 }
 
 #relativesEditModal .lcs_wrap {
@@ -12800,6 +12858,7 @@ button:focus {
 
 #newBeneficiaryModal .modal-body .form-group {
   margin-bottom: 30px;
+  max-width: 200px;
 }
 #newBeneficiaryModal .modal-body .form-group label {
   color: #3ACCE1;
@@ -13195,6 +13254,22 @@ button:focus {
 
 table th, table td {
   vertical-align: middle !important;
+}
+
+.form-group.invalid label {
+  color: #DE0101 !important;
+}
+.form-group.invalid .form-control {
+  border: solid 2px #DE0101 !important;
+}
+.form-group.invalid .form-control::placeholder {
+  color: #DE0101;
+}
+.form-group.invalid .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(222, 1, 1, 0.25);
+}
+.form-group .form-control[type=text].invalid, .form-group .form-control[type=number].invalid, .form-group .form-control[type=email].invalid, .form-group .form-control[type=password].invalid {
+  border: solid 2px #DE0101 !important;
 }
 
 .thead-dark {

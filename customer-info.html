@@ -1084,19 +1084,25 @@
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>שם פרטי</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="f_name" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>שם משפחה</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="l_name" class="form-control" placeholder="TEXT" />  
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>מספר זהות</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="id_num" class="form-control" placeholder="TEXT" />  
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
@@ -1110,25 +1116,33 @@
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>קרבה</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="proximity" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>מין</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="gender" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>מצב משפחתי</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="marital_status" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>עיסוק</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="occupation" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
           </div>
@@ -1142,19 +1156,25 @@
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>מספר טלפון</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="phone_num" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>מספר נייד</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="cellphone_num" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>דואר אלקטרוני</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="email" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
           </div>
@@ -1162,45 +1182,59 @@
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>ישוב</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="settlement" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>רחוב</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="street" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>מספר בית</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="house_num" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>מיקוד</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="postal_code" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-              <div class="form-group">
+              <div class="form-group invalid">
                 <label>סטטוס</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="status" class="form-control invalid" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label> תיק  מקושר</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="linked_bag" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
               <div class="form-group">
                 <label>שווי תיק</label>
-                <input type="text" class="form-control" placeholder="TEXT" />
+                <div class="autocomplete">
+                  <input type="text" id="portfolio_value" class="form-control" placeholder="TEXT" />
+                </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
@@ -3097,7 +3131,29 @@
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 <script src="assets/plugins/sliding-toggle-switch/lc_switch.js" type="text/javascript"></script>
 <script src="assets/js/questionnaire.js" type="text/javascript"></script>
+<script src="assets/js/autocomplete.js" type="text/javascript"></script>
+<script src="assets/js/form-validation.js" type="text/javascript"></script>
 
+<script>
+  // autocomplete form-control proximity
+  autocomplete(document.getElementById("f_name"), countries);
+  autocomplete(document.getElementById("l_name"), countries);
+  autocomplete(document.getElementById("id_num"), countries);
+  autocomplete(document.getElementById("proximity"), countries);
+  autocomplete(document.getElementById("gender"), countries);
+  autocomplete(document.getElementById("marital_status"), countries);
+  autocomplete(document.getElementById("occupation"), countries);
+  autocomplete(document.getElementById("phone_num"), countries);
+  autocomplete(document.getElementById("cellphone_num"), countries);
+  autocomplete(document.getElementById("email"), countries);
+  autocomplete(document.getElementById("settlement"), countries);
+  autocomplete(document.getElementById("street"), countries);
+  autocomplete(document.getElementById("house_num"), countries);
+  autocomplete(document.getElementById("postal_code"), countries);
+  autocomplete(document.getElementById("status"), countries);
+  autocomplete(document.getElementById("linked_bag"), countries);
+  autocomplete(document.getElementById("portfolio_value"), countries);
+</script>
 <script>
   // datepicker init
   $('#datepicker1').datepicker({ uiLibrary: 'bootstrap4' });
