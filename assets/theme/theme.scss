@@ -1178,12 +1178,14 @@ body {
                         font-size: 13px;
                         padding: 5px;
                         margin: 10px;
+                        cursor: default;
                         .cs-icon {
                             position: absolute;
                             top: 11px;
                             left: 20px;
                             width: 8px;
                             height: 8px;
+                            cursor: pointer;
                         }
                     }
                 }

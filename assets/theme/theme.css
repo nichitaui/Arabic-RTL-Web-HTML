@@ -11048,6 +11048,7 @@ body .main .filter-app .app-body .app-filter-tags .filter-tag {
   font-size: 13px;
   padding: 5px;
   margin: 10px;
+  cursor: default;
 }
 body .main .filter-app .app-body .app-filter-tags .filter-tag .cs-icon {
   position: absolute;
@@ -11055,6 +11056,7 @@ body .main .filter-app .app-body .app-filter-tags .filter-tag .cs-icon {
   left: 20px;
   width: 8px;
   height: 8px;
+  cursor: pointer;
 }
 body .main .filter-app .app-body .app-card-list .card {
   margin-bottom: 38px;
