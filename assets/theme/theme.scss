@@ -481,7 +481,7 @@ body {
                         .nav-link {
                             color: #485272;
                             font-size: 20px;
-                            padding: 19px;
+                            padding: 18px;
                             @media (min-width: 1600px) and (max-width: 1919px) {
                                 font-size: 16px;
                                 padding: 10px;
@@ -1646,18 +1646,18 @@ body {
     width: 5px;
 }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
+/* Track */
+::-webkit-scrollbar-track {
     background: #f1f1f1; 
 }
    
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #bfc5d2; 
 }
   
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: #78849e; 
 }
 
