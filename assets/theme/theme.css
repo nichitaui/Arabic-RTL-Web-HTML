@@ -11575,6 +11575,13 @@ button:focus {
   background-color: #BFC5D2;
 }
 .modal-open .modal .modal-dialog {
+  opacity: 0;
+  left: -30px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal-open .modal.show .modal-dialog {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -11582,8 +11589,11 @@ button:focus {
   height: 100%;
   max-width: 100%;
   overflow: auto;
+  opacity: 1;
+  transition: opacity 0.35s;
+  transition: left 0.35s;
 }
-.modal-open .modal .modal-dialog .modal-content {
+.modal-open .modal.show .modal-dialog .modal-content {
   min-height: 100%;
   background-color: #F4F6FC;
   border-radius: 0px;
@@ -11594,30 +11604,30 @@ button:focus {
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
-.modal-open .modal .modal-dialog .modal-content .modal-header {
+.modal-open .modal.show .modal-dialog .modal-content .modal-header {
   height: 80px;
   border-bottom: 0;
 }
-.modal-open .modal .modal-dialog .modal-content .modal-header button.close {
+.modal-open .modal.show .modal-dialog .modal-content .modal-header button.close {
   width: 32px;
   height: 32px;
   top: 25px;
   right: 60px;
 }
-.modal-open .modal .modal-dialog .modal-content .modal-body {
+.modal-open .modal.show .modal-dialog .modal-content .modal-body {
   padding: 30px 50px 30px 30px;
 }
-.modal-open .modal .modal-dialog .modal-content .modal-body .form-group {
+.modal-open .modal.show .modal-dialog .modal-content .modal-body .form-group {
   margin-bottom: 60px;
   text-align: right;
   max-width: 298px;
 }
 @media (min-width: 1600px) {
-  .modal-open .modal .modal-dialog .modal-content .modal-body .form-group {
+  .modal-open .modal.show .modal-dialog .modal-content .modal-body .form-group {
     width: 300px;
   }
 }
-.modal-open .modal .modal-dialog .modal-content .modal-body .form-group label {
+.modal-open .modal.show .modal-dialog .modal-content .modal-body .form-group label {
   font-size: 18px;
   font-weight: bold;
   font-family: "Heebo";
@@ -11626,32 +11636,32 @@ button:focus {
   line-height: 20px;
 }
 @media (min-width: 1280px) and (max-width: 1359px) {
-  .modal-open .modal .modal-dialog .modal-content .modal-body .form-group label {
+  .modal-open .modal.show .modal-dialog .modal-content .modal-body .form-group label {
     font-size: 16px;
     line-height: 18px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .modal-open .modal .modal-dialog .modal-content .modal-body .form-group label {
+  .modal-open .modal.show .modal-dialog .modal-content .modal-body .form-group label {
     font-size: 14px;
     line-height: 16px;
   }
 }
-.modal-open .modal .modal-dialog .modal-content .modal-body .form-group .form-control {
+.modal-open .modal.show .modal-dialog .modal-content .modal-body .form-group .form-control {
   height: 50px;
   width: 100%;
   background-color: #F9F9F9;
   border: solid 2px #E9E9E9;
   border-radius: 10px;
 }
-.modal-open .modal .modal-dialog .modal-content .modal-body .col-xl-9 .form-group {
+.modal-open .modal.show .modal-dialog .modal-content .modal-body .col-xl-9 .form-group {
   max-width: 963px;
 }
-.modal-open .modal .modal-dialog .modal-content .modal-body .col-xl-9 .form-group .form-control {
+.modal-open .modal.show .modal-dialog .modal-content .modal-body .col-xl-9 .form-group .form-control {
   width: 100%;
   height: 136px;
 }
-.modal-open .modal .modal-dialog .modal-content .modal-footer {
+.modal-open .modal.show .modal-dialog .modal-content .modal-footer {
   border-top: 0;
   text-align: right;
   justify-content: flex-start;
