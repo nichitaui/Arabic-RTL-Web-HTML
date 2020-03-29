@@ -10654,6 +10654,13 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group 
 body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .gj-datepicker .input-group-append .btn .gj-icon {
   top: 15px;
 }
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .employer-row {
+  margin-top: 30px;
+  border-bottom: solid 1px #E9E9E9;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .employer-row:first-child {
+  margin-top: 0;
+}
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .button-group {
   margin-top: 30px;
 }
@@ -11260,6 +11267,9 @@ body .main.open-filter .filter-app {
 .cs-btn-icon.btn-add {
   background-image: url(../img/buttons/btn-add.png);
 }
+.cs-btn-icon.btn-delete {
+  background-image: url(../img/buttons/btn-delete.png);
+}
 .cs-btn-icon.btn-close-transparent {
   background-image: url(../img/buttons/btn-close-transparent.png);
 }
@@ -11572,7 +11582,7 @@ button:focus {
 
 /* Modal Custom CSS */
 .modal-open .modal {
-  background-color: #BFC5D2;
+  background-color: rgba(191, 197, 210, 0.8);
 }
 .modal-open .modal .modal-dialog {
   opacity: 0;
@@ -11595,7 +11605,7 @@ button:focus {
 }
 .modal-open .modal.show .modal-dialog .modal-content {
   min-height: 100%;
-  background-color: #F4F6FC;
+  background-color: rgba(244, 246, 252, 0.8);
   border-radius: 0px;
   border-top: 0;
   border-bottom: 0;
@@ -12913,6 +12923,7 @@ input[type=submit] {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 @media (min-width: 1280px) and (max-width: 1359px) {
   #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .indicators .step {
@@ -12978,8 +12989,13 @@ input[type=submit] {
 #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab h5 {
   padding-right: 15px;
 }
+@media (min-width: 1600px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .form-group {
+    width: 100%;
+  }
+}
 @media (min-width: 1024px) and (max-width: 1599px) {
-  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .form-control {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab .form-group .form-control {
     height: 45px;
   }
 }
@@ -13021,11 +13037,34 @@ input[type=submit] {
     min-width: 335px;
   }
 }
-#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-group {
-  margin-bottom: 48px;
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-children-dependents-detail .children-dependents-detail-row {
+  padding-left: 50px;
 }
-#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-group .form-control {
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-children-dependents-detail .children-dependents-detail-row .form-group {
+  margin-bottom: 20px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-children-dependents-detail .children-dependents-detail-row .form-group .form-control {
   max-width: 100%;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-children-dependents-detail .children-dependents-detail-row .btn-delete {
+  position: absolute;
+  left: 20px;
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-children-dependents-detail .children-dependents-detail-row .btn-delete {
+    margin-top: 5px !important;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1599px) {
+  #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#children-dependents-detail .form-children-dependents-detail .children-dependents-detail-row .btn-delete {
+    margin-top: 3px !important;
+  }
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#customer-approval-risk .form-textarea {
+  max-width: 1327px;
+}
+#newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .mtab#customer-approval-risk .form-control {
+  max-width: 378px;
 }
 #newQuestionnaireModal .modal-dialog .modal-content .modal-body .multi-step-form .tabs .navigators {
   position: absolute;
@@ -13124,7 +13163,7 @@ input[type=submit] {
   position: relative;
   display: inline-flex;
   padding-right: 25px;
-  line-height: 30px;
+  line-height: 30px !important;
   margin-top: 40px;
   margin-bottom: 0;
   font-size: 18px;
@@ -13175,7 +13214,7 @@ input[type=submit] {
   display: inline-flex;
   height: 30px;
   padding-right: 25px;
-  line-height: 30px;
+  line-height: 30px !important;
   margin-top: 40px;
   margin-bottom: 0;
   font-size: 18px;
@@ -13455,6 +13494,23 @@ table th, table td {
     flex: 0 0 100%;
     max-width: 100%;
   }
+}
+#signature-pad {
+  height: 200px;
+}
+#signature-pad .pad {
+  width: 100%;
+}
+#signature-pad #signature-clear {
+  position: absolute;
+  right: 15px;
+  background-color: transparent;
+  padding: 5px;
+  color: crimson;
+}
+#signature-pad #signature-clear:focus {
+  outline: 0;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=theme.css.map */
