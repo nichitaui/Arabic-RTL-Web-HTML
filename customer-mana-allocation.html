@@ -11,6 +11,7 @@
   <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="assets/plugins/DataTables/datatables.css"/>
   <link rel="stylesheet" href="node_modules/chart.js/dist/Chart.min.css" />
+  <link rel="stylesheet" href="assets/plugins/signature-pad/assets/jquery.signaturepad.css">
 
   <script src="assets/jquery/jquery.min.js"></script>
   <script src="assets/plugins/popper/popper.min.js"></script>
@@ -280,27 +281,12 @@
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-capital-market" role="tabpanel" aria-labelledby="nav-capital-market-tab">
             <div class="table-filter-group">
-              <div class="input-group-prepend product-type-dropdown">
+              <div class="input-group-prepend single-dropdown">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">סוג מוצר</button>
                 <div class="dropdown-menu">
-                  <li class="dropdown-item">קופות גמל 
-                    <label class="cs-checkbox-container checkbox-small m-0">
-                      <input type="checkbox" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </li>
-                  <li class="dropdown-item">קרנות השתלמות 
-                    <label class="cs-checkbox-container checkbox-small m-0">
-                      <input type="checkbox" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </li>
-                  <li class="dropdown-item">קרנות פנסיה 
-                    <label class="cs-checkbox-container checkbox-small m-0">
-                      <input type="checkbox" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </li>
+                  <li class="dropdown-item">קופות גמל </li>
+                  <li class="dropdown-item">קרנות השתלמות </li>
+                  <li class="dropdown-item">קרנות פנסיה </li>
                 </div>
               </div>
             </div>
@@ -388,27 +374,12 @@
           
           <div class="tab-pane fade" id="nav-holdings-alternative" role="tabpanel" aria-labelledby="nav-holdings-alternative-tab">
             <div class="table-filter-group">
-              <div class="input-group-prepend product-type-dropdown">
+              <div class="input-group-prepend single-dropdown">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">סוג מוצר</button>
                 <div class="dropdown-menu">
-                  <li class="dropdown-item">קופות גמל 
-                    <label class="cs-checkbox-container checkbox-small m-0">
-                      <input type="checkbox" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </li>
-                  <li class="dropdown-item">קרנות השתלמות 
-                    <label class="cs-checkbox-container checkbox-small m-0">
-                      <input type="checkbox" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </li>
-                  <li class="dropdown-item">קרנות פנסיה 
-                    <label class="cs-checkbox-container checkbox-small m-0">
-                      <input type="checkbox" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </li>
+                  <li class="dropdown-item">קופות גמל </li>
+                  <li class="dropdown-item">קרנות השתלמות </li>
+                  <li class="dropdown-item">קרנות פנסיה </li>
                 </div>
               </div>
             </div>
@@ -1199,28 +1170,28 @@
       <div class="modal-body pt-2">
         <form class="multi-step-form" id="newQuestionnaireForm">
           <ul class="indicators">
-            <li class="step active">1</li>
-            <li class="step">2</li>
-            <li class="step">3</li>
-            <li class="step">4</li>
-            <li class="step">5</li>
-            <li class="step">6</li>
-            <li class="step">7</li>
-            <li class="step">8</li>
-            <li class="step">9</li>
-            <li class="step">10</li>
-            <li class="step">11</li>
-            <li class="step">12</li>
-            <li class="step">13</li>
-            <li class="step">14</li>
-            <li class="step">15</li>
-            <li class="step">16</li>
-            <li class="step">17</li>
-            <li class="step">18</li>
-            <li class="step">19</li>
-            <li class="step">20</li>
-            <li class="step">21</li>
-            <li class="step">22</li>
+            <li class="step active" onclick="showTabByStep(0)">1</li>
+            <li class="step" onclick="showTabByStep(1)">2</li>
+            <li class="step" onclick="showTabByStep(2)">3</li>
+            <li class="step" onclick="showTabByStep(3)">4</li>
+            <li class="step" onclick="showTabByStep(4)">5</li>
+            <li class="step" onclick="showTabByStep(5)">6</li>
+            <li class="step" onclick="showTabByStep(6)">7</li>
+            <li class="step" onclick="showTabByStep(7)">8</li>
+            <li class="step" onclick="showTabByStep(8)">9</li>
+            <li class="step" onclick="showTabByStep(9)">10</li>
+            <li class="step" onclick="showTabByStep(10)">11</li>
+            <li class="step" onclick="showTabByStep(11)">12</li>
+            <li class="step" onclick="showTabByStep(12)">13</li>
+            <li class="step" onclick="showTabByStep(13)">14</li>
+            <li class="step" onclick="showTabByStep(14)">15</li>
+            <li class="step" onclick="showTabByStep(15)">16</li>
+            <li class="step" onclick="showTabByStep(16)">17</li>
+            <li class="step" onclick="showTabByStep(17)">18</li>
+            <li class="step" onclick="showTabByStep(18)">19</li>
+            <li class="step" onclick="showTabByStep(19)">20</li>
+            <li class="step" onclick="showTabByStep(20)">21</li>
+            <li class="step" onclick="showTabByStep(21)">22</li>
           </ul>
           <div class="tabs">
             <div class="mtab" id="personal-details">
@@ -1415,60 +1386,62 @@
             </div>
             <div class="mtab" id="children-dependents-detail">
               <h3 class="mb-5">פרטי ילדים ותלויים</h3>
-              <div class="row">
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
-                  <div class="form-group">
-                    <label>שם פרטי</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
-                  <div class="form-group">
-                    <label>שם משפחה</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
-                  </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
-                  <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                      <div class="form-group">
-                        <label>מין</label>
-                        <select class="form-control">
-                          <option>M</option>
-                          <option>F</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                      <div class="form-group">
-                        <label>גיל</label>
-                        <input type="text" class="form-control" placeholder="NUMBER" />
-                      </div>
+              <div class="form-children-dependents-detail">
+                <div class="row children-dependents-detail-row">
+                  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
+                    <div class="form-group">
+                      <label>שם פרטי</label>
+                      <input type="text" class="form-control" placeholder="TEXT" />
                     </div>
                   </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
-                  <div class="form-group">
-                    <label>סטטוס משפחתי</label>
-                    <select class="form-control">
-                      <option>LIST</option>
-                    </select>
+                  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
+                    <div class="form-group">
+                      <label>שם משפחה</label>
+                      <input type="text" class="form-control" placeholder="TEXT" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
-                  <div class="form-group">
-                    <label>עיסוק</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
+                  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
+                    <div class="row">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label>מין</label>
+                          <select class="form-control">
+                            <option>M</option>
+                            <option>F</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label>גיל</label>
+                          <input type="text" class="form-control" placeholder="NUMBER" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
-                  <div class="form-group">
-                    <label>מצב בריאותי</label>
-                    <input type="text" class="form-control" placeholder="TEXT" />
+                  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
+                    <div class="form-group">
+                      <label>סטטוס משפחתי</label>
+                      <select class="form-control">
+                        <option>LIST</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
+                    <div class="form-group">
+                      <label>עיסוק</label>
+                      <input type="text" class="form-control" placeholder="TEXT" />
+                    </div>
+                  </div>
+                  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4">
+                    <div class="form-group">
+                      <label>מצב בריאותי</label>
+                      <input type="text" class="form-control" placeholder="TEXT" />
+                    </div>
                   </div>
                 </div>
               </div>
-              <a class="cs-btn-icon btn-add m-0" href="javascript:void(0)"></a>
+              <a class="cs-btn-icon btn-add m-0" href="javascript:duplicateChildrenDependentsDetailRow()"></a>
             </div>
             <div class="mtab" id="revenue-breakdown">
               <h3 class="mb-4">פירוט הכנסות</h3>
@@ -2835,7 +2808,7 @@
                 </div>
               </div>
             </div>
-            <div class="mtab">
+            <div class="mtab" id="customer-approval-risk">
               <h3 class="mb-4">:אישור הלקוח להתאמת רמת הסיכון</h3>
               <p class="px-3">:בחתימתי על גבי מסמך זה הינני מצהיר כי</p>
               <p class="px-3">.קביעת רמת הסיכון אליה תהיינה השקעותיי חשופות נעשתה בתיאום איתי ובהסתמך על המידע המפורט לעיל שהסכמתי למסור</p>
@@ -2845,34 +2818,37 @@
               <p class="px-3">.הנני לאשר כי הוסמכתי על ידי בעלי החשבון האחרים, ככל שקיימים, לענות בשמם להליך זה ולייצגם. במידה ונקבעה רמת סיכון שונה מזו המומלצת ע"י בעל הרישיון </p>
               <p class="px-3">:הנני מצהיר בזאת כי רמת הסיכון בה בחרתי היא</p>
               <div class="row m-0">
-                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12">
-                  <div class="form-group">
+                <div class="col-mxl-8 col-cxl-10 col-xl-10 col-lg-12 col-md-12 col-sm-12">
+                  <div class="form-group m-w-100">
                     <label>אישור הצהרת הלקוח</label>
                     <textarea class="form-textarea w-100" placeholder="TEXT"></textarea>
                   </div>
                 </div>
               </div>
               <div class="row m-0">
-                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                <div class="col-mxl-8 col-cxl-10 col-xl-10 col-lg-12 col-md-12 col-sm-12">
                   <div class="row m-0">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                       <div class="row">
-                        <div class="form-group">
+                        <div class="form-group m-w-100 w-100">
                           <label>שם הלקוח</label>
                           <input type="text" class="form-control" placeholder="TEXT" />
                         </div>
                       </div>
                       <div class="row">
-                        <div class="form-group">
+                        <div class="form-group m-w-100 w-100">
                           <label>שם הלקוח</label>
                           <input type="text" id="datepicker3" class="form-control" />
                         </div>
                       </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                      <div class="form-group">
+                      <div class="form-group m-w-100 w-100">
                         <label>חתימת הלקוח</label>
-                        <textarea class="form-textarea w-100" placeholder=""></textarea>
+                        <div id="signature-pad" class="form-textarea w-100">
+                          <canvas class="pad"></canvas>
+                          <input type="button" value="ברור" id="signature-clear" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2897,6 +2873,8 @@
 <script type="text/javascript" src="assets/plugins/DataTables/datatables.min.js"></script>
 <script type="text/javascript" src="node_modules/chart.js/dist/Chart.min.js"></script>
 <script type="text/javascript" src="node_modules/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+<script src="assets/plugins/signature-pad/jquery.signaturepad.js"></script>
+<script src="assets/plugins/signature-pad/assets/json2.min.js"></script>
 <script src="assets/js/questionnaire.js" type="text/javascript"></script>
 <script src="assets/js/form-validation.js" type="text/javascript"></script>
 
