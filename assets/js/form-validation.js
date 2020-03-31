@@ -14,7 +14,20 @@ $(document).on('keyup', '.form-control', function(e) {
 
 // single select dropdown js
 $(document).on('click', '.single-dropdown .dropdown-item', function() {
-    $(this).closest('.single-dropdown').find('.dropdown-toggle').text($(this).text());
+    $(this).closest('.single-dropdown').find('.dropdown-toggle').val($(this).text());
+});
+// $(document).on('focus', '.single-dropdown .dropdown-toggle', function() {
+//     $(this).attr('type', 'text');
+// });
+$(document).on('keyup', '.single-dropdown .dropdown-toggle[type=text]', function() {
+    console.log($(this).val());
+    var keywoard = $(this).val();
+    var item_arr = $(this).closest('.single-dropdown').find('.dropdown-menu').find('.dropdown-item').show();
+    for (var i=0; i<item_arr.length; i++) {
+        if (!item_arr[i].textContent.includes(keywoard)) {
+            $(item_arr[i]).hide();
+        }
+    }
 });
   
 // multi select dropdown js

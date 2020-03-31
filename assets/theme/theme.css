@@ -11850,6 +11850,35 @@ input[type=submit] {
     margin-left: 0;
   }
 }
+#nav-holding-portfolio .table-filter-group .input-group-prepend::before,
+#nav-capital-market .table-filter-group .input-group-prepend::before,
+#nav-holdings-alternative .table-filter-group .input-group-prepend::before,
+#nav-sustainability-loan .table-filter-group .input-group-prepend::before,
+#nav-potential-loans .table-filter-group .input-group-prepend::before,
+#nav-list-of-reports .table-filter-group .input-group-prepend::before,
+#nav-aggregation .table-filter-group .input-group-prepend::before {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  z-index: 10;
+}
+#nav-holding-portfolio .table-filter-group .input-group-prepend.show::before,
+#nav-capital-market .table-filter-group .input-group-prepend.show::before,
+#nav-holdings-alternative .table-filter-group .input-group-prepend.show::before,
+#nav-sustainability-loan .table-filter-group .input-group-prepend.show::before,
+#nav-potential-loans .table-filter-group .input-group-prepend.show::before,
+#nav-list-of-reports .table-filter-group .input-group-prepend.show::before,
+#nav-aggregation .table-filter-group .input-group-prepend.show::before {
+  content: none;
+}
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle,
 #nav-holdings-alternative .table-filter-group .input-group-prepend .dropdown-toggle,
@@ -11892,6 +11921,7 @@ input[type=submit] {
   position: absolute;
   left: 5px;
   top: 10px;
+  content: none;
 }
 #nav-holding-portfolio .table-filter-group .input-group-prepend .dropdown-toggle:active,
 #nav-capital-market .table-filter-group .input-group-prepend .dropdown-toggle:active,
@@ -11915,7 +11945,7 @@ input[type=submit] {
   position: absolute;
   width: 145px !important;
   min-width: 145px !important;
-  padding: 0;
+  padding: 10px 0;
   right: 0px !important;
   overflow: hidden;
 }

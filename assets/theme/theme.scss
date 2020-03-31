@@ -2012,6 +2012,24 @@ button:focus {
                     margin-left: 0;
                 }
             }
+            &::before {
+                position: absolute;
+                left: 5px;
+                top: 10px;
+                display: inline-block;
+                margin-left: 0.255em;
+                vertical-align: 0.255em;
+                content: "";
+                border-top: 0.3em solid;
+                border-right: 0.3em solid transparent;
+                border-bottom: 0;
+                border-left: 0.3em solid transparent;
+                z-index: 10;
+            }
+            &.show::before {
+                content: none;
+            }
+            
             .dropdown-toggle {
                 width: 145px;
                 height: 23px;
@@ -2033,6 +2051,7 @@ button:focus {
                     position: absolute;
                     left: 5px;
                     top: 10px;
+                    content: none;
                 }
                 &:active {
                     background-color: #FFFFFF;
@@ -2045,7 +2064,7 @@ button:focus {
                 position: absolute;
                 width: 145px !important;
                 min-width: 145px !important;
-                padding: 0;
+                padding: 10px 0;
                 right: 0px !important;
                 overflow: hidden;
                 @media (min-width: 1360px) and (max-width: 1439px) {
