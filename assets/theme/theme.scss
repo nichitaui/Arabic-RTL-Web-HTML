@@ -2578,33 +2578,35 @@ button:focus {
     }
 }
 
-#nisCapitalMarketModal, 
-#nisAlternativeProductsModal {
+#nisCapitalMarketAlternativeProductsModal {
     .modal-dialog {
         width: 100%;
         max-width: 1380px;
         .modal-body {
-            .tags-group {
-                padding: 0 20px 30px 20px;
-                .badge {
+            .nav-tabs {
+                .nav-item {
+                    background-color: #BFC5D2;
                     height: 44px;
+                    border-radius: 35px;
                     color: #FFFFFF;
                     font-size: 20px;
                     font-weight: bold;
-                    border-radius: 22px;
-                    padding: 10px 30px;
-                    margin-left: 30px;
-                    &.badge-primary {
+                    font-family: "Heebo";
+                    padding-left: 40px;
+                    padding-right: 40px;
+                    margin-left: 40px;
+                    border: 0;
+                    &.active {
                         background-color: #7ABBFC;
-                    }
-                    &.badge-gray {
-                        background-color: #BFC5D2;
+                        border: 0;
                     }
                 }
             }
-            .form-group {
-                label {
-                    width: 100%;
+            .tab-content {
+                .form-group {
+                    label {
+                        width: 100%;
+                    }
                 }
             }
         }

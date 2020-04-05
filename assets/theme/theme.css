@@ -12546,35 +12546,28 @@ input[type=submit] {
   padding: 10px;
 }
 
-#nisCapitalMarketModal .modal-dialog,
-#nisAlternativeProductsModal .modal-dialog {
+#nisCapitalMarketAlternativeProductsModal .modal-dialog {
   width: 100%;
   max-width: 1380px;
 }
-#nisCapitalMarketModal .modal-dialog .modal-body .tags-group,
-#nisAlternativeProductsModal .modal-dialog .modal-body .tags-group {
-  padding: 0 20px 30px 20px;
-}
-#nisCapitalMarketModal .modal-dialog .modal-body .tags-group .badge,
-#nisAlternativeProductsModal .modal-dialog .modal-body .tags-group .badge {
+#nisCapitalMarketAlternativeProductsModal .modal-dialog .modal-body .nav-tabs .nav-item {
+  background-color: #BFC5D2;
   height: 44px;
+  border-radius: 35px;
   color: #FFFFFF;
   font-size: 20px;
   font-weight: bold;
-  border-radius: 22px;
-  padding: 10px 30px;
-  margin-left: 30px;
+  font-family: "Heebo";
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 40px;
+  border: 0;
 }
-#nisCapitalMarketModal .modal-dialog .modal-body .tags-group .badge.badge-primary,
-#nisAlternativeProductsModal .modal-dialog .modal-body .tags-group .badge.badge-primary {
+#nisCapitalMarketAlternativeProductsModal .modal-dialog .modal-body .nav-tabs .nav-item.active {
   background-color: #7ABBFC;
+  border: 0;
 }
-#nisCapitalMarketModal .modal-dialog .modal-body .tags-group .badge.badge-gray,
-#nisAlternativeProductsModal .modal-dialog .modal-body .tags-group .badge.badge-gray {
-  background-color: #BFC5D2;
-}
-#nisCapitalMarketModal .modal-dialog .modal-body .form-group label,
-#nisAlternativeProductsModal .modal-dialog .modal-body .form-group label {
+#nisCapitalMarketAlternativeProductsModal .modal-dialog .modal-body .tab-content .form-group label {
   width: 100%;
 }
 
