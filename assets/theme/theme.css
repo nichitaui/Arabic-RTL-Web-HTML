@@ -10305,7 +10305,6 @@ body .main .app .app-header .app-header-bottom .card.chart-card .card-body .char
   width: 100%;
   height: 60px;
   position: relative;
-  color: #fff;
   font-size: 25px;
   font-weight: 700;
   line-height: 25px;
@@ -10329,6 +10328,21 @@ body .main .app .app-header .app-header-bottom .card.chart-card .card-body .char
   box-sizing: border-box;
   transform: rotate(calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ));
   animation: fillAnimation 1s ease-in;
+}
+body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut .semi-caption {
+  counter-reset: varible var(--percentage);
+  box-sizing: border-box;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 200;
+  font-size: 12px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  bottom: 0px;
+  position: absolute;
+  left: calc(50% - 10px);
+  opacity: 1;
 }
 body .main .app .app-body {
   transition: padding-bottom 1.5s;
