@@ -3243,8 +3243,15 @@
   // duplicate employer row
   function duplicateEmployerRow() {
     var employer_row = $('.employer-row').eq(0).html();
-    $('.form-employer').append('<div class="employer-row">'+ employer_row + '</div>');
+    $('.form-employer').append('<div class="employer-row">'+ 
+                              employer_row + 
+                              '<a class="cs-btn-icon btn-delete m-0" href="javascript:void(0)"></a>'+
+                              '</div>');
   }
+
+  $(document).on('click', '.employer-row .btn-delete', function() {
+    $(this).closest('.employer-row').remove();
+  });
 </script>
 </body>
 </html>

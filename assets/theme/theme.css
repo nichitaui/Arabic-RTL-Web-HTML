@@ -10655,12 +10655,18 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group 
   top: 15px;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .employer-row {
+  position: relative;
   margin-top: 30px;
   border-bottom: solid 1px #E9E9E9;
   padding-left: 50px;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .employer-row:first-child {
   margin-top: 0;
+}
+body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .employer-row .btn-delete {
+  position: absolute;
+  top: 33px;
+  left: 0;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .button-group {
   margin-top: 30px;
