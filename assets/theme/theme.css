@@ -10657,6 +10657,7 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group 
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .employer-row {
   margin-top: 30px;
   border-bottom: solid 1px #E9E9E9;
+  padding-left: 50px;
 }
 body .main .app .app-body .app-tab .tab-content .tab-pane form.form-employer .employer-row:first-child {
   margin-top: 0;
