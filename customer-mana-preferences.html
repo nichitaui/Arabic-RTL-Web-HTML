@@ -279,81 +279,91 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">רמת סיכון</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 50; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 50; --fill: #7ABBFC;">
                 6
               </div>
+              <div class="semi-donut-main-caption">5</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">רמת מינוף</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
+              <div class="semi-donut-main-caption">4</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">יחס להפסד</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 25; --fill: #7ABBFC;">
                 7
               </div>
+              <div class="semi-donut-main-caption">2</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">חשיפה למט"ח</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
+              <div class="semi-donut-main-caption">4</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">חשיפה לחו"ל</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
+              <div class="semi-donut-main-caption">4</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">נזילות </div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 25; --fill: #7ABBFC;">
                 7
               </div>
+              <div class="semi-donut-main-caption">2</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">תנודתיות התיק מול מדד הייחוס</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 50; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 50; --fill: #7ABBFC;">
                 6
               </div>
+              <div class="semi-donut-main-caption">5</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">השקעות אלטרנטיביות</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 50; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 50; --fill: #7ABBFC;">
                 6
               </div>
+              <div class="semi-donut-main-caption">5</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">תשואת יעד רב שנתית</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
+              <div class="semi-donut-main-caption">4</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">אלפא</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 25; --fill: #7ABBFC;">
                 7
               </div>
+              <div class="semi-donut-main-caption">2</div>
             </div>
           </div>
           <!-- <div class="chart-item">
@@ -368,17 +378,19 @@
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">חשיפה למניות</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 30; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 30; --fill: #7ABBFC;">
                 9
               </div>
+              <div class="semi-donut-main-caption">4</div>
             </div>
           </div>
           <div class="chart-item">
             <div class="chart-wrapper">
               <div class="label">חשיפה לנדלן</div>
-              <div class="semi-donut-main"  data-name="5" style="--percentage : 25; --fill: #7ABBFC;">
+              <div class="semi-donut-main" style="--percentage : 25; --fill: #7ABBFC;">
                 7
               </div>
+              <div class="semi-donut-main-caption">2</div>
             </div>
           </div>
         </div>
@@ -2192,7 +2204,7 @@
 
     for(var i=0; i<$('.semi-donut .semi-caption').length; i++) {
       var _percentage = Number($('.semi-donut')[i].style.cssText.split('--percentage:')[1].split(';')[0].trim()) * 0.01 * 0.5;
-      console.log('>', i, '>', _percentage);
+       
       var tx = ((-1) * (_width / 2) + 10) * Math.cos(_percentage * Math.PI);
       var ty = ((-1) * (_width / 2) + 20) * Math.sin(_percentage * Math.PI);
       $('.semi-donut .semi-caption').eq(i).css("transform", "translate("+ tx +"px, "+ ty +"px)");
@@ -2200,8 +2212,18 @@
   }).resize();
   // main semi chart init
   $(window).on( 'resize', function () {
-    $('.semi-donut-main').height( $('.semi-donut-main').width() / 2 );
-    $('head').append('<style>.semi-donut-main::before{height:'+ $('.semi-donut-main').width() +'px !important;}</style>');
+    var _width = $('.semi-donut-main').width();
+    $('.semi-donut-main').height( _width / 2 );
+    $('head').append('<style>.semi-donut-main::before{height:'+ _width +'px !important;}</style>');
+
+    // semi-donut-main-caption
+    for(var i=0; i<$('.semi-donut-main-caption').length; i++) {
+      var _percentage = Number($('.semi-donut-main')[i].style.cssText.split('--percentage:')[1].split(';')[0].trim()) * 0.01;
+       
+      var tx = ((-1) * (_width / 2) - 10) * Math.cos(_percentage * Math.PI);
+      var ty = ((-1) * (_width / 2) - 10) * Math.sin(_percentage * Math.PI);
+      $('.semi-donut-main-caption').eq(i).css("transform", "translate("+ tx +"px, "+ ty +"px)");
+    }
   }).resize();
 </script>
 <script type="text/javascript">

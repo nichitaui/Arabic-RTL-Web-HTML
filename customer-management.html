@@ -2282,7 +2282,7 @@
 
     for(var i=0; i<$('.semi-donut .semi-caption').length; i++) {
       var _percentage = Number($('.semi-donut')[i].style.cssText.split('--percentage:')[1].split(';')[0].trim()) * 0.01 * 0.5;
-      console.log('>', i, '>', _percentage);
+       
       var tx = ((-1) * (_width / 2) + 10) * Math.cos(_percentage * Math.PI);
       var ty = ((-1) * (_width / 2) + 20) * Math.sin(_percentage * Math.PI);
       $('.semi-donut .semi-caption').eq(i).css("transform", "translate("+ tx +"px, "+ ty +"px)");

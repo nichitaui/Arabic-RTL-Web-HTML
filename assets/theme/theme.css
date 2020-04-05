@@ -10912,6 +10912,12 @@ body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper
     height: 120px;
   }
 }
+body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut-main-caption {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 body .main .app .app-body .app-table {
   padding: 30px;
 }
