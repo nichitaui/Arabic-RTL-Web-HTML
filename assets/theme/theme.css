@@ -9877,6 +9877,10 @@ h3 {
 }
 body {
   background-color: #F4F7F8;
+  min-width: 1280px;
+}
+body .header {
+  width: 100%;
 }
 body .header .header-top {
   background-color: #F4F7F8;
@@ -9910,11 +9914,6 @@ body .header .header-nav {
     height: 76px;
   }
 }
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .header .header-nav {
-    height: 67px;
-  }
-}
 body .header .header-nav nav {
   height: 100%;
 }
@@ -9925,11 +9924,6 @@ body .header .header-nav nav .header-logo {
   color: #FFFFFF;
   display: grid;
   height: 100%;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .header .header-nav nav .header-logo {
-    width: 270px;
-  }
 }
 body .header .header-nav nav .header-logo .logo-text {
   font-size: 36px;
@@ -9963,16 +9957,10 @@ body .header .header-nav nav ul li a {
     padding: 20px 30px;
   }
 }
-@media (min-width: 1280px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .header .header-nav nav ul li a {
     padding: 20px 24px;
     font-size: 24px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .header .header-nav nav ul li a {
-    padding: 20px 20px;
-    font-size: 18px;
   }
 }
 body .header .header-nav nav ul li.active {
@@ -9984,22 +9972,15 @@ body .header .header-nav nav ul li.active a {
 body .main {
   direction: rtl;
   text-align: right;
+  display: flex;
 }
 body .main .sidebar {
-  position: fixed;
   width: 324px;
-  height: calc(100% - 150px);
   background-color: #FFFFFF;
   overflow: auto;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   z-index: 10;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .sidebar {
-    width: 270px;
-    height: calc(100% - 142px);
-  }
 }
 body .main .sidebar ul {
   list-style: none;
@@ -10012,30 +9993,14 @@ body .main .sidebar ul li {
   padding-top: 15px;
   padding-right: 125px;
 }
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .sidebar ul li {
-    padding-right: 100px;
-    padding-top: 20px;
-  }
-}
 body .main .sidebar ul li a {
   font-size: 24px;
   color: #485272;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .sidebar ul li a {
-    font-size: 20px;
-  }
 }
 body .main .sidebar ul li a .cs-icon {
   position: absolute;
   right: 60px;
   top: 25px;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .sidebar ul li a .cs-icon {
-    right: 50px;
-  }
 }
 body .main .sidebar ul li.active {
   background-color: #485272;
@@ -10127,17 +10092,8 @@ body .main .sidebar .side-nav li.active .cs-icon.ic-insurance {
   background-image: url(../img/icons/ic_insurance_white.png);
 }
 body .main .app {
-  position: fixed;
-  width: 100%;
-  padding-right: 324px;
-  height: calc(100% - 150px);
+  width: calc(100% - 324px);
   overflow: auto;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app {
-    padding-right: 270px;
-    height: calc(100% - 142px);
-  }
 }
 body .main .app .app-header {
   padding: 30px 30px 0 30px;
@@ -10159,14 +10115,9 @@ body .main .app .app-header .app-header-top .title {
     font-size: 26px;
   }
 }
-@media (min-width: 1280px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .main .app .app-header .app-header-top .title {
     font-size: 24px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app .app-header .app-header-top .title {
-    font-size: 20px;
   }
 }
 body .main .app .app-header .app-header-top .cs-btn-img {
@@ -10186,17 +10137,10 @@ body .main .app .app-header .app-header-top .cs-btn-img {
     height: 43px;
   }
 }
-@media (min-width: 1280px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .main .app .app-header .app-header-top .cs-btn-img {
     width: 130px;
     height: 39px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app .app-header .app-header-top .cs-btn-img {
-    width: 119px;
-    height: 36px;
-    margin-left: 10px;
   }
 }
 body .main .app .app-header .app-header-top .cs-btn-img:first-child {
@@ -10226,12 +10170,7 @@ body .main .app .app-header .app-header-bottom .card .card-body {
   position: relative;
   font-size: 20px;
 }
-@media (min-width: 1600px) and (max-width: 1919px) {
-  body .main .app .app-header .app-header-bottom .card .card-body {
-    font-size: 14px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (max-width: 1919px) {
   body .main .app .app-header .app-header-bottom .card .card-body {
     font-size: 14px;
   }
@@ -10247,21 +10186,41 @@ body .main .app .app-header .app-header-bottom .card .card-body .action-group {
 body .main .app .app-header .app-header-bottom .card .card-body .action-group .btn-action {
   padding: 13px 10px;
 }
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (max-width: 1919px) {
   body .main .app .app-header .app-header-bottom .card .card-body .action-group .btn-action {
     padding: 10px 10px;
   }
 }
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app .app-header .app-header-bottom .card .card-body .action-group .btn-action {
-    padding: 10px 10px;
+@media (max-width: 1599px) {
+  body .main .app .app-header .app-header-bottom .card.info-card .card-body .col-6 {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+}
+@media (max-width: 1599px) {
+  body .main .app .app-header .app-header-bottom .card.info-card .card-body .pr-4 {
+    padding-right: 10px !important;
+  }
+}
+body .main .app .app-header .app-header-bottom .card.info-card .card-body label {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-header .app-header-bottom .card.info-card .card-body label {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1359px) {
+  body .main .app .app-header .app-header-bottom .card.info-card .card-body label {
+    font-size: 11px;
   }
 }
 body .main .app .app-header .app-header-bottom .card.value-card .card-body {
   padding-top: 45px;
   padding-bottom: 25px;
 }
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (max-width: 1919px) {
   body .main .app .app-header .app-header-bottom .card.value-card .card-body {
     padding-top: 25px;
   }
@@ -10269,6 +10228,21 @@ body .main .app .app-header .app-header-bottom .card.value-card .card-body {
 body .main .app .app-header .app-header-bottom .card.value-card .card-body .label {
   font-size: 20px;
   text-align: center;
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .main .app .app-header .app-header-bottom .card.value-card .card-body .label {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-header .app-header-bottom .card.value-card .card-body .label {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1359px) {
+  body .main .app .app-header .app-header-bottom .card.value-card .card-body .label {
+    font-size: 14px;
+  }
 }
 body .main .app .app-header .app-header-bottom .card.value-card .card-body .value {
   font-size: 27px;
@@ -10279,6 +10253,21 @@ body .main .app .app-header .app-header-bottom .card.value-card .card-body .valu
 @media (min-width: 1600px) and (max-width: 1919px) {
   body .main .app .app-header .app-header-bottom .card.value-card .card-body .value {
     font-size: 20px;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  body .main .app .app-header .app-header-bottom .card.value-card .card-body .value {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  body .main .app .app-header .app-header-bottom .card.value-card .card-body .value {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1359px) {
+  body .main .app .app-header .app-header-bottom .card.value-card .card-body .value {
+    font-size: 12px;
   }
 }
 body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container {
@@ -10299,6 +10288,11 @@ body .main .app .app-header .app-header-bottom .card.chart-card .card-body .char
   margin-top: 5px;
   text-align: center;
 }
+@media (max-width: 1440px) {
+  body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .label {
+    font-size: 12px;
+  }
+}
 body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut {
   --percentage: 0;
   --fill: #ff0;
@@ -10315,6 +10309,18 @@ body .main .app .app-header .app-header-bottom .card.chart-card .card-body .char
   justify-content: center;
   box-sizing: border-box;
 }
+@media (min-width: 1360px) and (max-width: 1600px) {
+  body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 1359px) {
+  body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
 body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut:before {
   content: "";
   width: 100%;
@@ -10328,6 +10334,16 @@ body .main .app .app-header .app-header-bottom .card.chart-card .card-body .char
   box-sizing: border-box;
   transform: rotate(calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ));
   animation: fillAnimation 1s ease-in;
+}
+@media (min-width: 1360px) and (max-width: 1600px) {
+  body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut:before {
+    border-width: 18px;
+  }
+}
+@media (max-width: 1359px) {
+  body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut:before {
+    border-width: 15px;
+  }
 }
 body .main .app .app-header .app-header-bottom .card.chart-card .card-body .chart-group-container .chart-group .semi-donut .semi-caption {
   counter-reset: varible var(--percentage);
@@ -10371,22 +10387,9 @@ body .main .app .app-body .app-tab .nav-tabs {
     height: 60px;
   }
 }
-@media (min-width: 1280px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .main .app .app-body .app-tab .nav-tabs {
     height: 60px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app .app-body .app-tab .nav-tabs {
-    height: 60px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app .app-body .app-tab .nav-tabs.xl-tabs {
-    height: 100px;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    background-color: #7abbfc2b;
   }
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link {
@@ -10413,16 +10416,10 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link {
     padding: 8px;
   }
 }
-@media (min-width: 1280px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .main .app .app-body .app-tab .nav-tabs .nav-link {
     font-size: 12px;
     padding: 9px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app .app-body .app-tab .nav-tabs .nav-link {
-    font-size: 12px;
-    padding: 10px 15px;
   }
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
@@ -10441,17 +10438,11 @@ body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
     margin-left: 5px;
   }
 }
-@media (min-width: 1280px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
     width: 14px;
     height: 14px;
     margin-left: 4px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon {
-    width: 14px;
-    height: 14px;
   }
 }
 body .main .app .app-body .app-tab .nav-tabs .nav-link .cs-icon.ic-user {
@@ -10638,7 +10629,7 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group 
     font-size: 14px;
   }
 }
-@media (min-width: 1024px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group label {
     font-size: 12px;
   }
@@ -10649,7 +10640,7 @@ body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group 
   background-color: #F9F9F9;
   border: solid 2px #E9E9E9;
 }
-@media (min-width: 1024px) and (max-width: 1599px) {
+@media (max-width: 1599px) {
   body .main .app .app-body .app-tab .tab-content .tab-pane form .row .form-group .form-control {
     height: 45px;
   }
@@ -10724,7 +10715,7 @@ body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead 
     padding: 10px 0;
   }
 }
-@media (min-width: 1024px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table thead tr th {
     font-size: 12px;
     padding: 5px 0;
@@ -10748,7 +10739,7 @@ body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody 
     padding: 10px 0;
   }
 }
-@media (min-width: 1024px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .main .app .app-body .app-tab .tab-content .tab-pane .customer-table tbody tr td {
     font-size: 12px;
     padding: 5px 0;
@@ -10800,7 +10791,7 @@ body .main .app .app-body .app-chart .chart-container {
     grid-template-columns: 25% 25% 25% 25%;
   }
 }
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (max-width: 1279px) {
   body .main .app .app-body .app-chart .chart-container {
     grid-template-columns: 33.33333% 33.33333% 33.33333%;
   }
@@ -10813,7 +10804,7 @@ body .main .app .app-body .app-chart .chart-container .chart-item {
     padding: 20px 25px;
   }
 }
-@media (min-width: 1280px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   body .main .app .app-body .app-chart .chart-container .chart-item {
     padding: 20px 25px;
   }
@@ -10868,16 +10859,10 @@ body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper
     height: 70px;
   }
 }
-@media (min-width: 1280px) and (max-width: 1439px) {
+@media (max-width: 1439px) {
   body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut-main {
     width: 140px;
     height: 70px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut-main {
-    width: 120px;
-    height: 60px;
   }
 }
 body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut-main:before {
@@ -10900,16 +10885,10 @@ body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper
     height: 140px;
   }
 }
-@media (min-width: 1280px) and (max-width: 1439px) {
+@media (max-width: 1439px) {
   body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut-main:before {
     width: 140px;
     height: 140px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut-main:before {
-    width: 120px;
-    height: 120px;
   }
 }
 body .main .app .app-body .app-chart .chart-container .chart-item .chart-wrapper .semi-donut-main-caption {
@@ -10963,7 +10942,7 @@ body .main .app .app-body .app-chart-group ul li {
   padding: 20px 10px;
   vertical-align: middle;
 }
-@media (min-width: 1024px) and (max-width: 1919px) {
+@media (max-width: 1919px) {
   body .main .app .app-body .app-chart-group ul li {
     font-size: 12px;
     padding: 10px;
@@ -11302,7 +11281,7 @@ body .main.open-filter .filter-app {
     height: 40px;
   }
 }
-@media (min-width: 1024px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   .cs-btn-icon {
     width: 40px;
     height: 40px;
@@ -11401,7 +11380,7 @@ body .main.open-filter .filter-app {
   /* sidebar icon */
   /* tab nav icons css */
 }
-@media (min-width: 1024px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   .cs-icon {
     width: 16px;
     height: 16px;
@@ -11713,16 +11692,10 @@ button:focus {
   text-align: right;
   line-height: 20px;
 }
-@media (min-width: 1280px) and (max-width: 1359px) {
+@media (max-width: 1359px) {
   .modal-open .modal.show .modal-dialog .modal-content .modal-body .form-group label {
     font-size: 16px;
     line-height: 18px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .modal-open .modal.show .modal-dialog .modal-content .modal-body .form-group label {
-    font-size: 14px;
-    line-height: 16px;
   }
 }
 .modal-open .modal.show .modal-dialog .modal-content .modal-body .form-group .form-control {
@@ -11898,7 +11871,7 @@ input[type=submit] {
   width: 145px;
   margin-left: 20px;
 }
-@media (min-width: 1360px) and (max-width: 1439px) {
+@media (max-width: 1439px) {
   #nav-holding-portfolio .table-filter-group .input-group-prepend,
 #nav-capital-market .table-filter-group .input-group-prepend,
 #nav-holdings-alternative .table-filter-group .input-group-prepend,
@@ -13277,7 +13250,7 @@ input[type=submit] {
   margin-bottom: 0;
   font-size: 18px;
 }
-@media (min-width: 1024px) and (max-width: 1599px) {
+@media (max-width: 1599px) {
   .cs-radio-container {
     margin-top: 30px;
   }
