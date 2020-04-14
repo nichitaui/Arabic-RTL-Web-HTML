@@ -11628,6 +11628,12 @@ button:focus {
 }
 
 /* Modal Custom CSS */
+.modal-backdrop {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
 .modal-open .modal {
   background-color: rgba(191, 197, 210, 0.8);
 }
@@ -11638,11 +11644,13 @@ button:focus {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
+.modal-open .modal.show {
+  display: flex !important;
+}
 .modal-open .modal.show .modal-dialog {
-  position: fixed;
   top: 0px;
   left: 0px;
-  margin: 0px;
+  margin: 0px auto 0px 0px;
   height: 100%;
   max-width: 100%;
   overflow: auto;
@@ -11651,6 +11659,7 @@ button:focus {
   transition: left 0.35s;
 }
 .modal-open .modal.show .modal-dialog .modal-content {
+  width: max-content;
   min-height: 100%;
   background-color: rgba(244, 246, 252, 0.8);
   border-radius: 0px;
