@@ -1147,10 +1147,15 @@ body {
                   }
                 }
                 .app-alert-wrapper {
+                    position: fixed;
+                    display: flex;
+                    bottom: 0;
+                    right: 0;
+                    padding-right: 324px;
                     .app-alert {
-                        position: fixed;
                         height: 72px;
                         width: 100%;
+                        min-width: 1280px;
                         bottom: 0px;
                         padding: 20px;
                         opacity: 1;

@@ -10979,10 +10979,17 @@ body .main .app .app-body .app-chart-group .chart-container .chart-body {
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
-body .main .app .app-body .app-alert-wrapper .app-alert {
+body .main .app .app-body .app-alert-wrapper {
   position: fixed;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  padding-right: 324px;
+}
+body .main .app .app-body .app-alert-wrapper .app-alert {
   height: 72px;
   width: 100%;
+  min-width: 1280px;
   bottom: 0px;
   padding: 20px;
   opacity: 1;
