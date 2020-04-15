@@ -1827,7 +1827,9 @@ button:focus {
                 transition: opacity 0.35s;
                 transition: left 0.35s;
                 .modal-content {
-                    width: max-content;
+                    @media (max-width: 1279px) {
+                        width: max-content;    
+                    }
                     min-height: 100%;
                     // background-color: #F4F6FC;
                     background-color: rgba(244, 246, 252, 0.8);

@@ -11659,7 +11659,6 @@ button:focus {
   transition: left 0.35s;
 }
 .modal-open .modal.show .modal-dialog .modal-content {
-  width: max-content;
   min-height: 100%;
   background-color: rgba(244, 246, 252, 0.8);
   border-radius: 0px;
@@ -11669,6 +11668,11 @@ button:focus {
   border-right: solid 16px #7ABBFC;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+@media (max-width: 1279px) {
+  .modal-open .modal.show .modal-dialog .modal-content {
+    width: max-content;
+  }
 }
 .modal-open .modal.show .modal-dialog .modal-content .modal-header {
   height: 80px;
