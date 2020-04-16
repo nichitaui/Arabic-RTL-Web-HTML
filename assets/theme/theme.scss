@@ -1237,6 +1237,12 @@ body {
                     .title {
                         font-size: 35px;
                         font-weight: bold;
+                        @media (min-width: 1360px) and (max-width: 1440px) {
+                            font-size: 32px;
+                        }
+                        @media (max-width: 1359px) {
+                            font-size: 30px;
+                        }
                     }
                 }
                 .app-header-bottom {
@@ -1306,6 +1312,12 @@ body {
                             font-size: 20px;
                             line-height: 29px;
                             font-weight: 500;
+                            @media (min-width: 1360px) and (max-width: 1439px) {
+                                font-size: 18px;
+                            }
+                            @media (max-width: 1359px) {
+                                font-size: 16px;
+                            }
                             .cs-icon {
                                 margin-left: 20px;
                             }
@@ -1319,6 +1331,9 @@ body {
                             font-weight: 500;
                             height: 44px;
                             background-color: #F4F7F8;
+                            @media (max-width: 1439px) {
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
