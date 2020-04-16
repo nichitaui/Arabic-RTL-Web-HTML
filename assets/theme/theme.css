@@ -11017,9 +11017,8 @@ body .main .app .app-body.has-alert {
   transition: padding-bottom 1.5s;
 }
 body .main .filter-bar {
-  position: fixed;
   width: 75px;
-  height: calc(100% - 150px);
+  height: auto;
   overflow: auto;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
@@ -11027,12 +11026,15 @@ body .main .filter-bar {
   z-index: 10;
   transition: width 0.45s;
 }
-body .main .filter-bar .filter-button {
+body .main .filter-bar .filter-header {
+  position: relative;
+}
+body .main .filter-bar .filter-header .filter-button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-body .main .filter-bar .filter-button.filter-toggle {
+body .main .filter-bar .filter-header .filter-button.filter-toggle {
   position: absolute;
   left: 15px;
   top: 35px;
@@ -11040,17 +11042,15 @@ body .main .filter-bar .filter-button.filter-toggle {
   border: none;
   padding: 15px;
 }
-body .main .filter-bar .filter-button.filter-toggle:hover {
+body .main .filter-bar .filter-header .filter-button.filter-toggle:hover {
   background-color: #78849E;
 }
 body .main .filter-app {
-  position: fixed;
-  width: 100%;
-  height: calc(100% - 150px);
+  width: calc(100% - 75px);
   overflow: auto;
-  padding-right: 154px;
+  padding-right: 75px;
   padding-left: 75px;
-  transition: padding-right 0.45s;
+  transition: width 0.45s, padding-right 0.45s;
 }
 body .main .filter-app .app-header {
   width: 100%;
@@ -11293,8 +11293,9 @@ body .main.open-filter .filter-bar .filter-body .filter-form .collapse-menu labe
   color: #485272;
 }
 body .main.open-filter .filter-app {
-  padding-right: 375px;
-  transition: padding-right 0.45s;
+  width: calc(100% - 370px);
+  padding-right: 5px;
+  transition: width 0.45s, padding-right 0.45s;
 }
 
 .cs-btn-icon {
